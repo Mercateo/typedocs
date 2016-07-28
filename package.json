@@ -1,0 +1,19 @@
+{
+  "name": "typedocs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "ws": "ws"
+  },
+  "ws": {
+    "type": "node"
+  },
+  "devDependencies": {
+    "@mercateo/ws": "^1.0.1-2",
+    "@types/expect": "^1.13.29",
+    "expect": "^1.20.2"
+  },
+  "dependencies": {
+    "typescript": "^2.1.0-dev.20160728"
+  }
+}
