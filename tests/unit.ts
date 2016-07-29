@@ -2,6 +2,7 @@ import expect from 'expect';
 import { parse } from '../src';
 
 describe('test my code', () => {
+
   it('has a something called parse', () => {
     expect(parse).toNotBe(undefined);
   });
@@ -9,6 +10,13 @@ describe('test my code', () => {
   it('has a parse function', () => {
     expect(typeof parse).toBe('function');
   });
+
+  it('returns a JSON', () => {
+    let base = `${process.cwd()}/examples/exported-functions/src`;
+    let json = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
+    expect(typeof json).toBe('object');
+  });
+
 });
 
 // possible e2e test?
