@@ -7,19 +7,19 @@ import Markdown from '../src/interfaces/Markdown';
 describe('test analysis feature', () => {
 
   it('equals example JSON', () => {
-    let expected = require('../examples/exported-functions/docs/api.fixture.json');
+    const expected = require('../examples/exported-functions/docs/api.fixture.json');
 
-    let base = `${process.cwd()}/examples/exported-functions/src`;
-    let actual = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
+    const base = `${process.cwd()}/examples/exported-functions/src`;
+    const actual = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
 
     expect(actual).toEqual(expected);
   });
 
   it('creates correct Markdown', () => {
-    let expected = readFileSync(`${process.cwd()}/examples/exported-functions/docs/api.fixture.md`, 'utf8');
+    const expected = readFileSync(`${process.cwd()}/examples/exported-functions/docs/api.fixture.md`, 'utf8');
 
-    let json = require('../examples/exported-functions/docs/api.fixture.json');
-    let actual = new Markdown(json);
+    const json = require('../examples/exported-functions/docs/api.fixture.json');
+    const actual = new Markdown(json);
 
     expect(actual.getMarkdown()).toEqual(expected);
   });

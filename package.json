@@ -1,6 +1,7 @@
 {
   "name": "typedocs",
   "version": "0.1.0",
+  "main": "dist/index.js",
   "private": true,
   "scripts": {
     "ws": "ws"
@@ -9,11 +10,11 @@
     "type": "node"
   },
   "devDependencies": {
-    "@mercateo/ws": "^1.0.1-2",
+    "@mercateo/ws": "^1.0.1-7",
     "@types/expect": "^1.13.29",
     "expect": "^1.20.2"
   },
   "dependencies": {
-    "typescript": "^2.1.0-dev.20160728"
+    "typescript": "^2.1.0-dev.20160811"
   }
 }

@@ -9,9 +9,6 @@ import Markdown from './interfaces/Markdown';
 // generate(fileNames, options) → alias "toMarkdown(parse(fileNames, options))"
 // generateFile(fileNames, options, markdownfileName) → alias "toMarkdownFile(markdownfileName, parse(fileNames, options))"
 
-const base = `${process.cwd()}`;
-let json = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
-
 export function extractJson(fileNames: string[], parseOptions: ParseOptions = { compilerOptions: require('../tsconfig.json') }): JSON[] {
   return parse(fileNames, parseOptions);
 }

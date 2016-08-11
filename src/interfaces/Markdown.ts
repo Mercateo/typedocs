@@ -1,7 +1,7 @@
 /**
  * Created by alexander on 09.08.16.
  */
-import DocJson from "./DocJson";
+import { DocJson, Foo } from "./DocJson";
 
 export default class Markdown {
   private docAsJson: DocJson[];

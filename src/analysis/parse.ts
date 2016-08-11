@@ -12,7 +12,7 @@ import {
 } from 'typescript';
 import { serializeFunctions } from './serialization';
 import { isNodeExported } from './property-check';
-import DocJson from '../interfaces/DocJson';
+import { DocJson } from '../interfaces/DocJson';
 
 export type ParseOptions = {
   compilerOptions: CompilerOptions
