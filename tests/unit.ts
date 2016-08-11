@@ -1,22 +1,37 @@
+import { readFileSync } from 'fs';
 import expect from 'expect';
-import { parse } from '../src';
+import { parse } from '../src/analysis/parse';
+import * as uut from '../src/index';
+import Markdown from '../src/interfaces/Markdown';
 
-describe('test my code', () => {
+describe('test analysis feature', () => {
 
-  it('has a something called parse', () => {
-    expect(parse).toNotBe(undefined);
-  });
+  it('equals example JSON', () => {
+    let expected = require('../examples/exported-functions/docs/api.fixture.json');
 
-  it('has a parse function', () => {
-    expect(typeof parse).toBe('function');
-  });
-
-  it('returns a JSON', () => {
     let base = `${process.cwd()}/examples/exported-functions/src`;
-    let json = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
-    expect(typeof json).toBe('object');
+    let actual = parse([ `${base}/add.ts`, `${base}/subtract.ts` ], { compilerOptions: require('../tsconfig.json') });
+
+    expect(actual).toEqual(expected);
   });
 
+  it('creates correct Markdown', () => {
+    let expected = readFileSync(`${process.cwd()}/examples/exported-functions/docs/api.fixture.md`, 'utf8');
+
+    let json = require('../examples/exported-functions/docs/api.fixture.json');
+    let actual = new Markdown(json);
+
+    expect(actual.getMarkdown()).toEqual(expected);
+  });
+
+  /*it('writes Markdown correctly', () => {
+    let json = require('../examples/exported-functions/docs/api.fixture.json');
+
+    uut.toMarkdownFile('', json)
+      .then(() => {
+
+      });
+  });*/
 });
 
 // possible e2e test?

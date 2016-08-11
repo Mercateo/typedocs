@@ -1,0 +1,52 @@
+[
+  {
+    "name": "add",
+    "documentation": "This function adds two summands.\n",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "a",
+            "documentation": "The first summand.",
+            "type": "number"
+          },
+          {
+            "name": "b",
+            "documentation": "The second summand.",
+            "type": "number"
+          }
+        ],
+        "returns" : {
+          "type": "number",
+          "documentation": "The sum."
+        }
+      }
+    ]
+  },
+  {
+    "name": "subtract",
+    "documentation": "This function subtracts a subtrahend from a minuend.\n",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "a",
+            "documentation": "The minuend.",
+            "type": "number"
+          },
+          {
+            "name": "b",
+            "documentation": "The subtrahend.",
+            "type": "number"
+          }
+        ],
+        "returns" : {
+          "documentation": "The difference.",
+          "type": "number"
+        }
+      }
+    ]
+  }
+]

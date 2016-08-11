@@ -29,3 +29,4 @@ This function subtracts a subtrahend from a minuend.
 `number`
 
 The difference.
+
