@@ -1,0 +1,1401 @@
+[
+  {
+    "name": "getNextId",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "number"
+        }
+      }
+    ]
+  },
+  {
+    "name": "useProfilr",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "active",
+            "documentation": "",
+            "type": "boolean"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "void"
+        }
+      }
+    ]
+  },
+  {
+    "name": "processEvent",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "event",
+            "documentation": "",
+            "type": "PerformanceEvent"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "void"
+        }
+      }
+    ]
+  },
+  {
+    "name": "registerEventCallback",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "cb",
+            "documentation": "",
+            "type": "EventCallback"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "() => void"
+        }
+      }
+    ]
+  },
+  {
+    "name": "isFunction",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "functionToCheck",
+            "documentation": "",
+            "type": "any"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "name": "isPromise",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "obj",
+            "documentation": "",
+            "type": "any"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "T"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      },
+      {
+        "parameters": [],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "makeDecorator",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "id",
+            "documentation": "",
+            "type": "number"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "(target: any, propertyKey: string, descriptor: PropertyDescriptor) => PropertyDescriptor"
+        }
+      }
+    ]
+  },
+  {
+    "name": "executeWrapped",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "id",
+            "documentation": "",
+            "type": "number"
+          },
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "T"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "() => any"
+        }
+      }
+    ]
+  },
+  {
+    "name": "measure",
+    "documentation": "",
+    "type": "function",
+    "signatures": [
+      {
+        "parameters": [
+          {
+            "name": "id",
+            "documentation": "",
+            "type": "number"
+          },
+          {
+            "name": "fnName",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "documentation": "",
+            "type": "string"
+          },
+          {
+            "name": "fn",
+            "documentation": "",
+            "type": "Function"
+          },
+          {
+            "name": "context",
+            "documentation": "",
+            "type": "Object"
+          },
+          {
+            "name": "args",
+            "documentation": "",
+            "type": "IArguments"
+          },
+          {
+            "name": "options",
+            "documentation": "",
+            "type": "ProfileOptions"
+          }
+        ],
+        "returns": {
+          "documentation": "",
+          "type": "any"
+        }
+      }
+    ]
+  }
+]
