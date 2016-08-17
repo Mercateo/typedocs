@@ -12,6 +12,14 @@ export interface BaseDoc {
   type?: string
 }
 
+export interface FileDoc {
+  constants?: ConstantDoc[],
+  enums?: EnumDoc[],
+  functions?: FunctionDoc[],
+  classes?: ClassDoc[],
+  interfaces?: InterfaceDoc[]
+}
+
 export interface SignatureDoc {
   parameters?: BaseDoc[],
   returns?: BaseDoc
@@ -23,8 +31,27 @@ export interface FunctionDoc extends BaseDoc {
 }
 
 export interface ClassDoc extends BaseDoc {
-  fileName?: string,
-  constructors?: SignatureDoc[]
+  type: 'class',
+  constructors?: SignatureDoc[],
+  superclass?: string,
+  interfaces?: string[],
+  methods?: FunctionDoc[],
+  fields?: BaseDoc[]
+}
+
+export interface InterfaceDoc extends BaseDoc {
+  type: 'interface',
+  extending?: string,
+  members?: BaseDoc[]
+}
+
+export interface ConstantDoc extends BaseDoc {
+  value: any
+}
+
+export interface EnumDoc extends BaseDoc {
+  type: 'enum',
+  values: string[]
 }
 
 export interface Documentable extends Signature, Symbol {

@@ -1,37 +1,26 @@
-import * as fs from 'fs';
+import { writeFileAsync } from 'fs-extra-promise';
 import { parse, ParseOptions } from './analysis/parse';
-import Markdown from './interfaces/Markdown';
+import Markdown from './markdown/Markdown';
+import {DocJson} from "./interfaces/DocJson";
 
-// possible API:
-// parse(fileNames, options) → return JSON about docs
-// toMarkdown(JSON about docs) → return markdown
-// toMarkdownFile(fileName, JSON about docs) → writes markdown
-// generate(fileNames, options) → alias "toMarkdown(parse(fileNames, options))"
-// generateFile(fileNames, options, markdownfileName) → alias "toMarkdownFile(markdownfileName, parse(fileNames, options))"
+const defaultOptions = { compilerOptions: require('../tsconfig.json') };
 
-export function extractJson(fileNames: string[], parseOptions: ParseOptions = { compilerOptions: require('../tsconfig.json') }): JSON[] {
+export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): JSON[] {
   return parse(fileNames, parseOptions);
 }
 
-export function toMarkdown(json: JSON[]): Markdown {
+export function toMarkdown(json: DocJson[]): Markdown {
   return new Markdown(json);
 }
 
-export function toMarkdownFile(targetName: string, json: JSON[]) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(targetName, new Markdown(json).getMarkdown(), (err) => {
-      if (err)
-        reject();
-      else
-        resolve();
-    })
-  });
+export async function toMarkdownFile(targetName: string, json: DocJson[]) {
+  return await writeFileAsync(targetName, new Markdown(json).getMarkdown());
 }
 
-export function extractMarkdown(fileNames: string[], parseOptions: ParseOptions = { compilerOptions: require('../tsconfig.json') }): Markdown {
+export function extractMarkdown(fileNames: string[], parseOptions: ParseOptions = defaultOptions): Markdown {
   return toMarkdown(parse(fileNames, parseOptions));
 }
 
-export function extractMarkdownFile(fileNames: string[], parseOptions: ParseOptions = { compilerOptions: require('../tsconfig.json') }, targetName: string) {
-  toMarkdownFile(targetName, parse(fileNames, parseOptions));
+export async function extractMarkdownFile(fileNames: string[], targetName: string, parseOptions: ParseOptions = defaultOptions) {
+  return await toMarkdownFile(targetName, parse(fileNames, parseOptions));
 }

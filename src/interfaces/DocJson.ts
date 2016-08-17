@@ -1,5 +1,8 @@
 /**
  * Created by alexander on 09.08.16.
  */
-type DocJson = JSON;
-export { DocJson };
+import { FileDoc } from "./DocEntries";
+
+export interface DocJson extends JSON {
+  sourceFile?: FileDoc
+}
