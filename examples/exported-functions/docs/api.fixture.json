@@ -1,52 +1,173 @@
-[
-  {
-    "name": "add",
-    "documentation": "This function adds two summands.\n",
-    "type": "function",
-    "signatures": [
+{
+  "add.ts": {
+    "functions": [
       {
-        "parameters": [
+        "name": "add",
+        "documentation": "This function adds two summands.\n",
+        "type": "function",
+        "signatures": [
           {
-            "name": "a",
-            "documentation": "The first summand.",
-            "type": "number"
-          },
-          {
-            "name": "b",
-            "documentation": "The second summand.",
-            "type": "number"
+            "parameters": [
+              {
+                "name": "a",
+                "documentation": "The first summand.",
+                "type": "number"
+              },
+              {
+                "name": "b",
+                "documentation": "The second summand.",
+                "type": "number"
+              }
+            ],
+            "returns": {
+              "documentation": "The sum.",
+              "type": "number"
+            }
           }
-        ],
-        "returns" : {
-          "type": "number",
-          "documentation": "The sum."
-        }
+        ]
       }
     ]
   },
-  {
-    "name": "subtract",
-    "documentation": "This function subtracts a subtrahend from a minuend.\n",
-    "type": "function",
-    "signatures": [
+  "subtract.ts": {
+    "functions": [
       {
-        "parameters": [
+        "name": "subtract",
+        "documentation": "This function subtracts a subtrahend from a minuend.\n",
+        "type": "function",
+        "signatures": [
           {
-            "name": "a",
-            "documentation": "The minuend.",
-            "type": "number"
+            "parameters": [
+              {
+                "name": "a",
+                "documentation": "The minuend.",
+                "type": "number"
+              },
+              {
+                "name": "b",
+                "documentation": "The subtrahend.",
+                "type": "number"
+              }
+            ],
+            "returns": {
+              "documentation": "The difference.",
+              "type": "number"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "index.ts": {
+    "constants": [
+      {
+        "name": "CONST",
+        "documentation": "A constant.\n",
+        "type": "string",
+        "value": "'FOO'"
+      }
+    ],
+    "enums": [
+      {
+        "name": "ENUM",
+        "documentation": "An enum.",
+        "type": "enum",
+        "values": [
+          "a",
+          "b"
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "name": "A",
+        "documentation": "An exported superclass.",
+        "type": "class",
+        "constructors": [
+          {
+            "parameters": [],
+            "returns": {
+              "documentation": "",
+              "type": "A"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dummyClass",
+        "documentation": "This is a dummy class with no real doc.\n\n",
+        "type": "class",
+        "superclass": "A",
+        "interfaces": [
+          "B,C"
+        ],
+        "constructors": [
+          {
+            "parameters": [],
+            "returns": {
+              "documentation": "",
+              "type": "dummyClass"
+            }
           },
           {
-            "name": "b",
-            "documentation": "The subtrahend.",
+            "parameters": [
+              {
+                "name": "foo",
+                "documentation": "its a number",
+                "type": "number"
+              }
+            ],
+            "returns": {
+              "documentation": "",
+              "type": "dummyClass"
+            }
+          }
+        ],
+        "fields": [
+          {
+            "name": "bar",
+            "documentation": "The 'bar' variable.\n",
             "type": "number"
           }
         ],
-        "returns" : {
-          "documentation": "The difference.",
-          "type": "number"
-        }
+        "methods": [
+          {
+            "name": "dummyFctExp",
+            "documentation": "",
+            "type": "function",
+            "signatures": [
+              {
+                "parameters": [],
+                "returns": {
+                  "documentation": "",
+                  "type": "void"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "name": "B",
+        "documentation": "An exported interface.",
+        "type": "interface",
+        "extending": "",
+        "members": [
+          {
+            "name": "dummyFctExp",
+            "documentation": "Interface function.",
+            "type": "() => void"
+          }
+        ]
+      },
+      {
+        "name": "C",
+        "documentation": "",
+        "type": "interface",
+        "extending": "",
+        "members": []
       }
     ]
   }
-]
+}

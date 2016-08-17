@@ -1,7 +1,7 @@
 const join = require('path').join;
-const extractMarkdownFile = require('../../dist').extractMarkdownFile;
+const extractJson = require('../../dist').extractJson;
 
-// fileNames: string[], parseOptions: ParseOptions = { compilerOptions: require('../tsconfig.json') }, targetName: string
-extractMarkdownFile([
+const json = extractJson([
   join(process.cwd(), 'src/index.ts')
-], require('./tsconfig.json'), 'docs/api.md');
+]);
+console.log(JSON.stringify(json))
