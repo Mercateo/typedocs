@@ -12,6 +12,7 @@ export function isNodeExported(node: Node): boolean {
 }
 
 export function isExportedConstant(node: Node): boolean {
+  // TODO
   return (node.flags & (NodeFlags.Const | NodeFlags.Export)) !== 0 && (node.kind === SyntaxKind.ConstKeyword);
 }
 

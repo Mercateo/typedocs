@@ -15,7 +15,7 @@ import {
   displayPartsToString
 } from 'typescript';
 import {BaseDoc, SignatureDoc, InterfaceDoc, EnumDoc, FunctionDoc, Documentable, ClassDoc, ConstantDoc} from '../interfaces/DocEntries';
-import {isPublicFunction, isPublicMember} from './property-check';
+import { isExportedConstant, isPublicFunction, isPublicMember } from './property-check';
 
 function generalDoc(documentable: Documentable) : string {
   let generalDoc = documentable.getDocumentationComment().filter((t) => !t.text.startsWith('@'));
@@ -76,6 +76,9 @@ function serializeHeritage(heritageClauses: NodeArray<HeritageClause>) {
 
 export function serializeConstant(checker: TypeChecker, variable: VariableStatement): ConstantDoc {
   let declaration = variable.declarationList.declarations[0];
+  // TODO
+  //if (!isExportedConstant(declaration))
+  //  return;
   let symbol = checker.getSymbolAtLocation(declaration.name);
   let base = serializeSymbol(checker, symbol);
 
@@ -90,13 +93,13 @@ export function serializeConstant(checker: TypeChecker, variable: VariableStatem
 export function serializeEnum(checker: TypeChecker, symbol: Symbol): EnumDoc {
   let base = serializeSymbol(checker, symbol);
 
-  let values = Object.keys(symbol.exports);
+  let keys = Object.keys(symbol.exports);
 
   return {
     name: base.name,
     documentation: base.documentation,
     type: 'enum',
-    values: values
+    keys: keys
   }
 }
 

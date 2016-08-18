@@ -1,16 +1,16 @@
 import {DocJson} from "../interfaces/DocJson";
 
-export function functionsMd(docJson: DocJson[]): string {
+export function functionsMd(docJson: DocJson): string {
   let functionString: string = '# Functions\n\n';
 
-  docJson
-    .filter((o) => o['type'] === 'function')
-    .forEach((o) => {
-      let baseString = baseMd(o);
-      let argString = parametersMd(o['signatures'][0]['parameters']);
-      let retString = returnMd(o['signatures'][0]['returns']);
-      functionString += `${baseString}\n${argString}\n\n${retString}`;
-    });
+  // docJson
+  //   .filter((o) => o['type'] === 'function')
+  //   .forEach((o) => {
+  //     let baseString = baseMd(o);
+  //     let argString = parametersMd(o['signatures'][0]['parameters']);
+  //     let retString = returnMd(o['signatures'][0]['returns']);
+  //     functionString += `${baseString}\n${argString}\n\n${retString}`;
+  //   });
 
   return functionString;
 }

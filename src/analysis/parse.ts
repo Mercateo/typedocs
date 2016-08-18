@@ -8,6 +8,9 @@ import {
   FunctionDeclaration,
   InterfaceDeclaration,
   Node,
+  Path,
+  Program,
+  SourceFile,
   SyntaxKind,
   TypeChecker,
   VariableStatement,
@@ -15,14 +18,15 @@ import {
   forEachChild
 } from 'typescript';
 import {serializeFunctions, serializeEnum, serializeClass, serializeConstant, serializeInterface} from './serialization';
-import { isNodeExported } from './property-check';
+import { isNodeExported, isExportedConstant } from './property-check';
 import { DocJson } from '../interfaces/DocJson';
+import { BaseDoc } from "../interfaces/DocEntries";
 
 export type ParseOptions = {
   compilerOptions: CompilerOptions
 }
 
-const visit = (checker: TypeChecker, result: any[], node: Node) => {
+const visit = (checker: TypeChecker, result: DocJson, node: Node) => {
   if (!node || !isNodeExported(node)) {
     return;
   }
@@ -30,49 +34,52 @@ const visit = (checker: TypeChecker, result: any[], node: Node) => {
   if (node.kind === SyntaxKind.FunctionDeclaration) {
     let symbol = checker.getSymbolAtLocation((<FunctionDeclaration>node).name);
     let bound = serializeFunctions.bind(undefined, checker);
-    result.push(bound(symbol));
+    result.functions = pushed(result.functions, bound(symbol));
   }
   if (node.kind === SyntaxKind.ClassDeclaration) {
     let symbol = checker.getSymbolAtLocation((<ClassDeclaration>node).name);
     let bound = serializeClass.bind(undefined, checker);
-    result.push(bound(symbol));
+    result.classes = pushed(result.classes, bound(symbol));
   }
   if (node.kind === SyntaxKind.InterfaceDeclaration) {
     let symbol = checker.getSymbolAtLocation((<InterfaceDeclaration>node).name);
     let bound = serializeInterface.bind(undefined, checker);
-    result.push(bound(symbol));
+    result.interfaces = pushed(result.interfaces, bound(symbol));
   }
   if (node.kind === SyntaxKind.VariableStatement) {
     let bound = serializeConstant.bind(undefined, checker);
-    result.push(bound(<VariableStatement>node));
+    result.constants = pushed(result.constants, bound(<VariableStatement>node));
   }
   if (node.kind === SyntaxKind.EnumDeclaration) {
     let symbol = checker.getSymbolAtLocation((<EnumDeclaration>node).name);
     let bound = serializeEnum.bind(undefined, checker);
-    result.push(bound(symbol));
+    result.enums = pushed(result.enums, bound(symbol));
   }
 };
 
-function filter(result: DocJson[]): DocJson {
-  result.map((obj) => {
-    // TODO
-  });
-
-
-  return null;
+function pushed<T extends BaseDoc>(array: T[], value): T[] {
+  if (!array)
+    array = [];
+  array.push(value);
+  return array;
 }
 
-export function parse(fileNames: string[], options: ParseOptions): DocJson[] {
+function filterSourceFiles(program: Program, fileNames: string[]) {
+  let sourceFiles: SourceFile[] = [];
+  fileNames.forEach((f) =>
+    sourceFiles.push(program.getSourceFileByPath(<Path>f)));
+  return sourceFiles;
+}
+
+export function parse(fileNames: string[], options: ParseOptions): DocJson {
   let program = createProgram(fileNames, options.compilerOptions);
   let checker = program.getTypeChecker();
-  let result = [];
-  let boundChecker = visit.bind(undefined, checker);
 
-  let sourceFiles = program.getSourceFiles().filter((f) => !f.fileName.includes('node_modules'));
-  for (const sourceFile of sourceFiles) {
-    let tmpResult = [];
-    forEachChild(sourceFile, boundChecker.bind(undefined, tmpResult));
-    result.push(filter(tmpResult))
+  let result: DocJson = JSON;
+  let bound = visit.bind(undefined, checker, result);
+
+  for (const sourceFile of filterSourceFiles(program, fileNames)) {
+    forEachChild(sourceFile, bound);
   }
 
   return result;

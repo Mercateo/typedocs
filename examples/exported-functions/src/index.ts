@@ -10,6 +10,11 @@ export { add, subtract };
 export const CONST = 'FOO';
 
 /**
+ * A variable.
+ */
+export var VAR = 'BAR';
+
+/**
  * An enum.
  */
 export enum ENUM {

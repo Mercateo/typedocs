@@ -7,8 +7,8 @@ import {  functionsMd } from './component-gen'
 export default class Markdown {
   private markdownText: string;
 
-  constructor(docAsJson: DocJson[]) {
-    this.markdownText = functionsMd(docAsJson);
+  constructor(docAsJson: DocJson) {
+    //this.markdownText = functionsMd(docAsJson);
   }
 
   getMarkdown(): string {

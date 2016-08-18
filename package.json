@@ -2,8 +2,12 @@
   "name": "typedocs",
   "version": "0.1.0",
   "main": "dist/index.js",
+  "bin": {
+    "typedocs": "./bin/typedocs.js"
+  },
   "private": true,
   "scripts": {
+    "typedocs": "node ./bin/typedocs.js",
     "build": "ws b",
     "test": "ws u"
   },
@@ -17,6 +21,7 @@
   },
   "dependencies": {
     "@types/fs-extra-promise": "0.0.28",
+    "commander": "^2.9.0",
     "fs-extra-promise": "^0.4.0",
     "typescript": "^2.1.0-dev.20160811"
   }

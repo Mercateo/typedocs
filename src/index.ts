@@ -5,15 +5,15 @@ import {DocJson} from "./interfaces/DocJson";
 
 const defaultOptions = { compilerOptions: require('../tsconfig.json') };
 
-export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): JSON[] {
+export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): DocJson {
   return parse(fileNames, parseOptions);
 }
 
-export function toMarkdown(json: DocJson[]): Markdown {
+export function toMarkdown(json: DocJson): Markdown {
   return new Markdown(json);
 }
 
-export async function toMarkdownFile(targetName: string, json: DocJson[]) {
+export async function toMarkdownFile(targetName: string, json: DocJson) {
   return await writeFileAsync(targetName, new Markdown(json).getMarkdown());
 }
 
