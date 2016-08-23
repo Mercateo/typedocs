@@ -1,7 +1,7 @@
 import { writeFileAsync } from 'fs-extra-promise';
 import { parse, ParseOptions } from './analysis/parse';
 import Markdown from './markdown/Markdown';
-import {DocJson} from "./interfaces/DocJson";
+import { DocJson } from "./interfaces/DocJson";
 
 const defaultOptions = { compilerOptions: require('../tsconfig.json') };
 

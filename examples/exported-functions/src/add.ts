@@ -7,3 +7,9 @@
 export function add(a: number, b: number): number {
   return a + b;
 }
+
+/**
+ * another function in this sourcefile, that should not be recognized within the index.ts,
+ * because there is no exportclause for dummy() in index.ts
+ */
+function dummy() {}
