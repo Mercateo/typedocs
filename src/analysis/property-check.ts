@@ -8,12 +8,15 @@ import {
 } from 'typescript';
 
 export function isNodeExported(node: Node): boolean {
-  return (node.flags & NodeFlags.Export) !== 0 || (node.parent && node.parent.kind === SyntaxKind.SourceFile);
+  return (node.flags & NodeFlags.Export) !== 0
+    || (node.parent && (node.parent.kind === SyntaxKind.SourceFile ||
+                        node.parent.kind === SyntaxKind.ExportDeclaration));
 }
 
 export function isExportedConstant(node: Node): boolean {
-  // TODO
-  return (node.flags & (NodeFlags.Const | NodeFlags.Export)) !== 0 && (node.kind === SyntaxKind.ConstKeyword);
+  let hasExportKeyword = isNodeExported(node.parent.parent);
+  let hasConstKeyword = (node.parent.flags & NodeFlags.Const) !== 0;
+  return hasConstKeyword && hasExportKeyword;
 }
 
 export function isPublicFunction(node: Node): boolean {

@@ -10,3 +10,12 @@ export interface DocJson extends JSON {
   classes?: ClassDoc[],
   interfaces?: InterfaceDoc[]
 }
+
+export const EMPTY_DOC: DocJson
+  = Object.assign(JSON, {
+    constants: [],
+    enums: [],
+    functions: [],
+    classes: [],
+    interfaces: []
+  });

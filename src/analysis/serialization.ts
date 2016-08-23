@@ -34,7 +34,7 @@ function serializeSymbol(checker: TypeChecker, symbol: Symbol): BaseDoc {
   return {
     name: symbol.getName(),
     documentation: generalDoc(symbol as Documentable),
-    type: checker.typeToString(checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration))
+    type: checker.typeToString(checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration || symbol.getDeclarations()[0]))
   };
 }
 
@@ -76,9 +76,8 @@ function serializeHeritage(heritageClauses: NodeArray<HeritageClause>) {
 
 export function serializeConstant(checker: TypeChecker, variable: VariableStatement): ConstantDoc {
   let declaration = variable.declarationList.declarations[0];
-  // TODO
-  //if (!isExportedConstant(declaration))
-  //  return;
+  if (!isExportedConstant(declaration))
+    return;
   let symbol = checker.getSymbolAtLocation(declaration.name);
   let base = serializeSymbol(checker, symbol);
 

@@ -5,6 +5,7 @@ import {
   ClassDeclaration,
   CompilerOptions,
   EnumDeclaration,
+  ExportDeclaration,
   FunctionDeclaration,
   InterfaceDeclaration,
   Node,
@@ -17,18 +18,40 @@ import {
   createProgram,
   forEachChild
 } from 'typescript';
-import {serializeFunctions, serializeEnum, serializeClass, serializeConstant, serializeInterface} from './serialization';
-import { isNodeExported, isExportedConstant } from './property-check';
-import { DocJson } from '../interfaces/DocJson';
-import { BaseDoc } from "../interfaces/DocEntries";
+import { serializeFunctions, serializeEnum, serializeClass, serializeConstant, serializeInterface} from './serialization';
+import { DocJson, EMPTY_DOC } from '../interfaces/DocJson';
+import { BaseDoc } from '../interfaces/DocEntries';
+import { isNodeExported } from './property-check';
 
 export type ParseOptions = {
   compilerOptions: CompilerOptions
 }
 
-const visit = (checker: TypeChecker, result: DocJson, node: Node) => {
+const getNodesFromAnotherSourceFile = (program: Program, node: ExportDeclaration): Node[] => {
+  let exports = node.exportClause.elements
+    .map((e) => e.name.text);
+  let imports = (<SourceFile>node.parent)['resolvedModules'];
+  let candidates = Object.keys(imports)
+    .map((key) => {
+      let i = imports[key];
+      if (!i.isExternalLibraryImport)
+        return program.getSourceFileByPath(<Path>i.resolvedFileName);
+    })
+    .reduce((locals, sourceFile) => Object.assign(locals, sourceFile['locals']), {});
+  return Object.keys(candidates)
+    .filter((key) => exports.indexOf(key) > -1)
+    .map((key) => candidates[key].exportSymbol.valueDeclaration
+                    || candidates[key].exportSymbol.getDeclarations()[0] );
+};
+
+const visit = (program: Program, checker: TypeChecker, result: DocJson, node: Node) => {
   if (!node || !isNodeExported(node)) {
     return;
+  }
+
+  if (node.kind === SyntaxKind.ExportDeclaration) {
+    let nodes = getNodesFromAnotherSourceFile(program, <ExportDeclaration>node);
+    nodes.forEach((n) => visit(program, checker, result, n))
   }
 
   if (node.kind === SyntaxKind.FunctionDeclaration) {
@@ -60,7 +83,8 @@ const visit = (checker: TypeChecker, result: DocJson, node: Node) => {
 function pushed<T extends BaseDoc>(array: T[], value): T[] {
   if (!array)
     array = [];
-  array.push(value);
+  if (value)
+    array.push(value);
   return array;
 }
 
@@ -71,16 +95,26 @@ function filterSourceFiles(program: Program, fileNames: string[]) {
   return sourceFiles;
 }
 
+function clean(result: DocJson): DocJson {
+  Object.keys(result)
+    .forEach((key) => {
+      if(result[key].length === 0)
+        delete result[key];
+    });
+  return result;
+}
+
 export function parse(fileNames: string[], options: ParseOptions): DocJson {
   let program = createProgram(fileNames, options.compilerOptions);
   let checker = program.getTypeChecker();
 
-  let result: DocJson = JSON;
-  let bound = visit.bind(undefined, checker, result);
+  let result = EMPTY_DOC;
+  let bound = visit.bind(undefined, program, checker, result);
 
   for (const sourceFile of filterSourceFiles(program, fileNames)) {
     forEachChild(sourceFile, bound);
   }
 
+  clean(result);
   return result;
 }
