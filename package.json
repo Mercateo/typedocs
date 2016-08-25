@@ -8,8 +8,9 @@
   "private": true,
   "scripts": {
     "typedocs": "node ./bin/typedocs.js",
-    "build": "ws b",
-    "test": "ws u"
+    "ws": "ws",
+    "build": "ws build",
+    "test": "ws lint && ws unit"
   },
   "ws": {
     "type": "node"

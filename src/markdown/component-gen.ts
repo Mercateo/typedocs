@@ -1,4 +1,4 @@
-import {DocJson} from "../interfaces/DocJson";
+import { DocJson } from '../interfaces/DocJson';
 
 export function functionsMd(docJson: DocJson): string {
   let functionString: string = '# Functions\n\n';
@@ -24,7 +24,7 @@ export function parametersMd(params: JSON[]): string {
   let paramString: string = '### Arguments\n\n';
 
   params.forEach((p) => {
-    paramString = `${paramString}- \`${p['name']}\`: \`${p['type']}\` - ${p['documentation']}`
+    paramString = `${paramString}- \`${p['name']}\`: \`${p['type']}\` - ${p['documentation']}`;
   });
 
   return paramString;

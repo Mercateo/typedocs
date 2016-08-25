@@ -1,6 +1,3 @@
-/**
- * Created by alexander on 09.08.16.
- */
 import {
   ClassDeclaration,
   HeritageClause,
@@ -14,7 +11,16 @@ import {
   VariableStatement,
   displayPartsToString
 } from 'typescript';
-import {BaseDoc, SignatureDoc, InterfaceDoc, EnumDoc, FunctionDoc, Documentable, ClassDoc, ConstantDoc} from '../interfaces/DocEntries';
+import {
+  BaseDoc,
+  SignatureDoc,
+  InterfaceDoc,
+  EnumDoc,
+  FunctionDoc,
+  Documentable,
+  ClassDoc,
+  ConstantDoc
+} from '../interfaces/DocEntries';
 import { isExportedConstant, isPublicFunction, isPublicMember } from './property-check';
 
 function generalDoc(documentable: Documentable) : string {
@@ -76,8 +82,9 @@ function serializeHeritage(heritageClauses: NodeArray<HeritageClause>) {
 
 export function serializeConstant(checker: TypeChecker, variable: VariableStatement): ConstantDoc {
   let declaration = variable.declarationList.declarations[0];
-  if (!isExportedConstant(declaration))
+  if (!isExportedConstant(declaration)) {
     return;
+  }
   let symbol = checker.getSymbolAtLocation(declaration.name);
   let base = serializeSymbol(checker, symbol);
 
@@ -85,8 +92,8 @@ export function serializeConstant(checker: TypeChecker, variable: VariableStatem
     name: base.name,
     documentation: base.documentation,
     type: base.type,
-    value: (<VariableDeclaration>symbol.valueDeclaration).initializer.getText()
-  }
+    value: (<VariableDeclaration> symbol.valueDeclaration).initializer.getText()
+  };
 }
 
 export function serializeEnum(checker: TypeChecker, symbol: Symbol): EnumDoc {
@@ -99,7 +106,7 @@ export function serializeEnum(checker: TypeChecker, symbol: Symbol): EnumDoc {
     documentation: base.documentation,
     type: 'enum',
     keys: keys
-  }
+  };
 }
 
 export function serializeFunctions(checker: TypeChecker, symbol: Symbol): FunctionDoc {
@@ -124,8 +131,9 @@ export function serializeInterface(checker: TypeChecker, symbol: Symbol): Interf
 
   let members: BaseDoc[] = [];
   let keys = Object.keys(symbol.members);
-  if (keys.length !== 0)
+  if (keys.length !== 0) {
     keys.forEach((key) => members.push(serializeSymbol(checker, symbol.members[key])));
+  }
 
   return {
     name: symbol.getName(),
@@ -133,7 +141,7 @@ export function serializeInterface(checker: TypeChecker, symbol: Symbol): Interf
     type: 'interface',
     extending: extending,
     members: members
-  }
+  };
 }
 
 export function serializeClass(checker: TypeChecker, symbol: Symbol): ClassDoc {
@@ -153,10 +161,10 @@ export function serializeClass(checker: TypeChecker, symbol: Symbol): ClassDoc {
     let member = members[key];
     let node = member.valueDeclaration;
 
-    if(node && isPublicFunction(node)) {
+    if (node && isPublicFunction(node)) {
       methods.push(serializeFunctions(checker, member));
     }
-    if(node && isPublicMember(node)) {
+    if (node && isPublicMember(node)) {
       fields.push(serializeSymbol(checker, member));
     }
   });
@@ -165,13 +173,21 @@ export function serializeClass(checker: TypeChecker, symbol: Symbol): ClassDoc {
     name: base.name,
     documentation: base.documentation,
     type: 'class',
-    constructors: constructors,
+    constructors: constructors
   };
 
-  if (superclass) doc.superclass = superclass;
-  if (interfaces.length !== 0) doc.interfaces = interfaces;
-  if (methods.length !== 0) doc.methods = methods;
-  if (methods.length !== 0) doc.fields = fields;
+  if (superclass) {
+    doc.superclass = superclass;
+  };
+  if (interfaces.length !== 0) {
+    doc.interfaces = interfaces;
+  }
+  if (methods.length !== 0) {
+    doc.methods = methods;
+  }
+  if (methods.length !== 0) {
+    doc.fields = fields;
+  }
 
   return doc;
 }

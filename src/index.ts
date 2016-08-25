@@ -1,9 +1,14 @@
-import { writeFileAsync } from 'fs-extra-promise';
+import { join } from 'path';
+import { writeFileAsync, readJsonSync } from 'fs-extra-promise';
 import { parse, ParseOptions } from './analysis/parse';
 import Markdown from './markdown/Markdown';
-import { DocJson } from "./interfaces/DocJson";
+import { DocJson } from './interfaces/DocJson';
 
-const defaultOptions = { compilerOptions: require('../tsconfig.json') };
+const defaultOptions: ParseOptions = {
+  // currently we need `as any` until this is merged
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/10817
+  compilerOptions: readJsonSync(join(process.cwd(), 'tsconfig.json')) as any
+};
 
 export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): DocJson {
   return parse(fileNames, parseOptions);

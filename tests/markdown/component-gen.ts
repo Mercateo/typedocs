@@ -1,6 +1,3 @@
-/**
- * Created by alexander on 12.08.16.
- */
 import {baseMd, parametersMd, returnMd, functionsMd} from '../../src/markdown/component-gen';
 import expect from "expect";
 import {DocJson} from "../../src/interfaces/DocJson";

@@ -1,6 +1,3 @@
-/**
- * Created by alexander on 11.08.16.
- */
 import { isNodeExported } from '../../src/analysis/property-check';
 import expect from "expect";
 import {

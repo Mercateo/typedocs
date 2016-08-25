@@ -1,6 +1,3 @@
-/**
- * Created by alexander on 11.08.16.
- */
 import { readFileAsync, existsSync, readJsonAsync, removeSync } from 'fs-extra-promise';
 import { join } from 'path';
 import expect from 'expect';

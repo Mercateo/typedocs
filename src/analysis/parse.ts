@@ -1,6 +1,3 @@
-/**
- * Created by alexander on 09.08.16.
- */
 import {
   ClassDeclaration,
   CompilerOptions,
@@ -30,12 +27,13 @@ export type ParseOptions = {
 const getNodesFromAnotherSourceFile = (program: Program, node: ExportDeclaration): Node[] => {
   let exports = node.exportClause.elements
     .map((e) => e.name.text);
-  let imports = (<SourceFile>node.parent)['resolvedModules'];
+  let imports = (<SourceFile> node.parent)['resolvedModules'];
   let candidates = Object.keys(imports)
     .map((key) => {
       let i = imports[key];
-      if (!i.isExternalLibraryImport)
-        return program.getSourceFileByPath(<Path>i.resolvedFileName);
+      if (!i.isExternalLibraryImport) {
+        return program.getSourceFileByPath(<Path> i.resolvedFileName);
+      }
     })
     .reduce((locals, sourceFile) => Object.assign(locals, sourceFile['locals']), {});
   return Object.keys(candidates)
@@ -50,56 +48,59 @@ const visit = (program: Program, checker: TypeChecker, result: DocJson, node: No
   }
 
   if (node.kind === SyntaxKind.ExportDeclaration) {
-    let nodes = getNodesFromAnotherSourceFile(program, <ExportDeclaration>node);
-    nodes.forEach((n) => visit(program, checker, result, n))
+    let nodes = getNodesFromAnotherSourceFile(program, <ExportDeclaration> node);
+    nodes.forEach((n) => visit(program, checker, result, n));
   }
 
   if (node.kind === SyntaxKind.FunctionDeclaration) {
-    let symbol = checker.getSymbolAtLocation((<FunctionDeclaration>node).name);
+    let symbol = checker.getSymbolAtLocation((<FunctionDeclaration> node).name);
     let bound = serializeFunctions.bind(undefined, checker);
     result.functions = pushed(result.functions, bound(symbol));
   }
   if (node.kind === SyntaxKind.ClassDeclaration) {
-    let symbol = checker.getSymbolAtLocation((<ClassDeclaration>node).name);
+    let symbol = checker.getSymbolAtLocation((<ClassDeclaration> node).name);
     let bound = serializeClass.bind(undefined, checker);
     result.classes = pushed(result.classes, bound(symbol));
   }
   if (node.kind === SyntaxKind.InterfaceDeclaration) {
-    let symbol = checker.getSymbolAtLocation((<InterfaceDeclaration>node).name);
+    let symbol = checker.getSymbolAtLocation((<InterfaceDeclaration> node).name);
     let bound = serializeInterface.bind(undefined, checker);
     result.interfaces = pushed(result.interfaces, bound(symbol));
   }
   if (node.kind === SyntaxKind.VariableStatement) {
     let bound = serializeConstant.bind(undefined, checker);
-    result.constants = pushed(result.constants, bound(<VariableStatement>node));
+    result.constants = pushed(result.constants, bound(<VariableStatement> node));
   }
   if (node.kind === SyntaxKind.EnumDeclaration) {
-    let symbol = checker.getSymbolAtLocation((<EnumDeclaration>node).name);
+    let symbol = checker.getSymbolAtLocation((<EnumDeclaration> node).name);
     let bound = serializeEnum.bind(undefined, checker);
     result.enums = pushed(result.enums, bound(symbol));
   }
 };
 
 function pushed<T extends BaseDoc>(array: T[], value): T[] {
-  if (!array)
+  if (!array) {
     array = [];
-  if (value)
+  }
+  if (value) {
     array.push(value);
+  }
   return array;
 }
 
 function filterSourceFiles(program: Program, fileNames: string[]) {
   let sourceFiles: SourceFile[] = [];
   fileNames.forEach((f) =>
-    sourceFiles.push(program.getSourceFileByPath(<Path>f)));
+    sourceFiles.push(program.getSourceFileByPath(<Path> f)));
   return sourceFiles;
 }
 
 function clean(result: DocJson): DocJson {
   Object.keys(result)
     .forEach((key) => {
-      if(result[key].length === 0)
+      if (result[key].length === 0) {
         delete result[key];
+      }
     });
   return result;
 }
