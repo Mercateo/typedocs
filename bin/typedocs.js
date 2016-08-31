@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 const commander = require('commander');
 const join = require('path').join;
-const extractJson = require('../dist').extractJson;
+const toMarkdown = require('../dist').toMarkdown;
 
 commander.version(require('../package.json').version);
 
-commander.command('extract-json <entry>')
-  .description('returns api description as json')
+commander.command('convert <entry>')
+  .description('converts the TypeDoc JSON-output to Markdown')
   .action((entry) => {
     let path = join(process.cwd(), entry);
-    console.log(path)
-    let json = extractJson([ path ]);
-    console.log(json)
+    let markdown = toMarkdown(path);
+    console.log(markdown)
   });
 
 commander.on('*', (unknownCommand) => {

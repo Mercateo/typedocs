@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "typedocs": "node ./bin/typedocs.js",
-    "build": "ws b",
-    "test": "ws u"
+    "build": "ws build",
+    "test": "ws lint && ws unit"
   },
   "ws": {
     "type": "node"
@@ -23,6 +23,7 @@
     "@types/fs-extra-promise": "0.0.28",
     "commander": "^2.9.0",
     "fs-extra-promise": "^0.4.0",
+    "traverse": "^0.6.6",
     "typescript": "^2.1.0-dev.20160811"
   }
 }
