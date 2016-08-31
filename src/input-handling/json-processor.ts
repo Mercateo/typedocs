@@ -1,7 +1,7 @@
 import {BaseObject, GroupObject, TEMPLATE, ID, Result, Title, ConstantObject} from '../interfaces/objects';
 import {
   ReflectionKind
-} from './ReflectionKind';
+} from '../interfaces/ReflectionKind';
 const traverse = require('traverse');
 
 type Condition = (obj: BaseObject) => boolean;
@@ -17,12 +17,12 @@ class ObjectIterator {
   }
 
   private getFlatObjectList(): Array<BaseObject> {
-    if(!this.flatObjectList) {
+    if (!this.flatObjectList) {
       this.flatObjectList = [];
       traverse(this.typeDocJson.children)
         .forEach((obj) => {
           if (obj.id && !(obj.type === 'reference')) {
-            this.flatObjectList.push(obj)
+            this.flatObjectList.push(obj);
           }
         });
     }
@@ -38,7 +38,7 @@ class ObjectIterator {
     childrenIds.forEach((id) => {
       let child = this.findChildById(id);
       if (condition && condition(child)) {
-        children.push(child)
+        children.push(child);
       }
     });
     return children;
@@ -74,8 +74,8 @@ function processModules<T extends BaseObject>(it: ObjectIterator, modules: BaseO
       return {
         title: group.title === 'Variables' ? Title.Constants : Title[group.title],
         children: children
-      } as Result
-    })
+      } as Result;
+    });
 }
 
 export function process(typeDocJson: BaseObject): Result[] {

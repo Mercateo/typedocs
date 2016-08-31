@@ -1,10 +1,40 @@
-import { writeFileAsync } from 'fs-extra-promise';
-import { parse, ParseOptions } from './analysis/parse';
-import Markdown from './markdown/Markdown';
-import { DocJson } from "./interfaces/DocJson";
+import {writeFileAsync, readJsonSync} from 'fs-extra-promise';
+import {Markdown} from './markdown/Markdown';
+import Path from 'path';
 
-const defaultOptions = { compilerOptions: require('../tsconfig.json') };
+const defaultOutputFile = Path.join(process.cwd(), 'docs', 'api.md');
 
+export function toMarkdown(typeDocJsonFile: string): string {
+  const source = readJsonSync(typeDocJsonFile);
+
+  const markdown = new Markdown(source);
+
+  return markdown.getText();
+}
+
+export async function toMarkdownFile(typeDocJsonFile: string, outputFile: string = defaultOutputFile): Promise<any> {
+  const source = readJsonSync(typeDocJsonFile);
+
+  const markdown = new Markdown(source);
+
+  return await writeFileAsync(outputFile, markdown.getText());
+}
+
+export function toMarkdownFrom(sourceDir: string): string {
+  // run typedoc --json out src
+  const typeDocJson = '';
+
+  return toMarkdown(typeDocJson);
+}
+
+export async function toMarkdownFileFrom(sourceDir: string, outputFile: string = defaultOutputFile): Promise<any> {
+  // run typedoc --json out src
+  const typeDocJson = '';
+
+  return await toMarkdownFile(typeDocJson, outputFile);
+}
+
+/*
 export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): DocJson {
   return parse(fileNames, parseOptions);
 }
@@ -14,7 +44,7 @@ export function toMarkdown(json: DocJson): Markdown {
 }
 
 export async function toMarkdownFile(targetName: string, json: DocJson) {
-  return await writeFileAsync(targetName, new Markdown(json).getMarkdown());
+  return await writeFileAsync(targetName, new Markdown(json).getText());
 }
 
 export function extractMarkdown(fileNames: string[], parseOptions: ParseOptions = defaultOptions): Markdown {
@@ -24,3 +54,4 @@ export function extractMarkdown(fileNames: string[], parseOptions: ParseOptions 
 export async function extractMarkdownFile(fileNames: string[], targetName: string, parseOptions: ParseOptions = defaultOptions) {
   return await toMarkdownFile(targetName, parse(fileNames, parseOptions));
 }
+*/
