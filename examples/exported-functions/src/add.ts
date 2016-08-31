@@ -9,7 +9,7 @@ export function add(a: number, b: number): number {
 }
 
 /**
- * another function in this sourcefile, that should not be recognized within the index.ts,
- * because there is no exportclause for dummy() in index.ts
+ * another function in this sourcefile, that should not be recognized.
+ * It's also an anonymous function :O
  */
-function dummy() {}
+const dummy = (defaultParam: number = 2, optionalParam?: number) => {}

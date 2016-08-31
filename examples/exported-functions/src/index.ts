@@ -1,7 +1,7 @@
 import { add } from './add';
 import { subtract } from './subtract';
 
-export { add, subtract };
+export { add };
 
 /**
  * A constant.
@@ -14,10 +14,15 @@ export const CONST = 'FOO';
  */
 export var VAR = 'BAR';
 
+var VAR2 = "NOT EXPORTED";
+
 /**
  * An enum.
  */
 export enum ENUM {
+  /**
+   * This one is called a, the other has no doc.
+   */
   a = 1,
   b = 2
 }
@@ -32,9 +37,9 @@ export class A {}
  */
 export interface B {
   /**
-   * Interface function.
+   * Generic interface function.
    */
-  dummyFctExp: () => void
+  dummyFctExp: <T>(a: T) => void
 }
 
 export interface C extends B {}
