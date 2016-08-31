@@ -3,13 +3,19 @@
 ## Constants
 
 **CONST**
-`string CONST = "FOO"`
+
+```typescript
+string CONST = "FOO"
+```
 
 A constant.
 
 ---
 **VAR**
-`string VAR = "BAR"`
+
+```typescript
+string VAR = "BAR"
+```
 
 A variable.
 
@@ -19,7 +25,7 @@ A variable.
 ## Enumerations
 
 **ENUM**
-```
+```typescript
 enum ENUM {
     a = 1,
     b = 2
@@ -27,9 +33,10 @@ enum ENUM {
 ```
 
 An enum.
-Name | Description |
----- | ----------- |
-a | -
+
+Name | Description
+:--- | :----------
+a | This one is called a, the other has no doc.
 b | -
 
 ---
@@ -38,15 +45,29 @@ b | -
 ## Functions
 
 **add**
-`function add(): number`
+```typescript
+function add(a: number, b: number): number
+```
 
-This function adds two summands.
+
+
+Name | Description
+:--- | :----------
+a | The first summand.
+b | The second summand.
 
 ---
 **subtract**
-`function subtract(): number`
+```typescript
+function subtract(a: number, b: number): number
+```
 
-This function subtracts a subtrahend from a minuend.
+
+
+Name | Description
+:--- | :----------
+a | The minuend.
+b | The subtrahend.
 
 ---
 
@@ -54,13 +75,21 @@ This function subtracts a subtrahend from a minuend.
 ## Classes
 
 **A**
-`class A { }`
+
+```typescript
+class A  {}
+```
 
 An exported superclass.
 
 ---
 **dummyClass**
-`class dummyClass { }`
+
+```typescript
+class dummyClass extends A implements B, C {
+    constr
+}
+```
 
 This is a dummy class with no real doc.
 
@@ -70,14 +99,25 @@ This is a dummy class with no real doc.
 ## Interfaces
 
 **B**
-`interface B { }`
+
+```typescript
+interface B  {
+    dummyFctExp: undefined
+}
+```
 
 An exported interface.
 
 ---
 **C**
-`interface C { }`
+
+```typescript
+interface C extends B  {
+    dummyFctExp: undefined
+}
+```
 
 
 
 ---
+
