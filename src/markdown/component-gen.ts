@@ -1,6 +1,7 @@
 import {
   Result, Title, BaseObject, ConstantObject, CommentObject, FunctionObject,
-  EnumObject, ClassObject, InterfaceObject, EnumMemberObject, SignatureObject, ParameterObject
+  EnumObject, ClassObject, InterfaceObject, EnumMemberObject, SignatureObject, ParameterObject,
+  RelationObject
 } from '../interfaces/objects';
 import {SectionOrString, Section} from './Markdown';
 
@@ -11,6 +12,7 @@ const tableRow = (name: string, description: string): string => `${name} | ${des
 
 const n = '\n';
 const nn = n + n;
+const tab = '    ';
 const codeStart = '\`\`\`typescript' + n;
 const codeEnd = n + '\`\`\`';
 const tableHead = `Name | Description${n}:--- | :----------`;
@@ -89,7 +91,7 @@ function enumMd(enums: BaseObject[]): string {
 function enumMemberMd(enumMember: EnumMemberObject[]): string {
   return enumMember.reduce((s, child) => {
     let member = <EnumMemberObject> child;
-    return `${s}    ${member.name} = ${member.defaultValue},${n}`;
+    return `${s}${tab}${member.name} = ${member.defaultValue},${n}`;
   }, '').slice(0, -2);
 }
 
@@ -138,12 +140,12 @@ function typeParamMd(typeParameters: ParameterObject[]): string {
   }
 }
 
-function paramMd(params: ParameterObject[]): string {
+function paramMd(params: ParameterObject[], separator: string = ', '): string {
   if (params) {
     return params.reduce((s, param) => {
       let extension = param.type ? `: ${param.type.name}` : '';
-      return `${s}${param.name}${extension}, `;
-    }, '').slice(0, -2);
+      return `${s}${param.name}${extension}${separator}`;
+    }, '').slice(0, -(separator.length));
   } else {
     return '';
   }
@@ -162,11 +164,22 @@ function classMd(classes: BaseObject[]): string {
 
   classes.forEach((c) => {
     let converted = <ClassObject> c;
+    let separator = `,${n}${tab}`;
+    let children = '';
+    if (converted.children) {
+      children = converted.children.reduce((s, child) => {
+        return `${s}${child.name}: ${child.kindString}${separator}`;
+      }, '').slice(0, separator.length);
+    }
     classString = classString
       .concat(`${nameMd(converted)}`)
       .concat(n)
       .concat(codeStart)
-      .concat(`class ${converted.name} { }`)/* TODO */
+      .concat(`class ${converted.name} `)
+      .concat(heritageMd(converted))
+      .concat(`{`)
+      .concat(children ? `${n}${tab}${children}${n}` : '')
+      .concat(`}`)
       .concat(codeEnd)
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
@@ -176,17 +189,21 @@ function classMd(classes: BaseObject[]): string {
 
   return classString;
 }
-
 function interfaceMd(interfaces: BaseObject[]): string {
   let interfaceString: string = '';
 
   interfaces.forEach((i) => {
     let converted = <InterfaceObject> i;
+    let members = paramMd(converted.children, `,${n}${tab}`);
     interfaceString = interfaceString
       .concat(`${nameMd(converted)}`)
       .concat(n)
       .concat(codeStart)
-      .concat(`interface ${converted.name} { }`)/* TODO */
+      .concat(`interface ${converted.name} `)
+      .concat(heritageMd(converted))
+      .concat(`{`)
+      .concat(members ? `${n}${tab}${members}${n}` : '')
+      .concat(`}`)
       .concat(codeEnd)
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
@@ -195,6 +212,12 @@ function interfaceMd(interfaces: BaseObject[]): string {
   });
 
   return interfaceString;
+}
+
+function heritageMd(converted: InterfaceObject | ClassObject): string {
+  let reducedExtension = reduceHeritage('extends', converted.extendedTypes);
+  let reducedImplementation = reduceHeritage('implements', (<ClassObject> converted).implementedTypes)
+  return reducedExtension + (reducedExtension ? ' ' : '') + reducedImplementation + ' ';
 }
 
 function nameMd(baseObj: BaseObject): string {
@@ -260,4 +283,14 @@ function distinctParams(signatures: SignatureObject[]): ParameterObject[] {
     }
   });
   return params;
+}
+
+function reduceHeritage(keyword: string, relations: RelationObject[]): string {
+  if (relations && 0 !== relations.length) {
+    return relations.reduce((s, type) => {
+      return `${s}${type.name}, `;
+    }, `${keyword} `).slice(0, -2);
+  } else {
+    return '';
+  }
 }

@@ -38,6 +38,7 @@ export interface ClassObject extends BaseObject {
 }
 
 export interface InterfaceObject extends BaseObject {
+  children: ParameterObject[],
   extendedBy?: RelationObject[],
   implementedBy?: RelationObject[],
   extendedTypes?:  RelationObject[]
