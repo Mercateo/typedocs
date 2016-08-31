@@ -4,21 +4,27 @@
 
 **TARGET_MUST_BE_A_FUNCTION**
 
-`string TARGET_MUST_BE_A_FUNCTION = "Only class methods can be decorated."`
+```typescript
+string TARGET_MUST_BE_A_FUNCTION = "Only class methods can be decorated."
+```
 
 
 
 ---
 **UNSUPPORTED_CALL_SIGNATURE_ERROR**
 
-`string UNSUPPORTED_CALL_SIGNATURE_ERROR = "Unsupported call signature. Please check API docs."`
+```typescript
+string UNSUPPORTED_CALL_SIGNATURE_ERROR = "Unsupported call signature. Please check API docs."
+```
 
 
 
 ---
 **state**
 
-`object state = undefined`
+```typescript
+object state = undefined
+```
 
 
 
@@ -42,6 +48,7 @@ function profile(): (target: any, propertyKey: string, descriptor: PropertyDescr
 ```
 
 Dummy doc.
+
 Name | Description
 :--- | :----------
 fn | a function
@@ -57,11 +64,14 @@ function getNextId(): number
 
 
 
+
+
 ---
 **processEvent**
 ```typescript
 function processEvent(event: PerformanceEvent): void
 ```
+
 
 
 Name | Description
@@ -75,6 +85,7 @@ function registerEventCallback(cb: EventCallback): () => void
 ```
 
 
+
 Name | Description
 :--- | :----------
 cb | -
@@ -84,6 +95,7 @@ cb | -
 ```typescript
 function useProfilr(active: boolean): void
 ```
+
 
 
 Name | Description
@@ -97,6 +109,7 @@ function isFunction(functionToCheck: any): boolean
 ```
 
 
+
 Name | Description
 :--- | :----------
 functionToCheck | -
@@ -106,6 +119,7 @@ functionToCheck | -
 ```typescript
 function isPromise(obj: any): boolean
 ```
+
 
 
 Name | Description
@@ -121,28 +135,36 @@ obj | -
 
 **ProfileOptions**
 
-`interface ProfileOptions { }`
+```typescript
+interface ProfileOptions { }
+```
 
 
 
 ---
 **EventCallback**
 
-`interface EventCallback { }`
+```typescript
+interface EventCallback { }
+```
 
 
 
 ---
 **PerformanceEvent**
 
-`interface PerformanceEvent { }`
+```typescript
+interface PerformanceEvent { }
+```
 
 
 
 ---
 **State**
 
-`interface State { }`
+```typescript
+interface State { }
+```
 
 
 

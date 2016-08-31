@@ -9,12 +9,11 @@ const italic = (s: string): string => `*${s}*`;
 const underlined = (s: string): string => `_${s}_`;
 const tableRow = (name: string, description: string): string => `${name} | ${description}`;
 
-const nn = '\n\n';
-const codeStart = '\`\`\`typescript\n';
-const codeEnd = '\n\`\`\`';
-const tableHead = 'Name | Description\n:--- | :----------';
-
-type NameAndType = { name: string, type: string };
+const n = '\n';
+const nn = n + n;
+const codeStart = '\`\`\`typescript' + n;
+const codeEnd = n + '\`\`\`';
+const tableHead = `Name | Description${n}:--- | :----------`;
 
 export function generateMarkdown(result: Result): Section {
   if (result.children.length !== 0) {
@@ -50,11 +49,14 @@ function constantMd(constants: BaseObject[]): string {
     let converted = <ConstantObject> constant;
     constantString = constantString
       .concat(nameMd(converted))
-      .concat(`\n\`${converted.type.name} ${converted.name} = ${converted.defaultValue}\``)
+      .concat(n)
+      .concat(codeStart)
+      .concat(`${converted.type.name} ${converted.name} = ${converted.defaultValue}`)
+      .concat(codeEnd)
       .concat(nn)
       .concat(docMd(converted.comment))
       .concat(nn)
-      .concat('---\n');
+      .concat(`---${n}`);
   });
 
   return constantString;
@@ -69,15 +71,16 @@ function enumMd(enums: BaseObject[]): string {
     enumString = enumString
       .concat(nameMd(converted))
       .concat(codeStart)
-      .concat(`enum ${converted.name} {\n`)
+      .concat(`enum ${converted.name} {${n}`)
       .concat(childrenMd)
-      .concat(`\n}`)
+      .concat(`${n}}`)
       .concat(codeEnd)
       .concat(nn)
       .concat(docMd(converted.comment))
+      .concat(nn)
       .concat(docTableMd(converted.children))
       .concat(nn)
-      .concat('---\n');
+      .concat(`---${n}`);
   });
 
   return enumString;
@@ -86,7 +89,7 @@ function enumMd(enums: BaseObject[]): string {
 function enumMemberMd(enumMember: EnumMemberObject[]): string {
   return enumMember.reduce((s, child) => {
     let member = <EnumMemberObject> child;
-    return `${s}    ${member.name} = ${member.defaultValue},\n`;
+    return `${s}    ${member.name} = ${member.defaultValue},${n}`;
   }, '').slice(0, -2);
 }
 
@@ -102,9 +105,10 @@ function functionMd(functions: BaseObject[]): string {
       .concat(codeEnd)
       .concat(nn)
       .concat(docMd(converted.comment))
+      .concat(nn)
       .concat(docTableMd(distinctParams(converted.signatures)))
       .concat(nn)
-      .concat('---\n');
+      .concat(`---${n}`);
   });
 
   return functionString;
@@ -116,9 +120,9 @@ function signatureMd(signatures: SignatureObject[]): string {
     let params = paramMd(signature.parameters);
     let returnType = returnMd(signature);
     if ('__call' === signature.name) {
-      return `${s}(${params}) => ${returnType}\n`;
+      return `${s}(${params}) => ${returnType}${n}`;
     } else {
-      return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}\n`;
+      return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${n}`;
     }
   }, '').slice(0, -1);
 }
@@ -160,11 +164,14 @@ function classMd(classes: BaseObject[]): string {
     let converted = <ClassObject> c;
     classString = classString
       .concat(`${nameMd(converted)}`)
-      .concat(`\n\`class ${converted.name} { }\``)/* TODO */
+      .concat(n)
+      .concat(codeStart)
+      .concat(`class ${converted.name} { }`)/* TODO */
+      .concat(codeEnd)
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
       .concat(nn)
-      .concat('---\n');
+      .concat(`---${n}`);
   });
 
   return classString;
@@ -177,18 +184,21 @@ function interfaceMd(interfaces: BaseObject[]): string {
     let converted = <InterfaceObject> i;
     interfaceString = interfaceString
       .concat(`${nameMd(converted)}`)
-      .concat(`\n\`interface ${converted.name} { }\``)/* TODO */
+      .concat(n)
+      .concat(codeStart)
+      .concat(`interface ${converted.name} { }`)/* TODO */
+      .concat(codeEnd)
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
       .concat(nn)
-      .concat('---\n');
+      .concat(`---${n}`);
   });
 
   return interfaceString;
 }
 
 function nameMd(baseObj: BaseObject): string {
-  return `${bold(baseObj.name)}\n`;
+  return `${bold(baseObj.name)}${n}`;
 }
 
 function docMd(comment: CommentObject): string {
@@ -202,13 +212,13 @@ function docMd(comment: CommentObject): string {
         .forEach((tag) => {
           doc.concat(nn)
             .concat(`${italic(tag.tag)}`)
-            .concat('\n')
+            .concat(n)
             .concat(tag.text);
         });
     }
     if (comment.returns) {
       doc.concat(nn)
-        .concat(`${italic('Returns')}\n`)
+        .concat(`${italic('Returns')}${n}`)
         .concat(comment.returns);
     }
 
@@ -223,8 +233,8 @@ function docTableMd(children: BaseObject[]): string {
     return children.reduce((s, child) => {
       let comment = child.comment;
       let doc = comment ? (comment.shortText ? comment.shortText : comment.text) : '-';
-      return s + tableRow(child.name, doc) + '\n';
-    }, `\n${tableHead}\n`).slice(0, -1);
+      return s + tableRow(child.name, doc) + n;
+    }, `${tableHead}${n}`).slice(0, -1);
   } else {
     return '';
   }
