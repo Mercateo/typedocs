@@ -30,7 +30,7 @@
 ## Functions
 
 **profile**
-```javascript
+```typescript
 function profile<T extends Function>(fn: T, label: string, options: ProfileOptions): T
 function profile<T extends Function>(fn: T, options: ProfileOptions): T
 function profile<T extends Function>(fn: T, label: string): T
@@ -51,7 +51,7 @@ options | some options
 
 ---
 **getNextId**
-```javascript
+```typescript
 function getNextId(): number
 ```
 
@@ -59,7 +59,7 @@ function getNextId(): number
 
 ---
 **processEvent**
-```javascript
+```typescript
 function processEvent(event: PerformanceEvent): void
 ```
 
@@ -70,7 +70,7 @@ event | -
 
 ---
 **registerEventCallback**
-```javascript
+```typescript
 function registerEventCallback(cb: EventCallback): () => void
 ```
 
@@ -81,7 +81,7 @@ cb | -
 
 ---
 **useProfilr**
-```javascript
+```typescript
 function useProfilr(active: boolean): void
 ```
 
@@ -92,7 +92,7 @@ active | -
 
 ---
 **isFunction**
-```javascript
+```typescript
 function isFunction(functionToCheck: any): boolean
 ```
 
@@ -103,7 +103,7 @@ functionToCheck | -
 
 ---
 **isPromise**
-```javascript
+```typescript
 function isPromise(obj: any): boolean
 ```
 

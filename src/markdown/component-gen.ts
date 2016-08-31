@@ -10,7 +10,7 @@ const underlined = (s: string): string => `_${s}_`;
 const tableRow = (name: string, description: string): string => `${name} | ${description}`;
 
 const nn = '\n\n';
-const codeStart = '\`\`\`javascript\n';
+const codeStart = '\`\`\`typescript\n';
 const codeEnd = '\n\`\`\`';
 const tableHead = 'Name | Description\n:--- | :----------';
 
