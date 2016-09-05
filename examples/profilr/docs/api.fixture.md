@@ -53,7 +53,7 @@ Type | Name | Description
 :--- | :--- | :----------
 T | fn | a function
 string | label | a label
-[ProfileOptions](#ProfileOptions) | options | some options;
+[ProfileOptions](#profileoptions) | options | some options;
 
 ---
 #### getNextId
@@ -75,7 +75,7 @@ function processEvent(event: PerformanceEvent): void
 
 Type | Name | Description
 :--- | :--- | :----------
-[PerformanceEvent](#PerformanceEvent) | event | -
+[PerformanceEvent](#performanceevent) | event | -
 
 ---
 #### registerEventCallback
@@ -87,7 +87,7 @@ function registerEventCallback(cb: EventCallback): () => void
 
 Type | Name | Description
 :--- | :--- | :----------
-[EventCallback](#EventCallback) | cb | -
+[EventCallback](#eventcallback) | cb | -
 
 ---
 #### useProfilr
@@ -179,7 +179,7 @@ number | duration | -
 string | fnName | -
 number | id | -
 string | label | -
-[ProfileOptions](#ProfileOptions) | options | -
+[ProfileOptions](#profileoptions) | options | -
 any | result | -
 
 ---
@@ -197,6 +197,7 @@ interface State  {
 Type | Name | Description
 :--- | :--- | :----------
 boolean | enabled | -
-[Array](#Array) | listeners | -
+[Array](#array) | listeners | -
 
 ---
+
