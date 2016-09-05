@@ -34,7 +34,19 @@ export interface EnumMemberObject extends BaseObject {
 export interface ClassObject extends BaseObject {
   extendedBy?: RelationObject[],
   extendedTypes?:  RelationObject[],
-  implementedTypes?: RelationObject[]
+  implementedTypes?: RelationObject[],
+  constructors?: ConstructorObject,
+  properties?: BaseObject[],
+  methods?: MethodObject[]
+}
+
+export interface ConstructorObject extends BaseObject {
+  signatures?: SignatureObject[]
+}
+
+export interface MethodObject extends FunctionObject {
+  implementationOf?: RelationObject,
+  inheritedFrom?: RelationObject
 }
 
 export interface InterfaceObject extends BaseObject {
@@ -61,6 +73,7 @@ export interface SignatureObject extends BaseObject {
 
 export interface ParameterObject extends BaseObject {
   type: TypeObject
+  inheritedFrom?: RelationObject
 }
 
 /*

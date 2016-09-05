@@ -30,7 +30,9 @@ export enum ENUM {
 /**
  * An exported superclass.
  */
-export class A {}
+export class A {
+  protected method() {};
+}
 
 /**
  * An exported interface.
@@ -50,7 +52,7 @@ export interface C extends B {}
  * @return a dummyClass instance
  */
 export class dummyClass extends A implements B,C {
-  private foo = 1;
+  protected foo;
   /**
    * The 'bar' variable.
    * @type {number}

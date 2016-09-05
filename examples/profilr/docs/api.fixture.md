@@ -136,7 +136,9 @@ obj | -
 **ProfileOptions**
 
 ```typescript
-interface ProfileOptions { }
+interface ProfileOptions  {
+    custom: any
+}
 ```
 
 
@@ -145,7 +147,7 @@ interface ProfileOptions { }
 **EventCallback**
 
 ```typescript
-interface EventCallback { }
+interface EventCallback  {}
 ```
 
 
@@ -154,7 +156,14 @@ interface EventCallback { }
 **PerformanceEvent**
 
 ```typescript
-interface PerformanceEvent { }
+interface PerformanceEvent  {
+    duration: number,
+    fnName: string,
+    id: number,
+    label: string,
+    options: ProfileOptions,
+    result: any
+}
 ```
 
 
@@ -163,7 +172,10 @@ interface PerformanceEvent { }
 **State**
 
 ```typescript
-interface State { }
+interface State  {
+    enabled: boolean,
+    listeners: Array
+}
 ```
 
 

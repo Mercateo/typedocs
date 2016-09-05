@@ -1,4 +1,7 @@
-import {BaseObject, GroupObject, TEMPLATE, ID, Result, Title, ConstantObject} from '../interfaces/objects';
+import {
+  BaseObject, GroupObject, TEMPLATE, ID, Result, Title, ClassObject,
+  ConstructorObject, MethodObject
+} from '../interfaces/objects';
 import {
   ReflectionKind
 } from '../interfaces/ReflectionKind';
@@ -37,7 +40,7 @@ class ObjectIterator {
     let children = [];
     childrenIds.forEach((id) => {
       let child = this.findChildById(id);
-      if (condition && condition(child)) {
+      if (!condition || condition(child)) {
         children.push(child);
       }
     });
@@ -78,6 +81,37 @@ function processModules<T extends BaseObject>(it: ObjectIterator, modules: BaseO
     });
 }
 
+function processClasses(classes: Result, it: ObjectIterator): void {
+  if (classes) {
+    classes.children.forEach((child) => {
+      let clazz = <ClassObject> child;
+      clazz.groups.forEach((group) => {
+        switch (group.kind) {
+          case ReflectionKind.Constructor:
+            // there will only be one constructor with different signatures
+            clazz.constructors = it.findChildById<ConstructorObject>(group.children[0]);
+            break;
+          case ReflectionKind.Property:
+            if (!clazz.properties) {
+              clazz.properties = [];
+            }
+            let properties = it.findChildrenById(group.children);
+            clazz.properties = clazz.properties.concat(properties);
+            break;
+          case ReflectionKind.Method:
+            if (!clazz.methods) {
+              clazz.methods = [];
+            }
+            let methods = it.findChildrenById<MethodObject>(group.children);
+            clazz.methods = clazz.methods.concat(methods);
+            break;
+          default:
+            break;
+        }
+      })
+    });
+  }
+}
 export function process(typeDocJson: BaseObject): Result[] {
   let it = new ObjectIterator(typeDocJson);
 
@@ -105,6 +139,9 @@ export function process(typeDocJson: BaseObject): Result[] {
    EXPLICITLY re-exported function from the target module.*/
 
   let results = processModules(it, externalModules);
+
+  let classes = results.find((r) => Title.Classes === r.title);
+  processClasses(classes, it);
 
   return results;
 }

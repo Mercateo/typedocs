@@ -77,7 +77,9 @@ b | The subtrahend.
 **A**
 
 ```typescript
-class A  {}
+class A  {
+    protected method(): void;
+}
 ```
 
 An exported superclass.
@@ -87,7 +89,15 @@ An exported superclass.
 
 ```typescript
 class dummyClass extends A implements B, C {
-    constr
+    public constructor();
+    public constructor(foo: number);
+
+
+    public bar: number = 2;
+    protected foo: any;
+
+    public dummyFctExp(): void; // implementation of C.dummyFctExp
+    protected method(): void; // inherited from A.method
 }
 ```
 
@@ -102,7 +112,7 @@ This is a dummy class with no real doc.
 
 ```typescript
 interface B  {
-    dummyFctExp: undefined
+    dummyFctExp: <T>(a: T) => void
 }
 ```
 
@@ -113,7 +123,7 @@ An exported interface.
 
 ```typescript
 interface C extends B  {
-    dummyFctExp: undefined
+    dummyFctExp: <T>(a: T) => void // inherited from B.dummyFctExp
 }
 ```
 

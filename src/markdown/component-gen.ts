@@ -1,7 +1,7 @@
 import {
   Result, Title, BaseObject, ConstantObject, CommentObject, FunctionObject,
   EnumObject, ClassObject, InterfaceObject, EnumMemberObject, SignatureObject, ParameterObject,
-  RelationObject
+  RelationObject, ConstructorObject, MethodObject
 } from '../interfaces/objects';
 import {SectionOrString, Section} from './Markdown';
 
@@ -117,22 +117,26 @@ function functionMd(functions: BaseObject[]): string {
 }
 
 function signatureMd(signatures: SignatureObject[]): string {
-  return signatures.reduce((s, signature) => {
-    let typeParam = typeParamMd(signature.typeParameter);
-    let params = paramMd(signature.parameters);
-    let returnType = returnMd(signature);
-    if ('__call' === signature.name) {
-      return `${s}(${params}) => ${returnType}${n}`;
-    } else {
-      return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${n}`;
-    }
-  }, '').slice(0, -1);
+  if (signatures) {
+    return signatures.reduce((s, signature) => {
+      let typeParam = typeParamMd(signature.typeParameter);
+      let params = paramMd(signature.parameters);
+      let returnType = returnMd(signature);
+      if ('__call' === signature.name) {
+        return `${s}${typeParam}(${params}) => ${returnType}${n}`;
+      } else {
+        return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${n}`;
+      }
+    }, '').slice(0, -1);
+  } else {
+    return '';
+  }
 }
 
 function typeParamMd(typeParameters: ParameterObject[]): string {
   if (typeParameters) {
     return typeParameters.reduce((s, param) => {
-      let extension =  param.type ? ` extends ${param.type.name}` : '';
+      let extension = param.type ? ` extends ${param.type.name}` : '';
       return `${s}${param.name}${extension}, `;
     }, '<').slice(0, -2).concat('>');
   } else {
@@ -143,8 +147,9 @@ function typeParamMd(typeParameters: ParameterObject[]): string {
 function paramMd(params: ParameterObject[], separator: string = ', '): string {
   if (params) {
     return params.reduce((s, param) => {
-      let extension = param.type ? `: ${param.type.name}` : '';
-      return `${s}${param.name}${extension}${separator}`;
+      let relation = relationMd(param);
+      let extension = param.type ? ': ' + returnMd(param) : '';
+      return `${s}${param.name}${extension}${relation}${separator}`;
     }, '').slice(0, -(separator.length));
   } else {
     return '';
@@ -152,10 +157,12 @@ function paramMd(params: ParameterObject[], separator: string = ', '): string {
 }
 
 function returnMd(signature: SignatureObject): string {
-  if (signature.type.name) {
-    return signature.type.name;
-  } else if ('reflection' === signature.type.type) {
+  if ('reflection' === signature.type.type) {
     return signatureMd(signature.type.declaration.signatures);
+  } else if (signature.type.name) {
+    return signature.type.name;
+  } else {
+    return '';
   }
 }
 
@@ -164,13 +171,10 @@ function classMd(classes: BaseObject[]): string {
 
   classes.forEach((c) => {
     let converted = <ClassObject> c;
-    let separator = `,${n}${tab}`;
-    let children = '';
-    if (converted.children) {
-      children = converted.children.reduce((s, child) => {
-        return `${s}${child.name}: ${child.kindString}${separator}`;
-      }, '').slice(0, separator.length);
-    }
+    let constructor = constructorMd(converted.constructors);
+    let properties = propertyMd(converted.properties);
+    let methods = methodMd(converted.methods);
+
     classString = classString
       .concat(`${nameMd(converted)}`)
       .concat(n)
@@ -178,7 +182,9 @@ function classMd(classes: BaseObject[]): string {
       .concat(`class ${converted.name} `)
       .concat(heritageMd(converted))
       .concat(`{`)
-      .concat(children ? `${n}${tab}${children}${n}` : '')
+      .concat(constructor ? `${n}${tab}${constructor}${n}` : '')
+      .concat(properties ? `${n}${tab}${properties}${n}` : '')
+      .concat(methods ? `${n}${tab}${methods}${n}` : '')
       .concat(`}`)
       .concat(codeEnd)
       .concat(nn)
@@ -189,6 +195,65 @@ function classMd(classes: BaseObject[]): string {
 
   return classString;
 }
+
+function constructorMd(constructor: ConstructorObject): string {
+  if (constructor) {
+    let modifier = modifierMd(constructor.flags);
+    let constructorSignatures = constructor.signatures;
+    if (constructorSignatures) {
+      let separator = `${n}${tab}`;
+      return constructorSignatures.reduce((s, constructor) => {
+        let params = paramMd(constructor.parameters);
+        return `${s}${modifier}constructor(${params});${separator}`;
+      }, '');
+    } else {
+      return '';
+    }
+  } else {
+    return '';
+  }
+}
+
+function propertyMd(properties: BaseObject[]): string {
+  if (properties) {
+    let separator = `${n}${tab}`;
+    return properties.reduce((s, property) => {
+      if (!property.flags.isExported || property.flags.isPrivate)
+        return s;
+
+      let modifier = modifierMd(property.flags);
+      let p = paramMd([<ParameterObject> property]);
+      let defaultValue = (<ConstantObject> property).defaultValue ? ` = ${(<ConstantObject> property).defaultValue}` : '';
+      return `${s}${modifier}${p}${defaultValue};${separator}`;
+    }, '').slice(0, -(separator.length));
+  } else {
+    return '';
+  }
+}
+
+function methodMd(methods: MethodObject[]): string {
+  if (methods) {
+    let separator = `${n}${tab}`;
+    return methods.reduce((t, method) => {
+      if (!method.flags.isExported || method.flags.isPrivate)
+        return t;
+
+      let modifier = modifierMd(method.flags);
+      let relation = relationMd(method);
+      let md = method.signatures.reduce((s, signature) => {
+        let typeParam = typeParamMd(signature.typeParameter);
+        let params = paramMd(signature.parameters);
+        let returnType = returnMd(signature);
+        return `${s}${modifier}${signature.name}${typeParam}(${params}): ${returnType};${relation}${n}`;
+      }, '').slice(0, -1);
+
+      return `${t}${md}${separator}`
+    }, '').slice(0, -(separator.length));
+  } else {
+    return '';
+  }
+}
+
 function interfaceMd(interfaces: BaseObject[]): string {
   let interfaceString: string = '';
 
@@ -218,6 +283,28 @@ function heritageMd(converted: InterfaceObject | ClassObject): string {
   let reducedExtension = reduceHeritage('extends', converted.extendedTypes);
   let reducedImplementation = reduceHeritage('implements', (<ClassObject> converted).implementedTypes)
   return reducedExtension + (reducedExtension ? ' ' : '') + reducedImplementation + ' ';
+}
+
+function relationMd(obj: BaseObject): string {
+  // TODO link inheritance
+  if (obj) {
+    if (obj['inheritedFrom']) {
+      return ` // inherited from ${obj['inheritedFrom'].name}`
+    } else if (obj['implementationOf']) {
+      return ` // implementation of ${obj['implementationOf'].name}`
+    }
+  }
+  return '';
+}
+
+function modifierMd(flags: any): string {
+  if (flags.isProtected) {
+    return 'protected ';
+  } else if (flags.isPrivate) {
+    return 'private ';
+  } else {
+    return 'public ';
+  }
 }
 
 function nameMd(baseObj: BaseObject): string {
