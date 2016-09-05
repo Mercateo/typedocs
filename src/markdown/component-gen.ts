@@ -355,8 +355,8 @@ function createLinkToType(type: TypeObject): string {
         case 'reference':
           let plainName = type.name
             .replace(/\s/g, '-')
-            .replace(/[^a-zA-Z0-9\-]/g, '');
-          console.log(plainName)
+            .replace(/[^a-zA-Z0-9\-]/g, '')
+            .toLowerCase();
           return link(type.name, `#${plainName}`);
         case 'typeParameter':
         case 'instrinct': // ATTENTION: this is a typo in typedoc generated JSON!
