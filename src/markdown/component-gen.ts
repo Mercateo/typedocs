@@ -1,21 +1,25 @@
 import {
   Result, Title, BaseObject, ConstantObject, CommentObject, FunctionObject,
   EnumObject, ClassObject, InterfaceObject, EnumMemberObject, SignatureObject, ParameterObject,
-  RelationObject, ConstructorObject, MethodObject
+  RelationObject, ConstructorObject, MethodObject, TypeObject
 } from '../interfaces/objects';
 import {SectionOrString, Section} from './Markdown';
+import {ReflectionKind} from "../interfaces/ReflectionKind";
 
 const bold = (s: string): string => `**${s}**`;
 const italic = (s: string): string => `*${s}*`;
 const underlined = (s: string): string => `_${s}_`;
-const tableRow = (name: string, description: string): string => `${name} | ${description}`;
+
+const h4 = (s: string) => `#### ${s}`;
+const link = (name: string, url: string = `#${name}`) => `[${name}](${url})`;
+const tableRow = (type: string, name: string, description: string): string => `${type} | ${name} | ${description}`;
 
 const n = '\n';
 const nn = n + n;
 const tab = '    ';
 const codeStart = '\`\`\`typescript' + n;
 const codeEnd = n + '\`\`\`';
-const tableHead = `Name | Description${n}:--- | :----------`;
+const tableHead = `Type | Name | Description${n}:--- | :--- | :----------`;
 
 export function generateMarkdown(result: Result): Section {
   if (result.children.length !== 0) {
@@ -156,13 +160,13 @@ function paramMd(params: ParameterObject[], separator: string = ', '): string {
   }
 }
 
-function returnMd(signature: SignatureObject): string {
-  if ('reflection' === signature.type.type) {
-    return signatureMd(signature.type.declaration.signatures);
-  } else if (signature.type.name) {
-    return signature.type.name;
+function returnMd(param: ParameterObject): string {
+  if ('reflection' === param.type.type) {
+    return signatureMd(param.type.declaration.signatures);
+  } else if (param.type.name) {
+    return param.type.name;
   } else {
-    return '';
+    return 'any';
   }
 }
 
@@ -189,6 +193,8 @@ function classMd(classes: BaseObject[]): string {
       .concat(codeEnd)
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
+      .concat(nn)
+      .concat(docTableMd(converted.children))
       .concat(nn)
       .concat(`---${n}`);
   });
@@ -273,6 +279,8 @@ function interfaceMd(interfaces: BaseObject[]): string {
       .concat(nn)
       .concat(`${docMd(converted.comment)}`)
       .concat(nn)
+      .concat(docTableMd(converted.children))
+      .concat(nn)
       .concat(`---${n}`);
   });
 
@@ -286,7 +294,7 @@ function heritageMd(converted: InterfaceObject | ClassObject): string {
 }
 
 function relationMd(obj: BaseObject): string {
-  // TODO link inheritance
+  // TODO link inheritance + DO NOT display tableDoc twice
   if (obj) {
     if (obj['inheritedFrom']) {
       return ` // inherited from ${obj['inheritedFrom'].name}`
@@ -308,7 +316,7 @@ function modifierMd(flags: any): string {
 }
 
 function nameMd(baseObj: BaseObject): string {
-  return `${bold(baseObj.name)}${n}`;
+  return `${h4(baseObj.name)}${n}`;
 }
 
 function docMd(comment: CommentObject): string {
@@ -338,12 +346,44 @@ function docMd(comment: CommentObject): string {
   }
 }
 
+function createLinkToType(type: TypeObject): string {
+  if (type) {
+    if ('reflection' === type.type) {
+      return 'function';
+    } else if (type.name) {
+      switch (type.type) {
+        case 'reference':
+          let plainName = type.name
+            .replace(/\s/g, '-')
+            .replace(/[^a-zA-Z0-9\-]/g, '');
+          console.log(plainName)
+          return link(type.name, `#${plainName}`);
+        case 'typeParameter':
+        case 'instrinct': // ATTENTION: this is a typo in typedoc generated JSON!
+        default:
+          return type.name;
+      }
+    }
+  }
+  return '-';
+}
+
 function docTableMd(children: BaseObject[]): string {
-  if (0 !== children.length) {
+  if (children && 0 !== children.length) {
     return children.reduce((s, child) => {
       let comment = child.comment;
-      let doc = comment ? (comment.shortText ? comment.shortText : comment.text) : '-';
-      return s + tableRow(child.name, doc) + n;
+      let doc = comment ? (comment.shortText ? comment.shortText : comment.text)
+        .replace(/\n/g, ';') : '-';
+      let type = `[${child.kindString}]`;
+      switch (child.kind) {
+        case ReflectionKind.Parameter:
+        case ReflectionKind.Property:
+        case ReflectionKind.TypeParameter:
+          type = createLinkToType((<ParameterObject> child).type);
+          return s + tableRow(type, child.name, doc) + n;
+        default:
+          return s + tableRow(type, child.name, doc) + n;
+      }
     }, `${tableHead}${n}`).slice(0, -1);
   } else {
     return '';

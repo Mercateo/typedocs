@@ -2,7 +2,7 @@
 
 ## Constants
 
-**CONST**
+#### CONST
 
 ```typescript
 string CONST = "FOO"
@@ -11,7 +11,7 @@ string CONST = "FOO"
 A constant.
 
 ---
-**VAR**
+#### VAR
 
 ```typescript
 string VAR = "BAR"
@@ -24,7 +24,7 @@ A variable.
 
 ## Enumerations
 
-**ENUM**
+#### ENUM
 ```typescript
 enum ENUM {
     a = 1,
@@ -34,47 +34,47 @@ enum ENUM {
 
 An enum.
 
-Name | Description
-:--- | :----------
-a | This one is called a, the other has no doc.
-b | -
+Type | Name | Description
+:--- | :--- | :----------
+[Enumeration member] | a | This one is called a, the other has no doc.
+[Enumeration member] | b | -
 
 ---
 
 
 ## Functions
 
-**add**
+#### add
 ```typescript
 function add(a: number, b: number): number
 ```
 
 
 
-Name | Description
-:--- | :----------
-a | The first summand.
-b | The second summand.
+Type | Name | Description
+:--- | :--- | :----------
+number | a | The first summand.
+number | b | The second summand.
 
 ---
-**subtract**
+#### subtract
 ```typescript
 function subtract(a: number, b: number): number
 ```
 
 
 
-Name | Description
-:--- | :----------
-a | The minuend.
-b | The subtrahend.
+Type | Name | Description
+:--- | :--- | :----------
+number | a | The minuend.
+number | b | The subtrahend.
 
 ---
 
 
 ## Classes
 
-**A**
+#### A
 
 ```typescript
 class A  {
@@ -84,8 +84,12 @@ class A  {
 
 An exported superclass.
 
+Type | Name | Description
+:--- | :--- | :----------
+[Method] | method | -
+
 ---
-**dummyClass**
+#### dummyClass
 
 ```typescript
 class dummyClass extends A implements B, C {
@@ -103,12 +107,21 @@ class dummyClass extends A implements B, C {
 
 This is a dummy class with no real doc.
 
+Type | Name | Description
+:--- | :--- | :----------
+[Constructor] | constructor | Default Constructor.;Constructor with foo.;Constructor implementation.;Constructor implementation.
+number | bar | The 'bar' variable.
+any | foo | -
+[Method] | dummyFctExp | -
+[Method] | dummyFctNotExp | -
+[Method] | method | -
+
 ---
 
 
 ## Interfaces
 
-**B**
+#### B
 
 ```typescript
 interface B  {
@@ -118,8 +131,12 @@ interface B  {
 
 An exported interface.
 
+Type | Name | Description
+:--- | :--- | :----------
+function | dummyFctExp | Generic interface function.
+
 ---
-**C**
+#### C
 
 ```typescript
 interface C extends B  {
@@ -128,6 +145,10 @@ interface C extends B  {
 ```
 
 
+
+Type | Name | Description
+:--- | :--- | :----------
+function | dummyFctExp | Generic interface function.
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Constants
 
-**TARGET_MUST_BE_A_FUNCTION**
+#### TARGET_MUST_BE_A_FUNCTION
 
 ```typescript
 string TARGET_MUST_BE_A_FUNCTION = "Only class methods can be decorated."
@@ -11,7 +11,7 @@ string TARGET_MUST_BE_A_FUNCTION = "Only class methods can be decorated."
 
 
 ---
-**UNSUPPORTED_CALL_SIGNATURE_ERROR**
+#### UNSUPPORTED_CALL_SIGNATURE_ERROR
 
 ```typescript
 string UNSUPPORTED_CALL_SIGNATURE_ERROR = "Unsupported call signature. Please check API docs."
@@ -20,7 +20,7 @@ string UNSUPPORTED_CALL_SIGNATURE_ERROR = "Unsupported call signature. Please ch
 
 
 ---
-**state**
+#### state
 
 ```typescript
 object state = undefined
@@ -35,7 +35,7 @@ object state = undefined
 
 ## Functions
 
-**profile**
+#### profile
 ```typescript
 function profile<T extends Function>(fn: T, label: string, options: ProfileOptions): T
 function profile<T extends Function>(fn: T, options: ProfileOptions): T
@@ -49,15 +49,14 @@ function profile(): (target: any, propertyKey: string, descriptor: PropertyDescr
 
 Dummy doc.
 
-Name | Description
-:--- | :----------
-fn | a function
-label | a label
-options | some options
-
+Type | Name | Description
+:--- | :--- | :----------
+T | fn | a function
+string | label | a label
+[ProfileOptions](#ProfileOptions) | options | some options;
 
 ---
-**getNextId**
+#### getNextId
 ```typescript
 function getNextId(): number
 ```
@@ -67,64 +66,64 @@ function getNextId(): number
 
 
 ---
-**processEvent**
+#### processEvent
 ```typescript
 function processEvent(event: PerformanceEvent): void
 ```
 
 
 
-Name | Description
-:--- | :----------
-event | -
+Type | Name | Description
+:--- | :--- | :----------
+[PerformanceEvent](#PerformanceEvent) | event | -
 
 ---
-**registerEventCallback**
+#### registerEventCallback
 ```typescript
 function registerEventCallback(cb: EventCallback): () => void
 ```
 
 
 
-Name | Description
-:--- | :----------
-cb | -
+Type | Name | Description
+:--- | :--- | :----------
+[EventCallback](#EventCallback) | cb | -
 
 ---
-**useProfilr**
+#### useProfilr
 ```typescript
 function useProfilr(active: boolean): void
 ```
 
 
 
-Name | Description
-:--- | :----------
-active | -
+Type | Name | Description
+:--- | :--- | :----------
+boolean | active | -
 
 ---
-**isFunction**
+#### isFunction
 ```typescript
 function isFunction(functionToCheck: any): boolean
 ```
 
 
 
-Name | Description
-:--- | :----------
-functionToCheck | -
+Type | Name | Description
+:--- | :--- | :----------
+any | functionToCheck | -
 
 ---
-**isPromise**
+#### isPromise
 ```typescript
 function isPromise(obj: any): boolean
 ```
 
 
 
-Name | Description
-:--- | :----------
-obj | -
+Type | Name | Description
+:--- | :--- | :----------
+any | obj | -
 
 ---
 
@@ -133,7 +132,7 @@ obj | -
 
 ## Interfaces
 
-**ProfileOptions**
+#### ProfileOptions
 
 ```typescript
 interface ProfileOptions  {
@@ -143,8 +142,12 @@ interface ProfileOptions  {
 
 
 
+Type | Name | Description
+:--- | :--- | :----------
+any | custom | -
+
 ---
-**EventCallback**
+#### EventCallback
 
 ```typescript
 interface EventCallback  {}
@@ -152,8 +155,10 @@ interface EventCallback  {}
 
 
 
+
+
 ---
-**PerformanceEvent**
+#### PerformanceEvent
 
 ```typescript
 interface PerformanceEvent  {
@@ -168,8 +173,17 @@ interface PerformanceEvent  {
 
 
 
+Type | Name | Description
+:--- | :--- | :----------
+number | duration | -
+string | fnName | -
+number | id | -
+string | label | -
+[ProfileOptions](#ProfileOptions) | options | -
+any | result | -
+
 ---
-**State**
+#### State
 
 ```typescript
 interface State  {
@@ -180,5 +194,9 @@ interface State  {
 
 
 
----
+Type | Name | Description
+:--- | :--- | :----------
+boolean | enabled | -
+[Array](#Array) | listeners | -
 
+---
