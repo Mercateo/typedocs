@@ -109,7 +109,8 @@ export interface RelationObject {
 export interface TypeObject {
   type: string,
   name?: string,
-  declaration?: FunctionObject
+  declaration?: FunctionObject,
+  typeArguments?: RelationObject[]
 }
 
 // BADLY designed by typedoc, no field to focus on -.-

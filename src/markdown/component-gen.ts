@@ -125,7 +125,7 @@ function signatureMd(signatures: SignatureObject[]): string {
     return signatures.reduce((s, signature) => {
       let typeParam = typeParamMd(signature.typeParameter);
       let params = paramMd(signature.parameters);
-      let returnType = returnMd(signature);
+      let returnType = returnMd(signature.type);
       if ('__call' === signature.name) {
         return `${s}${typeParam}(${params}) => ${returnType}${n}`;
       } else {
@@ -152,7 +152,7 @@ function paramMd(params: ParameterObject[], separator: string = ', '): string {
   if (params) {
     return params.reduce((s, param) => {
       let relation = relationMd(param);
-      let extension = param.type ? ': ' + returnMd(param) : '';
+      let extension = param.type ? ': ' + returnMd(param.type) : '';
       return `${s}${param.name}${extension}${relation}${separator}`;
     }, '').slice(0, -(separator.length));
   } else {
@@ -160,13 +160,17 @@ function paramMd(params: ParameterObject[], separator: string = ', '): string {
   }
 }
 
-function returnMd(param: ParameterObject): string {
-  if ('reflection' === param.type.type) {
-    return signatureMd(param.type.declaration.signatures);
-  } else if (param.type.name) {
-    return param.type.name;
+function returnMd(type: TypeObject): string {
+  if (type) {
+    if ('reflection' === type.type) {
+      return signatureMd(type.declaration.signatures);
+    } else if (type.name) {
+      return typeArgMd(type);
+    } else {
+      return 'any';
+    }
   } else {
-    return 'any';
+    return '';
   }
 }
 
@@ -249,7 +253,7 @@ function methodMd(methods: MethodObject[]): string {
       let md = method.signatures.reduce((s, signature) => {
         let typeParam = typeParamMd(signature.typeParameter);
         let params = paramMd(signature.parameters);
-        let returnType = returnMd(signature);
+        let returnType = returnMd(signature.type);
         return `${s}${modifier}${signature.name}${typeParam}(${params}): ${returnType};${relation}${n}`;
       }, '').slice(0, -1);
 
@@ -353,15 +357,20 @@ function createLinkToType(type: TypeObject): string {
     } else if (type.name) {
       switch (type.type) {
         case 'reference':
-          let plainName = type.name
-            .replace(/\s/g, '-')
-            .replace(/[^a-zA-Z0-9\-]/g, '')
-            .toLowerCase();
-          return link(type.name, `#${plainName}`);
+          let name = typeArgMd(type, createLinkToType);
+          if (!(<RelationObject> type).id) {
+            return name;
+          } else {
+            let plainName = name
+              .replace(/\s/g, '-')
+              .replace(/[^a-zA-Z0-9\-]/g, '')
+              .toLowerCase();
+            return link(name, `#${plainName}`);
+          }
         case 'typeParameter':
         case 'instrinct': // ATTENTION: this is a typo in typedoc generated JSON!
         default:
-          return type.name;
+          return returnMd(type);
       }
     }
   }
@@ -375,15 +384,11 @@ function docTableMd(children: BaseObject[]): string {
       let doc = comment ? (comment.shortText ? comment.shortText : comment.text)
         .replace(/\n/g, ';') : '-';
       let type = `[${child.kindString}]`;
-      switch (child.kind) {
-        case ReflectionKind.Parameter:
-        case ReflectionKind.Property:
-        case ReflectionKind.TypeParameter:
-          type = createLinkToType((<ParameterObject> child).type);
-          return s + tableRow(type, child.name, doc) + n;
-        default:
-          return s + tableRow(type, child.name, doc) + n;
+      if (0 !== (child.kind &
+        (ReflectionKind.Parameter | ReflectionKind.Property | ReflectionKind.TypeParameter))) {
+        type = createLinkToType((<ParameterObject> child).type);
       }
+      return s + tableRow(type, child.name, doc) + n;
     }, `${tableHead}${n}`).slice(0, -1);
   } else {
     return '';
@@ -417,6 +422,20 @@ function reduceHeritage(keyword: string, relations: RelationObject[]): string {
     return relations.reduce((s, type) => {
       return `${s}${type.name}, `;
     }, `${keyword} `).slice(0, -2);
+  } else {
+    return '';
+  }
+}
+
+function typeArgMd(type: TypeObject, recursiveCb: (TypeObject) => string = returnMd) {
+  if (type) {
+    let name = type.name;
+    if (type.typeArguments) {
+      name = type.typeArguments.reduce((s, arg) => {
+        return s + recursiveCb(arg) + ', ';
+      }, `${name}<`).slice(0, -2).concat('>');
+    }
+    return name;
   } else {
     return '';
   }
