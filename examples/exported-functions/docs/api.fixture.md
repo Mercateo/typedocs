@@ -46,7 +46,7 @@ Type | Name | Description
 
 #### add
 ```typescript
-function add(a: number, b: number): number
+function add(a: number // , b: number // ): number
 ```
 
 
@@ -59,7 +59,7 @@ number | b | The second summand.
 ---
 #### subtract
 ```typescript
-function subtract(a: number, b: number): number
+function subtract(a: number // , b: number // ): number
 ```
 
 
@@ -78,11 +78,14 @@ number | b | The subtrahend.
 
 ```typescript
 class A  {
-    protected method(): void;
+    protected method(): void; //
 }
 ```
 
 An exported superclass.
+
+**Known subclasses:** [dummyClass](#dummyclass)
+
 
 Type | Name | Description
 :--- | :--- | :----------
@@ -94,27 +97,30 @@ Type | Name | Description
 ```typescript
 class dummyClass extends A implements B, C {
     public constructor();
-    public constructor(foo: number);
+    public constructor(foo: number // );
 
 
-    public bar: number = 2;
-    protected foo: any;
+    public bar: number //  = 2;
+    protected foo: any // ;
 
-    public dummyFctExp(): void; // implementation of C.dummyFctExp
-    protected method(): void; // inherited from A.method
+    public dummyFctExp(): void; // { implements function of C }
+    protected method(): void; // { inherited from A }
 }
 ```
 
 This is a dummy class with no real doc.
+
+**Inheritance:** [A](#a)
+**Implemented interfaces:** [B](#b), [C](#c)
+
 
 Type | Name | Description
 :--- | :--- | :----------
 [Constructor] | constructor | Default Constructor.;Constructor with foo.;Constructor implementation.;Constructor implementation.
 number | bar | The 'bar' variable.
 any | foo | -
-[Method] | dummyFctExp | -
-[Method] | dummyFctNotExp | -
-[Method] | method | -
+[Method] | dummyFctExp | { implements function of [C](#c) }
+[Method] | method | { inherited from [A](#a) }
 
 ---
 
@@ -125,11 +131,14 @@ any | foo | -
 
 ```typescript
 interface B  {
-    dummyFctExp: <T>(a: T) => void
+    dummyFctExp: <T>(a: T // ) => void //
 }
 ```
 
 An exported interface.
+
+**Known subclasses:** [C](#c)
+
 
 Type | Name | Description
 :--- | :--- | :----------
@@ -140,15 +149,18 @@ function | dummyFctExp | Generic interface function.
 
 ```typescript
 interface C extends B  {
-    dummyFctExp: <T>(a: T) => void // inherited from B.dummyFctExp
+    dummyFctExp: <T>(a: T // ) => void // { inherited from B }
 }
 ```
 
 
 
+**Inheritance:** [B](#b)
+
+
 Type | Name | Description
 :--- | :--- | :----------
-function | dummyFctExp | Generic interface function.
+function | dummyFctExp | { inherited from [B](#b) }
 
 ---
 

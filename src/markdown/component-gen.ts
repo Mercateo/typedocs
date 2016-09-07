@@ -11,7 +11,7 @@ const italic = (s: string): string => `*${s}*`;
 const underlined = (s: string): string => `_${s}_`;
 
 const h4 = (s: string) => `#### ${s}`;
-const link = (name: string, url: string = `#${name}`) => `[${name}](${url})`;
+const link = (name: string, url: string = createMdUrl(name)) => `[${name}](${url})`;
 const tableRow = (type: string, name: string, description: string): string => `${type} | ${name} | ${description}`;
 
 const n = '\n';
@@ -151,7 +151,7 @@ function typeParamMd(typeParameters: ParameterObject[]): string {
 function paramMd(params: ParameterObject[], separator: string = ', '): string {
   if (params) {
     return params.reduce((s, param) => {
-      let relation = relationMd(param);
+      let relation = ' // ' + relationMd(param);
       let extension = param.type ? ': ' + returnMd(param.type) : '';
       return `${s}${param.name}${extension}${relation}${separator}`;
     }, '').slice(0, -(separator.length));
@@ -196,9 +196,11 @@ function classMd(classes: BaseObject[]): string {
       .concat(`}`)
       .concat(codeEnd)
       .concat(nn)
-      .concat(`${docMd(converted.comment)}`)
+      .concat(docMd(converted.comment))
       .concat(nn)
-      .concat(docTableMd(converted.children))
+      .concat(docHeritage(converted))
+      .concat(nn)
+      .concat(docTableMd(converted.children.filter(isAccessible)))
       .concat(nn)
       .concat(`---${n}`);
   });
@@ -228,7 +230,7 @@ function propertyMd(properties: BaseObject[]): string {
   if (properties) {
     let separator = `${n}${tab}`;
     return properties.reduce((s, property) => {
-      if (!property.flags.isExported || property.flags.isPrivate)
+      if (!isAccessible(property))
         return s;
 
       let modifier = modifierMd(property.flags);
@@ -245,11 +247,11 @@ function methodMd(methods: MethodObject[]): string {
   if (methods) {
     let separator = `${n}${tab}`;
     return methods.reduce((t, method) => {
-      if (!method.flags.isExported || method.flags.isPrivate)
+      if (!isAccessible(method))
         return t;
 
       let modifier = modifierMd(method.flags);
-      let relation = relationMd(method);
+      let relation = ' // ' + relationMd(method);
       let md = method.signatures.reduce((s, signature) => {
         let typeParam = typeParamMd(signature.typeParameter);
         let params = paramMd(signature.parameters);
@@ -281,7 +283,9 @@ function interfaceMd(interfaces: BaseObject[]): string {
       .concat(`}`)
       .concat(codeEnd)
       .concat(nn)
-      .concat(`${docMd(converted.comment)}`)
+      .concat(docMd(converted.comment))
+      .concat(nn)
+      .concat(docHeritage(converted))
       .concat(nn)
       .concat(docTableMd(converted.children))
       .concat(nn)
@@ -297,13 +301,19 @@ function heritageMd(converted: InterfaceObject | ClassObject): string {
   return reducedExtension + (reducedExtension ? ' ' : '') + reducedImplementation + ' ';
 }
 
-function relationMd(obj: BaseObject): string {
-  // TODO link inheritance + DO NOT display tableDoc twice
+function relationMd(obj: BaseObject, linked = (s) => s): string {
+  const inheritedFrom = 'inheritedFrom';
+  const implementationOf = 'implementationOf';
+  const fOnlyType = (s: string) => s.substring(0, -1 !== s.indexOf('.') ? s.indexOf('.') : s.length);
+
+  // TODO link inheritance
   if (obj) {
-    if (obj['inheritedFrom']) {
-      return ` // inherited from ${obj['inheritedFrom'].name}`
-    } else if (obj['implementationOf']) {
-      return ` // implementation of ${obj['implementationOf'].name}`
+    if (obj[inheritedFrom]) {
+      let name = linked(fOnlyType(obj[inheritedFrom].name));
+      return `{ inherited from ${name} }`
+    } else if (obj[implementationOf]) {
+      let name = linked(fOnlyType(obj[implementationOf].name));
+      return `{ implements function of ${name} }`
     }
   }
   return '';
@@ -361,10 +371,7 @@ function createLinkToType(type: TypeObject): string {
           if (!(<RelationObject> type).id) {
             return name;
           } else {
-            let plainName = name
-              .replace(/\s/g, '-')
-              .replace(/[^a-zA-Z0-9\-]/g, '')
-              .toLowerCase();
+            let plainName = createMdUrl(name);
             return link(name, `#${plainName}`);
           }
         case 'typeParameter':
@@ -377,18 +384,47 @@ function createLinkToType(type: TypeObject): string {
   return '-';
 }
 
+function docHeritage(type: ClassObject | InterfaceObject): string {
+  if (type) {
+    const linkCondition = (obj) => obj.id ? link(obj.name) : obj.name;
+    let result = '';
+
+    let heritageSuperclass = reduceHeritage('', type.extendedTypes,linkCondition);
+    let superclass = heritageSuperclass ? bold('Inheritance:') + heritageSuperclass + n : '';
+
+    let heritageSubclasses = reduceHeritage('', type.extendedBy, linkCondition);
+    let subclasses  = heritageSubclasses ? bold('Known subclasses:') + heritageSubclasses + n : '';
+
+    if (type as ClassObject) {
+      const heritageInterfaces = reduceHeritage('', (type as ClassObject).implementedTypes, linkCondition);
+      let implemented = heritageInterfaces ? bold('Implemented interfaces:') + heritageInterfaces + n : '';
+      result = result + implemented;
+    } else {
+      const heritageImplementedBy = reduceHeritage('', (type as InterfaceObject).implementedBy, linkCondition);
+      let implementedBy = heritageImplementedBy ? bold('Known implementations:') + heritageImplementedBy + n : '';
+      result = result + implementedBy;
+    }
+
+    return superclass + subclasses + result;
+  } else {
+    return '';
+  }
+}
+
 function docTableMd(children: BaseObject[]): string {
   if (children && 0 !== children.length) {
     return children.reduce((s, child) => {
       let comment = child.comment;
       let doc = comment ? (comment.shortText ? comment.shortText : comment.text)
         .replace(/\n/g, ';') : '-';
+      let subDoc = relationMd(child, link);
       let type = `[${child.kindString}]`;
-      if (0 !== (child.kind &
-        (ReflectionKind.Parameter | ReflectionKind.Property | ReflectionKind.TypeParameter))) {
+
+      if (0 !== (child.kind & (ReflectionKind.Parameter | ReflectionKind.Property | ReflectionKind.TypeParameter))) {
         type = createLinkToType((<ParameterObject> child).type);
       }
-      return s + tableRow(type, child.name, doc) + n;
+
+      return s + tableRow(type, child.name, subDoc ? subDoc : doc) + n;
     }, `${tableHead}${n}`).slice(0, -1);
   } else {
     return '';
@@ -417,10 +453,11 @@ function distinctParams(signatures: SignatureObject[]): ParameterObject[] {
   return params;
 }
 
-function reduceHeritage(keyword: string, relations: RelationObject[]): string {
+function reduceHeritage(keyword: string, relations: RelationObject[], linkCondition = (obj) => obj.name): string {
   if (relations && 0 !== relations.length) {
     return relations.reduce((s, type) => {
-      return `${s}${type.name}, `;
+      let typeName = linkCondition(type);
+      return `${s}${typeName}, `;
     }, `${keyword} `).slice(0, -2);
   } else {
     return '';
@@ -439,4 +476,15 @@ function typeArgMd(type: TypeObject, recursiveCb: (TypeObject) => string = retur
   } else {
     return '';
   }
+}
+
+function isAccessible(obj: BaseObject): boolean {
+  return obj.flags && obj.flags.isExported && !obj.flags.isPrivate;
+}
+
+function createMdUrl(name: string): string {
+  return '#' + name
+    .replace(/\s/g, '-')
+    .replace(/[^a-zA-Z0-9\-]/g, '')
+    .toLowerCase();
 }
