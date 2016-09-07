@@ -151,7 +151,7 @@ function typeParamMd(typeParameters: ParameterObject[]): string {
 function paramMd(params: ParameterObject[], separator: string = ', '): string {
   if (params) {
     return params.reduce((s, param) => {
-      let relation = ' // ' + relationMd(param);
+      let relation = relationMd(param) ? ' // ' + relationMd(param) : '';
       let extension = param.type ? ': ' + returnMd(param.type) : '';
       return `${s}${param.name}${extension}${relation}${separator}`;
     }, '').slice(0, -(separator.length));
@@ -251,7 +251,7 @@ function methodMd(methods: MethodObject[]): string {
         return t;
 
       let modifier = modifierMd(method.flags);
-      let relation = ' // ' + relationMd(method);
+      let relation = relationMd(method) ? ' // ' + relationMd(method) : '';
       let md = method.signatures.reduce((s, signature) => {
         let typeParam = typeParamMd(signature.typeParameter);
         let params = paramMd(signature.parameters);
@@ -306,7 +306,6 @@ function relationMd(obj: BaseObject, linked = (s) => s): string {
   const implementationOf = 'implementationOf';
   const fOnlyType = (s: string) => s.substring(0, -1 !== s.indexOf('.') ? s.indexOf('.') : s.length);
 
-  // TODO link inheritance
   if (obj) {
     if (obj[inheritedFrom]) {
       let name = linked(fOnlyType(obj[inheritedFrom].name));
@@ -372,7 +371,7 @@ function createLinkToType(type: TypeObject): string {
             return name;
           } else {
             let plainName = createMdUrl(name);
-            return link(name, `#${plainName}`);
+            return link(name, plainName);
           }
         case 'typeParameter':
         case 'instrinct': // ATTENTION: this is a typo in typedoc generated JSON!
