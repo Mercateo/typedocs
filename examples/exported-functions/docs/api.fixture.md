@@ -46,7 +46,7 @@ Type | Name | Description
 
 #### add
 ```typescript
-function add(a: number // , b: number // ): number
+function add(a: number, b: number): number
 ```
 
 
@@ -59,7 +59,7 @@ number | b | The second summand.
 ---
 #### subtract
 ```typescript
-function subtract(a: number // , b: number // ): number
+function subtract(a: number, b: number): number
 ```
 
 
@@ -78,7 +78,7 @@ number | b | The subtrahend.
 
 ```typescript
 class A  {
-    protected method(): void; //
+    protected method(): void;
 }
 ```
 
@@ -97,11 +97,11 @@ Type | Name | Description
 ```typescript
 class dummyClass extends A implements B, C {
     public constructor();
-    public constructor(foo: number // );
+    public constructor(foo: number);
 
 
-    public bar: number //  = 2;
-    protected foo: any // ;
+    public bar: number = 2;
+    protected foo: any;
 
     public dummyFctExp(): void; // { implements function of C }
     protected method(): void; // { inherited from A }
@@ -131,7 +131,7 @@ any | foo | -
 
 ```typescript
 interface B  {
-    dummyFctExp: <T>(a: T // ) => void //
+    dummyFctExp: <T>(a: T) => void
 }
 ```
 
@@ -149,7 +149,7 @@ function | dummyFctExp | Generic interface function.
 
 ```typescript
 interface C extends B  {
-    dummyFctExp: <T>(a: T // ) => void // { inherited from B }
+    dummyFctExp: <T>(a: T) => void // { inherited from B }
 }
 ```
 
