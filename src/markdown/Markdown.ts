@@ -1,4 +1,4 @@
-import {generateMarkdown} from './component-gen';
+import {generateMarkdown} from './generation/component-gen';
 import {process} from '../input-handling/json-processor';
 
 function isString(s: SectionOrString): s is string {
