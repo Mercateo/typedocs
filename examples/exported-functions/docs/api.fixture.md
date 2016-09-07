@@ -1,4 +1,19 @@
 # exported-functions
+- [Constants](#constants)
+    + [CONST](#const)
+    + [VAR](#var)
+- [Enumerations](#enumerations)
+    + [ENUM](#enum)
+- [Functions](#functions)
+    + [add](#add)
+    + [subtract](#subtract)
+- [Classes](#classes)
+    + [A](#a)
+    + [dummyClass](#dummyclass)
+- [Interfaces](#interfaces)
+    + [B](#b)
+    + [C](#c)
+
 
 ## Constants
 

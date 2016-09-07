@@ -1,4 +1,22 @@
 # profilr
+- [Constants](#constants)
+    + [TARGET_MUST_BE_A_FUNCTION](#target_must_be_a_function)
+    + [UNSUPPORTED_CALL_SIGNATURE_ERROR](#unsupported_call_signature_error)
+    + [state](#state)
+- [Functions](#functions)
+    + [profile](#profile)
+    + [getNextId](#getnextid)
+    + [processEvent](#processevent)
+    + [registerEventCallback](#registereventcallback)
+    + [useProfilr](#useprofilr)
+    + [isFunction](#isfunction)
+    + [isPromise](#ispromise)
+- [Interfaces](#interfaces)
+    + [ProfileOptions](#profileoptions)
+    + [EventCallback](#eventcallback)
+    + [PerformanceEvent](#performanceevent)
+    + [State](#state)
+
 
 ## Constants
 

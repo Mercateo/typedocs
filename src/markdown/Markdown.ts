@@ -1,5 +1,6 @@
 import {generateMarkdown} from './generation/component-gen';
 import {process} from '../input-handling/json-processor';
+const toc = require('markdown-toc');
 
 function isString(s: SectionOrString): s is string {
   return typeof s === 'string';
@@ -34,6 +35,20 @@ const printable = (section: SectionOrString): string => {
   }
 };
 
+function appendTableOfContent(text: string): string {
+  let tableOfContent = toc(text).content;
+  return `${tableOfContent}\n${text}`;
+}
+
+function printParagraphs(paragraphs: Section[]): string {
+  let text = '';
+  paragraphs.forEach((p) => {
+      text = text
+        .concat('\n\n')
+        .concat(printable(p));
+    });
+  return text;
+}
 export class Markdown {
   private markdown: TopLevelSection;
 
@@ -48,14 +63,9 @@ export class Markdown {
   }
 
   getText(): string {
-    let text = this.markdown.header;
-    this.markdown.paragraphs
-      .forEach((p) => {
-        text = text
-          .concat('\n\n')
-          .concat(printable(p));
-      });
-    return text;
+    let header = this.markdown.header;
+    let contents = appendTableOfContent(printParagraphs(this.markdown.paragraphs));
+    return `${header}\n${contents}`
   }
 
 }
