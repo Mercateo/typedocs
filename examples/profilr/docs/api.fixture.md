@@ -188,7 +188,7 @@ any | result | -
 ```typescript
 interface State  {
     enabled: boolean,
-    listeners: Array
+    listeners: Array<EventCallback>
 }
 ```
 
@@ -197,7 +197,7 @@ interface State  {
 Type | Name | Description
 :--- | :--- | :----------
 boolean | enabled | -
-[Array](#array) | listeners | -
+Array<[EventCallback](#eventcallback)> | listeners | -
 
 ---
 
