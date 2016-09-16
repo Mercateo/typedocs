@@ -33,25 +33,3 @@ export async function toMarkdownFileFrom(sourceDir: string, outputFile: string =
 
   return await toMarkdownFile(typeDocJson, outputFile);
 }
-
-/*
-export function extractJson(fileNames: string[], parseOptions: ParseOptions = defaultOptions): DocJson {
-  return parse(fileNames, parseOptions);
-}
-
-export function toMarkdown(json: DocJson): Markdown {
-  return new Markdown(json);
-}
-
-export async function toMarkdownFile(targetName: string, json: DocJson) {
-  return await writeFileAsync(targetName, new Markdown(json).getText());
-}
-
-export function extractMarkdown(fileNames: string[], parseOptions: ParseOptions = defaultOptions): Markdown {
-  return toMarkdown(parse(fileNames, parseOptions));
-}
-
-export async function extractMarkdownFile(fileNames: string[], targetName: string, parseOptions: ParseOptions = defaultOptions) {
-  return await toMarkdownFile(targetName, parse(fileNames, parseOptions));
-}
-*/
