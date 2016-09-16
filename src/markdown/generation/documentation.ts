@@ -1,5 +1,5 @@
 import {CommentObject, ClassObject, InterfaceObject, BaseObject, ParameterObject} from "../../interfaces/objects";
-import {nn, italic, n, link, reduceHeritage, bold, createLinkToType, tableRow, tableHead} from "./util";
+import {nn, italic, n, link, reduceHeritage, bold, createLinkToType, tableRow, tableHead, h5} from "./util";
 import {ReflectionKind} from "../../interfaces/ReflectionKind";
 import {relationMd} from "./general-md-gen";
 
@@ -35,11 +35,11 @@ export function docHeritage(type: ClassObject | InterfaceObject): string {
     const linkCondition = (obj) => obj.id ? link(obj.name) : obj.name;
     let result = '';
 
-    let heritageSuperclass = reduceHeritage('', type.extendedTypes,linkCondition);
+    let heritageSuperclass = reduceHeritage('', type.extendedTypes, linkCondition);
     let superclass = heritageSuperclass ? bold('Inheritance:') + heritageSuperclass + n : '';
 
     let heritageSubclasses = reduceHeritage('', type.extendedBy, linkCondition);
-    let subclasses  = heritageSubclasses ? bold('Known subclasses:') + heritageSubclasses + n : '';
+    let subclasses = heritageSubclasses ? bold('Known subclasses:') + heritageSubclasses + n : '';
 
     if (type as ClassObject) {
       const heritageInterfaces = reduceHeritage('', (type as ClassObject).implementedTypes, linkCondition);
@@ -59,19 +59,29 @@ export function docHeritage(type: ClassObject | InterfaceObject): string {
 
 export function docTableMd(children: BaseObject[]): string {
   if (children && 0 !== children.length) {
+    let subDocTables = '';
     return children.reduce((s, child) => {
+      let name = child.name;
       let comment = child.comment;
       let doc = comment ? (comment.shortText ? comment.shortText : comment.text)
-        .replace(/\n/g, ';') : '-';
+        .replace(/\n/g, ' ') : '-';
       let subDoc = relationMd(child, link);
       let type = `[${child.kindString}]`;
 
-      if (0 !== (child.kind & (ReflectionKind.Parameter | ReflectionKind.Property | ReflectionKind.TypeParameter))) {
-        type = createLinkToType((<ParameterObject> child).type);
+      if (0 !== (child.kind & (ReflectionKind.Parameter | ReflectionKind.VariableOrProperty | ReflectionKind.TypeParameter))) {
+        let paramType = (<ParameterObject> child).type;
+        type = createLinkToType(paramType);
+        if (paramType.declaration && paramType.declaration.children) {
+          name = link(name);
+          subDocTables = subDocTables.concat(nn)
+            .concat(h5(child.name))
+            .concat(nn)
+            .concat(docTableMd(paramType.declaration.children));
+        }
       }
 
-      return s + tableRow(type, child.name, subDoc ? subDoc : doc) + n;
-    }, `${tableHead}${n}`).slice(0, -1);
+      return s + tableRow(type, name, subDoc ? subDoc : doc) + n;
+    }, `${tableHead}${n}`).slice(0, -1).concat(subDocTables);
   } else {
     return '';
   }

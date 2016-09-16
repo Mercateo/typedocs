@@ -6,6 +6,7 @@ export const italic = (s: string): string => `*${s}*`;
 export const underlined = (s: string): string => `_${s}_`;
 
 export const h4 = (s: string) => `#### ${s}`;
+export const h5 = (s: string) => `##### ${s}`;
 export const link = (name: string, url: string = createMdUrl(name)) => `[${name}](${url})`;
 export const tableRow = (type: string, name: string, description: string): string => `${type} | ${name} | ${description}`;
 
@@ -30,7 +31,17 @@ export function createMdUrl(name: string): string {
 export function createLinkToType(type: TypeObject): string {
   if (type) {
     if ('reflection' === type.type) {
-      return 'function';
+      if(type.declaration.children) {
+        return 'Object';
+      } else if (type.declaration.indexSignature) {
+        return 'IndexSignature';
+      } else {
+        return 'function';
+      }
+    } else if('union' === type.type) {
+      return type.types.reduce((s, union) => {
+        return `${s}'${union.value}' OR `;
+      }, '').slice(0, -4);
     } else if (type.name) {
       switch (type.type) {
         case 'reference':

@@ -1,6 +1,7 @@
 import {SignatureObject, ParameterObject, TypeObject} from "../../interfaces/objects";
-import {n} from "./util";
+import {n, tab} from "./util";
 import {relationMd} from "./general-md-gen";
+import {ReflectionKind} from "../../interfaces/ReflectionKind";
 
 export function signatureMd(signatures: SignatureObject[]): string {
   if (signatures) {
@@ -10,6 +11,8 @@ export function signatureMd(signatures: SignatureObject[]): string {
       let returnType = returnMd(signature.type);
       if ('__call' === signature.name) {
         return `${s}${typeParam}(${params}) => ${returnType}${n}`;
+      } else if(ReflectionKind.IndexSignature === signature.kind) {
+        return `{ [${params}]: ${returnType}; } `;
       } else {
         return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${n}`;
       }
@@ -48,18 +51,24 @@ export function paramMd(params: ParameterObject[], separator: string = ', '): st
   if (params) {
     return params.reduce((s, param) => {
       let relation = relationMd(param) ? ' // ' + relationMd(param) : '';
-      let extension = param.type ? ': ' + returnMd(param.type) : '';
-      return `${s}${param.name}${extension}${relation}${separator}`;
+      let optional = param.flags.isOptional ? '?' : '';
+      let extension = param.type ? ': ' + returnMd(param.type, separator + tab) : '';
+      return `${s}${param.name}${optional}${extension}${relation}${separator}`;
     }, '').slice(0, -(separator.length));
   } else {
     return '';
   }
 }
 
-export function returnMd(type: TypeObject): string {
+export function returnMd(type: TypeObject, separator: string = `,${n}${tab}`): string {
   if (type) {
     if ('reflection' === type.type) {
-      return signatureMd(type.declaration.signatures);
+      return signatureMd(type.declaration.signatures || type.declaration.indexSignature)
+        || `{${separator.slice(1)}` + paramMd(type.declaration.children, `${separator}`) + ' }';
+    } else if('union' === type.type) {
+      return type.types.reduce((s, union) => {
+        return `${s}'${union.value}' | `;
+      }, '').slice(0, -3);
     } else if (type.name) {
       return typeArgMd(type);
     } else {

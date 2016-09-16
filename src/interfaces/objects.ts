@@ -76,6 +76,12 @@ export interface ParameterObject extends BaseObject {
   inheritedFrom?: RelationObject
 }
 
+export interface TypeLiteralObject extends BaseObject {
+  signatures?: SignatureObject[],
+  indexSignature?: SignatureObject[],
+  children?: ParameterObject[]
+}
+
 /*
   ---------- TYPEDOC-JSON OBJECTS ----------
  */
@@ -109,8 +115,14 @@ export interface RelationObject {
 export interface TypeObject {
   type: string,
   name?: string,
-  declaration?: FunctionObject,
-  typeArguments?: RelationObject[]
+  declaration?: TypeLiteralObject,
+  typeArguments?: RelationObject[],
+  types?: UnionObject[]
+}
+
+export interface UnionObject {
+  type: string,
+  value: string
 }
 
 // BADLY designed by typedoc, no field to focus on -.-
