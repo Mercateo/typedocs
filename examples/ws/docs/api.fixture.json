@@ -1,0 +1,804 @@
+{
+	"id": 0,
+	"name": "@mercateo/ws",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"project\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/alexander/workspace_js/ws/src/project.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "IProject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 4,
+							"name": "dependencies",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The dependencies of your project."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 5,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 6,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 7,
+													"name": "dependency",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 9,
+							"name": "keywords",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Keywords which describe your project."
+							},
+							"type": {
+								"type": "instrinct",
+								"isArray": true,
+								"name": "string"
+							}
+						},
+						{
+							"id": 3,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The name of your project taken from `package.json`."
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 8,
+							"name": "private",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Flags if this package is private."
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 10,
+							"name": "ws",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "This is the `ws` configuration used in the projects `package.json`."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 11,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 21,
+											"name": "browsers",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "A [browserslist](https://github.com/ai/browserslist) compatible string to specify which\nbrowsers should be used for selenium testing (if it is enabled) and for\n[autoprefixer](https://github.com/postcss/autoprefixer).\nDefaults to `'> 1%, last 2 versions, Firefox ESR'`."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 18,
+											"name": "distDir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The directory where your development build is generated.\nIf you have a browser components project, optimized files will live here, too."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 20,
+											"name": "distReleaseDir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The directory where your production build is generated (only SPAs)."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 19,
+											"name": "distTestsDir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The directory where your tests build is generated."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 13,
+											"name": "entryExtension",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The file extension of your entry file. Either `js`, `ts` or `tsx`."
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "stringLiteral",
+														"value": "js"
+													},
+													{
+														"type": "stringLiteral",
+														"value": "ts"
+													},
+													{
+														"type": "stringLiteral",
+														"value": "tsx"
+													}
+												]
+											}
+										},
+										{
+											"id": 15,
+											"name": "externals",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"shortText": "Probably only needed for 'browser' projects currently.\nSee https://webpack.github.io/docs/configuration.html#externals."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										},
+										{
+											"id": 29,
+											"name": "i18n",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"shortText": "Our i18n settings. Only needed for translated projects."
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 30,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 33,
+															"name": "dir",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {},
+															"comment": {
+																"shortText": "The directory where your `.properties` with translations are located. Defaults to `i18n`."
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 34,
+															"name": "features",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"comment": {
+																"shortText": "You can group translations in so called _features_ (e.g. `common`, `errors`, `forms`).",
+																"text": "Note that the translation keys must be unique, because every feature is merged into\n_one_ translation file at the end. We do that on purpose, so we can reuse a translated\nfeature like `common-errors` across several projects, but override certain keys with a\ntranslated feature like `specific-errors`, if we need to.\n\nFeatures are _optional_.\n"
+															},
+															"type": {
+																"type": "instrinct",
+																"isArray": true,
+																"name": "string"
+															}
+														},
+														{
+															"id": 35,
+															"name": "importUrl",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"comment": {
+																"shortText": "If you translations aren't maintained in your repository, you can optionally provide\na _templated URL_ and we try to download the translations. You can set `{locale}` and\n`{feature}` in your URL as params (e.g. `https://foo.com/i18n?language={locale}&project={feature}`)."
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 32,
+															"name": "isSingleLocale",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"comment": {
+																"shortText": "If you want to have the benefits of i18n like using the message format, but you _really_\njust want to support _one_ locale, you can generate your projects as if you would not\nsupport any locale at all (e.g. generated SPAs aren't nested in a directory for every\nlocale)."
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "boolean"
+															}
+														},
+														{
+															"id": 31,
+															"name": "locales",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {},
+															"comment": {
+																"shortText": "The locales your project supports. A locale consists of a language code (expressed\nby two lower case characters), a `_` and a country code (expressed by two upper case\ncharacters). E.g. valid locales are `'en_GB'`, `'de_AT'`, `'it_IT'` and so on.",
+																"text": "Note that you can save shared translations of a language in a `.properties` file without\na country code (e.g. if `'de_DE'` and `'de_AT'` share translations, they can be stored\nin a `de.properties` file). That way you don't have to save duplicates.\n"
+															},
+															"type": {
+																"type": "instrinct",
+																"isArray": true,
+																"name": "string"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																33,
+																34,
+																35,
+																32,
+																31
+															]
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 22,
+											"name": "selenium",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"shortText": "Our selenium settings. Only needed if you run tests in selenium."
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 23,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 28,
+															"name": "filterForAvailability",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {},
+															"comment": {
+																"shortText": "Tries to use the `browsers` query only against available browsers on the selenium grid.\nE.g. `\"last 2 Chrome versions\"` would return the last 2 chrome versions available on the\ngrid, not the last 2 released chrome versions. Defaults to `false`.",
+																"text": "This is experimental!\n"
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "boolean"
+															}
+														},
+														{
+															"id": 24,
+															"name": "host",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {},
+															"comment": {
+																"shortText": "The host of selenium."
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 27,
+															"name": "password",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"comment": {
+																"shortText": "Password which should be used to access selenium (e.g. needed for Sauce Labs).",
+																"text": "You can also set `envPassword` in in your `package.json` and we get the password from\n`process.env`. E.g. when `\"envPassword\": \"SAUCE_ACCESS_KEY\"` is set we use\n`process.env['SAUCE_ACCESS_KEY']` as `password`.\n"
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 25,
+															"name": "port",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {},
+															"comment": {
+																"shortText": "The port of selenium."
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "number"
+															}
+														},
+														{
+															"id": 26,
+															"name": "user",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"comment": {
+																"shortText": "User name which should be used to access selenium (e.g. needed for Sauce Labs).",
+																"text": "You can also set `envUser` in in your `package.json` and we get the user from `process.env`.\nE.g. when `\"envUser\": \"SAUCE_USERNAME\"` is set we use `process.env['SAUCE_USERNAME']` as `user`.\n"
+															},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																28,
+																24,
+																27,
+																25,
+																26
+															]
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 16,
+											"name": "srcDir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The directory where your source code is located."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 17,
+											"name": "testsDir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "The directory where your tests are located."
+											},
+											"type": {
+												"type": "instrinct",
+												"name": "string"
+											}
+										},
+										{
+											"id": 14,
+											"name": "tsconfig",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"shortText": "If this is a TypeScript project, we will save the `tsconfig.json` here."
+											},
+											"type": {
+												"type": "reference",
+												"name": "CompilerOptions"
+											}
+										},
+										{
+											"id": 12,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"comment": {
+												"shortText": "We currently support three types of projects: `'spa'`, `'node'` and `'browser'`."
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "stringLiteral",
+														"value": "spa"
+													},
+													{
+														"type": "stringLiteral",
+														"value": "node"
+													},
+													{
+														"type": "stringLiteral",
+														"value": "browser"
+													}
+												]
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												21,
+												18,
+												20,
+												19,
+												13,
+												15,
+												29,
+												22,
+												16,
+												17,
+												14,
+												12
+											]
+										}
+									]
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4,
+								9,
+								3,
+								8,
+								10
+							]
+						}
+					]
+				},
+				{
+					"id": 42,
+					"name": "TYPES",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "Array",
+						"typeArguments": [
+							{
+								"type": "union",
+								"types": [
+									{
+										"type": "stringLiteral",
+										"value": "spa"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "node"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "browser"
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " [\n  TYPE.SPA,\n  TYPE.NODE,\n  TYPE.BROWSER\n]"
+				},
+				{
+					"id": 46,
+					"name": "project",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true
+					},
+					"type": {
+						"type": "reference",
+						"name": "IProject",
+						"id": 2
+					},
+					"defaultValue": " validate(unvalidatedProject)"
+				},
+				{
+					"id": 37,
+					"name": "tsconfig",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {},
+					"type": {
+						"type": "instrinct",
+						"name": "any"
+					}
+				},
+				{
+					"id": 36,
+					"name": "unvalidatedProject",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {},
+					"type": {
+						"type": "instrinct",
+						"name": "void"
+					},
+					"defaultValue": " readJsonSync(join(process.cwd(), 'package.json'))"
+				},
+				{
+					"id": 43,
+					"name": "validate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 44,
+							"name": "validate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 45,
+									"name": "pkg",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IProject",
+								"id": 2
+							}
+						}
+					]
+				},
+				{
+					"id": 38,
+					"name": "TYPE",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 41,
+							"name": "BROWSER",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "stringLiteral",
+								"value": "browser"
+							},
+							"defaultValue": " 'browser' as 'browser'"
+						},
+						{
+							"id": 40,
+							"name": "NODE",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "stringLiteral",
+								"value": "node"
+							},
+							"defaultValue": " 'node' as 'node'"
+						},
+						{
+							"id": 39,
+							"name": "SPA",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "stringLiteral",
+								"value": "spa"
+							},
+							"defaultValue": " 'spa' as 'spa'"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								41,
+								40,
+								39
+							]
+						}
+					],
+					"type": {
+						"type": "instrinct",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						42,
+						46,
+						37,
+						36
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						43
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						38
+					]
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

@@ -1,0 +1,4 @@
+*.log
+dist-tests/
+dist-release/
+examples/
