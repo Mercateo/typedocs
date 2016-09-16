@@ -115,6 +115,7 @@ export interface RelationObject {
 export interface TypeObject {
   type: string,
   name?: string,
+  value?: string,
   declaration?: TypeLiteralObject,
   typeArguments?: RelationObject[],
   types?: UnionObject[]

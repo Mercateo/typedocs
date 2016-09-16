@@ -25,7 +25,11 @@ IProject project =  validate(unvalidatedProject)
 #### TYPE
 
 ```typescript
-object TYPE = undefined
+object TYPE = {
+    BROWSER: 'browser',
+    NODE: 'node',
+    SPA: 'spa'
+}
 ```
 
 

@@ -69,6 +69,8 @@ export function returnMd(type: TypeObject, separator: string = `,${n}${tab}`): s
       return type.types.reduce((s, union) => {
         return `${s}'${union.value}' | `;
       }, '').slice(0, -3);
+    } else if('stringLiteral' === type.type) {
+      return `'${type.value}'`;
     } else if (type.name) {
       return typeArgMd(type);
     } else {
