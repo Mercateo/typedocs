@@ -32,7 +32,7 @@ Type | Name | Description
 :--- | :--- | :----------
 T | fn | a function
 string | label | a label
-[ProfileOptions](#profileoptions) | options | some options
+[ProfileOptions](#profileoptions) | options | some options 
 
 ---
 #### registerEventCallback
@@ -73,14 +73,21 @@ any | custom | -
 #### EventCallback
 
 ```typescript
-interface EventCallback  {}
+interface EventCallback  {
+    id: number
+
+    <T>(event: PerformanceEvent) => void
+}
 ```
 
 
 
 
 
-
+Type | Name | Description
+:--- | :--- | :----------
+number | id | -
+[Call signature] | <T>([PerformanceEvent](#performanceevent)): void | -
 
 ---
 #### PerformanceEvent
@@ -110,4 +117,3 @@ string | label | -
 any | result | -
 
 ---
-

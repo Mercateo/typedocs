@@ -1,1560 +1,1594 @@
 {
-  "id": 0,
-  "name": "profilr",
-  "kind": 0,
-  "flags": {},
-  "children": [
-    {
-      "id": 8,
-      "name": "\"api\"",
-      "kind": 1,
-      "kindString": "External module",
-      "flags": {
-        "isExported": true,
-        "isExternal": true
-      },
-      "originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/api.ts",
-      "children": [
-        {
-          "id": 9,
-          "name": "ProfileOptions",
-          "kind": 256,
-          "kindString": "Interface",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "children": [
-            {
-              "id": 10,
-              "name": "custom",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ],
-          "groups": [
-            {
-              "title": "Properties",
-              "kind": 1024,
-              "children": [
-                10
-              ]
-            }
-          ]
-        },
-        {
-          "id": 11,
-          "name": "FN_KEY",
-          "kind": 32,
-          "kindString": "Variable",
-          "flags": {
-            "isExternal": true
-          },
-          "type": {
-            "type": "reference",
-            "name": "Symbol"
-          },
-          "defaultValue": " <Symbol>Symbol()"
-        },
-        {
-          "id": 13,
-          "name": "TARGET_MUST_BE_A_FUNCTION",
-          "kind": 32,
-          "kindString": "Variable",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "type": {
-            "type": "instrinct",
-            "name": "string"
-          },
-          "defaultValue": "\"Only class methods can be decorated.\""
-        },
-        {
-          "id": 12,
-          "name": "UNSUPPORTED_CALL_SIGNATURE_ERROR",
-          "kind": 32,
-          "kindString": "Variable",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "type": {
-            "type": "instrinct",
-            "name": "string"
-          },
-          "defaultValue": "\"Unsupported call signature. Please check API docs.\""
-        },
-        {
-          "id": 64,
-          "name": "executeWrapped",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 65,
-              "name": "executeWrapped",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "typeParameter": [
-                {
-                  "id": 66,
-                  "name": "T",
-                  "kind": 131072,
-                  "kindString": "Type parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Function"
-                  }
-                }
-              ],
-              "parameters": [
-                {
-                  "id": 67,
-                  "name": "id",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "number"
-                  }
-                },
-                {
-                  "id": 68,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "typeParameter",
-                    "name": "T",
-                    "constraint": {
-                      "type": "reference",
-                      "name": "Function"
-                    }
-                  }
-                },
-                {
-                  "id": 69,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 70,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {
-                    "isOptional": true
-                  },
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "reference",
-                "name": "(Anonymous function)"
-              }
-            }
-          ]
-        },
-        {
-          "id": 59,
-          "name": "makeDecorator",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 60,
-              "name": "makeDecorator",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 61,
-                  "name": "id",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "number"
-                  }
-                },
-                {
-                  "id": 62,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 63,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {
-                    "isOptional": true
-                  },
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "reference",
-                "name": "(Anonymous function)"
-              }
-            }
-          ]
-        },
-        {
-          "id": 71,
-          "name": "measure",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 72,
-              "name": "measure",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 73,
-                  "name": "id",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "number"
-                  }
-                },
-                {
-                  "id": 74,
-                  "name": "fnName",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 75,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 76,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Function"
-                  }
-                },
-                {
-                  "id": 77,
-                  "name": "context",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Object"
-                  }
-                },
-                {
-                  "id": 78,
-                  "name": "args",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "IArguments"
-                  }
-                },
-                {
-                  "id": 79,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ]
-        },
-        {
-          "id": 14,
-          "name": "profile",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "comment": {
-            "shortText": "Dummy doc.",
-            "returns": "\n"
-          },
-          "signatures": [
-            {
-              "id": 15,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Maybe this overrides below doc?",
-                "returns": "\n"
-              },
-              "typeParameter": [
-                {
-                  "id": 16,
-                  "name": "T",
-                  "kind": 131072,
-                  "kindString": "Type parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Function"
-                  }
-                }
-              ],
-              "parameters": [
-                {
-                  "id": 17,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "a function"
-                  },
-                  "type": {
-                    "type": "typeParameter",
-                    "name": "T",
-                    "constraint": {
-                      "type": "reference",
-                      "name": "Function"
-                    }
-                  }
-                },
-                {
-                  "id": 18,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "a label"
-                  },
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 19,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "comment": {
-                    "text": "some options\n"
-                  },
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "typeParameter",
-                "name": "T",
-                "constraint": {
-                  "type": "reference",
-                  "name": "Function"
-                }
-              }
-            },
-            {
-              "id": 20,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "typeParameter": [
-                {
-                  "id": 21,
-                  "name": "T",
-                  "kind": 131072,
-                  "kindString": "Type parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Function"
-                  }
-                }
-              ],
-              "parameters": [
-                {
-                  "id": 22,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "typeParameter",
-                    "name": "T",
-                    "constraint": {
-                      "type": "reference",
-                      "name": "Function"
-                    }
-                  }
-                },
-                {
-                  "id": 23,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "typeParameter",
-                "name": "T",
-                "constraint": {
-                  "type": "reference",
-                  "name": "Function"
-                }
-              }
-            },
-            {
-              "id": 24,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "typeParameter": [
-                {
-                  "id": 25,
-                  "name": "T",
-                  "kind": 131072,
-                  "kindString": "Type parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "Function"
-                  }
-                }
-              ],
-              "parameters": [
-                {
-                  "id": 26,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "typeParameter",
-                    "name": "T",
-                    "constraint": {
-                      "type": "reference",
-                      "name": "Function"
-                    }
-                  }
-                },
-                {
-                  "id": 27,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "typeParameter",
-                "name": "T",
-                "constraint": {
-                  "type": "reference",
-                  "name": "Function"
-                }
-              }
-            },
-            {
-              "id": 28,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "typeParameter": [
-                {
-                  "id": 29,
-                  "name": "T",
-                  "kind": 131072,
-                  "kindString": "Type parameter",
-                  "flags": {}
-                }
-              ],
-              "parameters": [
-                {
-                  "id": 30,
-                  "name": "fn",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "typeParameter",
-                    "name": "T"
-                  }
-                }
-              ],
-              "type": {
-                "type": "typeParameter",
-                "name": "T"
-              }
-            },
-            {
-              "id": 31,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "parameters": [
-                {
-                  "id": 32,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                },
-                {
-                  "id": 33,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 34,
-                  "name": "__type",
-                  "kind": 65536,
-                  "kindString": "Type literal",
-                  "flags": {},
-                  "signatures": [
-                    {
-                      "id": 35,
-                      "name": "__call",
-                      "kind": 4096,
-                      "kindString": "Call signature",
-                      "flags": {},
-                      "parameters": [
-                        {
-                          "id": 36,
-                          "name": "target",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 37,
-                          "name": "propertyKey",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "string"
-                          }
-                        },
-                        {
-                          "id": 38,
-                          "name": "descriptor",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "reference",
-                            "name": "PropertyDescriptor"
-                          }
-                        }
-                      ],
-                      "type": {
-                        "type": "reference",
-                        "name": "PropertyDescriptor"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": 39,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "parameters": [
-                {
-                  "id": 40,
-                  "name": "options",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "ProfileOptions",
-                    "id": 9
-                  }
-                }
-              ],
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 41,
-                  "name": "__type",
-                  "kind": 65536,
-                  "kindString": "Type literal",
-                  "flags": {},
-                  "signatures": [
-                    {
-                      "id": 42,
-                      "name": "__call",
-                      "kind": 4096,
-                      "kindString": "Call signature",
-                      "flags": {},
-                      "parameters": [
-                        {
-                          "id": 43,
-                          "name": "target",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 44,
-                          "name": "propertyKey",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "string"
-                          }
-                        },
-                        {
-                          "id": 45,
-                          "name": "descriptor",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "reference",
-                            "name": "PropertyDescriptor"
-                          }
-                        }
-                      ],
-                      "type": {
-                        "type": "reference",
-                        "name": "PropertyDescriptor"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": 46,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "parameters": [
-                {
-                  "id": 47,
-                  "name": "label",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "string"
-                  }
-                }
-              ],
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 48,
-                  "name": "__type",
-                  "kind": 65536,
-                  "kindString": "Type literal",
-                  "flags": {},
-                  "signatures": [
-                    {
-                      "id": 49,
-                      "name": "__call",
-                      "kind": 4096,
-                      "kindString": "Call signature",
-                      "flags": {},
-                      "parameters": [
-                        {
-                          "id": 50,
-                          "name": "target",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 51,
-                          "name": "propertyKey",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "string"
-                          }
-                        },
-                        {
-                          "id": 52,
-                          "name": "descriptor",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "reference",
-                            "name": "PropertyDescriptor"
-                          }
-                        }
-                      ],
-                      "type": {
-                        "type": "reference",
-                        "name": "PropertyDescriptor"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": 53,
-              "name": "profile",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "comment": {
-                "shortText": "Dummy doc.",
-                "returns": "\n"
-              },
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 54,
-                  "name": "__type",
-                  "kind": 65536,
-                  "kindString": "Type literal",
-                  "flags": {},
-                  "signatures": [
-                    {
-                      "id": 55,
-                      "name": "__call",
-                      "kind": 4096,
-                      "kindString": "Call signature",
-                      "flags": {},
-                      "parameters": [
-                        {
-                          "id": 56,
-                          "name": "target",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 57,
-                          "name": "propertyKey",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "instrinct",
-                            "name": "string"
-                          }
-                        },
-                        {
-                          "id": 58,
-                          "name": "descriptor",
-                          "kind": 32768,
-                          "kindString": "Parameter",
-                          "flags": {},
-                          "type": {
-                            "type": "reference",
-                            "name": "PropertyDescriptor"
-                          }
-                        }
-                      ],
-                      "type": {
-                        "type": "reference",
-                        "name": "PropertyDescriptor"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "groups": [
-        {
-          "title": "Interfaces",
-          "kind": 256,
-          "children": [
-            9
-          ]
-        },
-        {
-          "title": "Variables",
-          "kind": 32,
-          "children": [
-            11,
-            13,
-            12
-          ]
-        },
-        {
-          "title": "Functions",
-          "kind": 64,
-          "children": [
-            64,
-            59,
-            71,
-            14
-          ]
-        }
-      ]
-    },
-    {
-      "id": 111,
-      "name": "\"profilr\"",
-      "kind": 1,
-      "kindString": "External module",
-      "flags": {
-        "isExported": true
-      },
-      "originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/profilr.ts"
-    },
-    {
-      "id": 80,
-      "name": "\"state\"",
-      "kind": 1,
-      "kindString": "External module",
-      "flags": {
-        "isExported": true,
-        "isExternal": true
-      },
-      "originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/state.ts",
-      "children": [
-        {
-          "id": 91,
-          "name": "EventCallback",
-          "kind": 256,
-          "kindString": "Interface",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 92,
-              "name": "__call",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 93,
-                  "name": "event",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "PerformanceEvent",
-                    "id": 84
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "void"
-              }
-            }
-          ]
-        },
-        {
-          "id": 84,
-          "name": "PerformanceEvent",
-          "kind": 256,
-          "kindString": "Interface",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "children": [
-            {
-              "id": 88,
-              "name": "duration",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "number"
-              }
-            },
-            {
-              "id": 86,
-              "name": "fnName",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "string"
-              }
-            },
-            {
-              "id": 85,
-              "name": "id",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "number"
-              }
-            },
-            {
-              "id": 87,
-              "name": "label",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "string"
-              }
-            },
-            {
-              "id": 90,
-              "name": "options",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true,
-                "isOptional": true
-              },
-              "type": {
-                "type": "reference",
-                "name": "ProfileOptions",
-                "id": 9
-              }
-            },
-            {
-              "id": 89,
-              "name": "result",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "any"
-              }
-            }
-          ],
-          "groups": [
-            {
-              "title": "Properties",
-              "kind": 1024,
-              "children": [
-                88,
-                86,
-                85,
-                87,
-                90,
-                89
-              ]
-            }
-          ]
-        },
-        {
-          "id": 81,
-          "name": "State",
-          "kind": 256,
-          "kindString": "Interface",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "children": [
-            {
-              "id": 82,
-              "name": "enabled",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "boolean"
-              }
-            },
-            {
-              "id": 83,
-              "name": "listeners",
-              "kind": 1024,
-              "kindString": "Property",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "reference",
-                "name": "Array",
-                "typeArguments": [
-                  {
-                    "type": "reference",
-                    "name": "EventCallback",
-                    "id": 91
-                  }
-                ]
-              }
-            }
-          ],
-          "groups": [
-            {
-              "title": "Properties",
-              "kind": 1024,
-              "children": [
-                82,
-                83
-              ]
-            }
-          ]
-        },
-        {
-          "id": 94,
-          "name": "id",
-          "kind": 32,
-          "kindString": "Variable",
-          "flags": {
-            "isExternal": true
-          },
-          "type": {
-            "type": "instrinct",
-            "name": "number"
-          },
-          "defaultValue": "0"
-        },
-        {
-          "id": 95,
-          "name": "getNextId",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 96,
-              "name": "getNextId",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "type": {
-                "type": "instrinct",
-                "name": "number"
-              }
-            }
-          ]
-        },
-        {
-          "id": 103,
-          "name": "processEvent",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 104,
-              "name": "processEvent",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 105,
-                  "name": "event",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "PerformanceEvent",
-                    "id": 84
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "void"
-              }
-            }
-          ]
-        },
-        {
-          "id": 106,
-          "name": "registerEventCallback",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 107,
-              "name": "registerEventCallback",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 108,
-                  "name": "cb",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "reference",
-                    "name": "EventCallback",
-                    "id": 91
-                  }
-                }
-              ],
-              "type": {
-                "type": "reflection",
-                "declaration": {
-                  "id": 109,
-                  "name": "__type",
-                  "kind": 65536,
-                  "kindString": "Type literal",
-                  "flags": {},
-                  "signatures": [
-                    {
-                      "id": 110,
-                      "name": "__call",
-                      "kind": 4096,
-                      "kindString": "Call signature",
-                      "flags": {},
-                      "type": {
-                        "type": "instrinct",
-                        "name": "void"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": 100,
-          "name": "useProfilr",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 101,
-              "name": "useProfilr",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 102,
-                  "name": "active",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "boolean"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "void"
-              }
-            }
-          ]
-        },
-        {
-          "id": 97,
-          "name": "state",
-          "kind": 2097152,
-          "kindString": "Object literal",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "children": [
-            {
-              "id": 98,
-              "name": "enabled",
-              "kind": 32,
-              "kindString": "Variable",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "instrinct",
-                "name": "boolean"
-              },
-              "defaultValue": "true"
-            },
-            {
-              "id": 99,
-              "name": "listeners",
-              "kind": 32,
-              "kindString": "Variable",
-              "flags": {
-                "isExported": true,
-                "isExternal": true
-              },
-              "type": {
-                "type": "reference",
-                "name": "Array",
-                "typeArguments": [
-                  {
-                    "type": "instrinct",
-                    "name": "undefined"
-                  }
-                ]
-              },
-              "defaultValue": " []"
-            }
-          ],
-          "groups": [
-            {
-              "title": "Variables",
-              "kind": 32,
-              "children": [
-                98,
-                99
-              ]
-            }
-          ],
-          "type": {
-            "type": "instrinct",
-            "name": "object"
-          }
-        }
-      ],
-      "groups": [
-        {
-          "title": "Interfaces",
-          "kind": 256,
-          "children": [
-            91,
-            84,
-            81
-          ]
-        },
-        {
-          "title": "Variables",
-          "kind": 32,
-          "children": [
-            94
-          ]
-        },
-        {
-          "title": "Functions",
-          "kind": 64,
-          "children": [
-            95,
-            103,
-            106,
-            100
-          ]
-        },
-        {
-          "title": "Object literals",
-          "kind": 2097152,
-          "children": [
-            97
-          ]
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "\"utils\"",
-      "kind": 1,
-      "kindString": "External module",
-      "flags": {
-        "isExported": true,
-        "isExternal": true
-      },
-      "originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/utils.ts",
-      "children": [
-        {
-          "id": 2,
-          "name": "isFunction",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 3,
-              "name": "isFunction",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 4,
-                  "name": "functionToCheck",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "any"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "name": "isPromise",
-          "kind": 64,
-          "kindString": "Function",
-          "flags": {
-            "isExported": true,
-            "isExternal": true
-          },
-          "signatures": [
-            {
-              "id": 6,
-              "name": "isPromise",
-              "kind": 4096,
-              "kindString": "Call signature",
-              "flags": {},
-              "parameters": [
-                {
-                  "id": 7,
-                  "name": "obj",
-                  "kind": 32768,
-                  "kindString": "Parameter",
-                  "flags": {},
-                  "type": {
-                    "type": "instrinct",
-                    "name": "any"
-                  }
-                }
-              ],
-              "type": {
-                "type": "instrinct",
-                "name": "boolean"
-              }
-            }
-          ]
-        }
-      ],
-      "groups": [
-        {
-          "title": "Functions",
-          "kind": 64,
-          "children": [
-            2,
-            5
-          ]
-        }
-      ]
-    }
-  ],
-  "groups": [
-    {
-      "title": "External modules",
-      "kind": 1,
-      "children": [
-        8,
-        111,
-        80,
-        1
-      ]
-    }
-  ]
+	"id": 0,
+	"name": "profilr",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 8,
+			"name": "\"api\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/api.ts",
+			"children": [
+				{
+					"id": 9,
+					"name": "ProfileOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 10,
+							"name": "custom",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								10
+							]
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "FN_KEY",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExternal": true
+					},
+					"type": {
+						"type": "reference",
+						"name": "Symbol"
+					},
+					"defaultValue": " <Symbol>Symbol()"
+				},
+				{
+					"id": 13,
+					"name": "TARGET_MUST_BE_A_FUNCTION",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": "\"Only class methods can be decorated.\""
+				},
+				{
+					"id": 12,
+					"name": "UNSUPPORTED_CALL_SIGNATURE_ERROR",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": "\"Unsupported call signature. Please check API docs.\""
+				},
+				{
+					"id": 64,
+					"name": "executeWrapped",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 65,
+							"name": "executeWrapped",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 66,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 67,
+									"name": "id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 68,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "Function"
+										}
+									}
+								},
+								{
+									"id": 69,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 70,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "(Anonymous function)"
+							}
+						}
+					]
+				},
+				{
+					"id": 59,
+					"name": "makeDecorator",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 60,
+							"name": "makeDecorator",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 61,
+									"name": "id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 62,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 63,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "(Anonymous function)"
+							}
+						}
+					]
+				},
+				{
+					"id": 71,
+					"name": "measure",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 72,
+							"name": "measure",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 73,
+									"name": "id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 74,
+									"name": "fnName",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 75,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 76,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								},
+								{
+									"id": 77,
+									"name": "context",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Object"
+									}
+								},
+								{
+									"id": 78,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "IArguments"
+									}
+								},
+								{
+									"id": 79,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "profile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "Dummy doc.",
+						"returns": "\n"
+					},
+					"signatures": [
+						{
+							"id": 15,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Maybe this overrides below doc? -> IT DOES NOT!",
+								"returns": "\n"
+							},
+							"typeParameter": [
+								{
+									"id": 16,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 17,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "a function"
+									},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "Function"
+										}
+									}
+								},
+								{
+									"id": 18,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "a label"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 19,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "some options\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T",
+								"constraint": {
+									"type": "reference",
+									"name": "Function"
+								}
+							}
+						},
+						{
+							"id": 20,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"typeParameter": [
+								{
+									"id": 21,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 22,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "Function"
+										}
+									}
+								},
+								{
+									"id": 23,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T",
+								"constraint": {
+									"type": "reference",
+									"name": "Function"
+								}
+							}
+						},
+						{
+							"id": 24,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"typeParameter": [
+								{
+									"id": 25,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Function"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 26,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "Function"
+										}
+									}
+								},
+								{
+									"id": 27,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T",
+								"constraint": {
+									"type": "reference",
+									"name": "Function"
+								}
+							}
+						},
+						{
+							"id": 28,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"typeParameter": [
+								{
+									"id": 29,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 30,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "T"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T"
+							}
+						},
+						{
+							"id": 31,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"parameters": [
+								{
+									"id": 32,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 33,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 34,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 35,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 36,
+													"name": "target",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "any"
+													}
+												},
+												{
+													"id": 37,
+													"name": "propertyKey",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 38,
+													"name": "descriptor",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "PropertyDescriptor"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "PropertyDescriptor"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 39,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"parameters": [
+								{
+									"id": 40,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ProfileOptions",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 41,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 42,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 43,
+													"name": "target",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "any"
+													}
+												},
+												{
+													"id": 44,
+													"name": "propertyKey",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 45,
+													"name": "descriptor",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "PropertyDescriptor"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "PropertyDescriptor"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 46,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"parameters": [
+								{
+									"id": 47,
+									"name": "label",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 48,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 49,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 50,
+													"name": "target",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "any"
+													}
+												},
+												{
+													"id": 51,
+													"name": "propertyKey",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 52,
+													"name": "descriptor",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "PropertyDescriptor"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "PropertyDescriptor"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 53,
+							"name": "profile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Dummy doc.",
+								"returns": "\n"
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 54,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 55,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 56,
+													"name": "target",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "any"
+													}
+												},
+												{
+													"id": 57,
+													"name": "propertyKey",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												},
+												{
+													"id": 58,
+													"name": "descriptor",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "PropertyDescriptor"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "PropertyDescriptor"
+											}
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						9
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						11,
+						13,
+						12
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						64,
+						59,
+						71,
+						14
+					]
+				}
+			]
+		},
+		{
+			"id": 113,
+			"name": "\"profilr\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/profilr.ts"
+		},
+		{
+			"id": 80,
+			"name": "\"state\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/state.ts",
+			"children": [
+				{
+					"id": 91,
+					"name": "EventCallback",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 92,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 93,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 94,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PerformanceEvent",
+										"id": 84
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 95,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								95
+							]
+						}
+					]
+				},
+				{
+					"id": 84,
+					"name": "PerformanceEvent",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 88,
+							"name": "duration",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							}
+						},
+						{
+							"id": 86,
+							"name": "fnName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 85,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							}
+						},
+						{
+							"id": 87,
+							"name": "label",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 90,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ProfileOptions",
+								"id": 9
+							}
+						},
+						{
+							"id": 89,
+							"name": "result",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								88,
+								86,
+								85,
+								87,
+								90,
+								89
+							]
+						}
+					]
+				},
+				{
+					"id": 81,
+					"name": "State",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 82,
+							"name": "enabled",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 83,
+							"name": "listeners",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "Array",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "EventCallback",
+										"id": 91
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								82,
+								83
+							]
+						}
+					]
+				},
+				{
+					"id": 96,
+					"name": "id",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "number"
+					},
+					"defaultValue": "0"
+				},
+				{
+					"id": 97,
+					"name": "getNextId",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 98,
+							"name": "getNextId",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 105,
+					"name": "processEvent",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 106,
+							"name": "processEvent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 107,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PerformanceEvent",
+										"id": 84
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 108,
+					"name": "registerEventCallback",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 109,
+							"name": "registerEventCallback",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 110,
+									"name": "cb",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "EventCallback",
+										"id": 91
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 111,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 112,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "instrinct",
+												"name": "void"
+											}
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 102,
+					"name": "useProfilr",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 103,
+							"name": "useProfilr",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 104,
+									"name": "active",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 99,
+					"name": "state",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 100,
+							"name": "enabled",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 101,
+							"name": "listeners",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "Array",
+								"typeArguments": [
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"defaultValue": " []"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								100,
+								101
+							]
+						}
+					],
+					"type": {
+						"type": "instrinct",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						91,
+						84,
+						81
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						96
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						97,
+						105,
+						108,
+						102
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						99
+					]
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"utils\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/typedocs/examples/profilr/src/utils.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "isFunction",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 3,
+							"name": "isFunction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "functionToCheck",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "isPromise",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 6,
+							"name": "isPromise",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "obj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						2,
+						5
+					]
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				8,
+				113,
+				80,
+				1
+			]
+		}
+	]
 }

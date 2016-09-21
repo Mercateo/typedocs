@@ -26,7 +26,8 @@ export interface PerformanceEvent {
 }
 
 export interface EventCallback {
-  (event: PerformanceEvent): void;
+  <T>(event: PerformanceEvent): void,
+  id: number
 }
 
 export function useProfilr(active: boolean) {
