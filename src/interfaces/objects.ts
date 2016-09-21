@@ -14,6 +14,7 @@ export interface BaseObject {
   kind: ReflectionKind,
   kindString?: string,
   flags: any,
+  originalName?: string,
   comment?: CommentObject,
   children?: BaseObject[]
   groups?: GroupObject[]

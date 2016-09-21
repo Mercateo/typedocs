@@ -13,11 +13,7 @@ export function toMarkdown(typeDocJsonFile: string): string {
 }
 
 export async function toMarkdownFile(typeDocJsonFile: string, outputFile: string = defaultOutputFile): Promise<any> {
-  const source = readJsonSync(typeDocJsonFile);
-
-  const markdown = new Markdown(source);
-
-  return await writeFileAsync(outputFile, markdown.getText());
+  return await writeFileAsync(outputFile, toMarkdown(typeDocJsonFile));
 }
 
 export function toMarkdownFrom(sourceDir: string): string {
