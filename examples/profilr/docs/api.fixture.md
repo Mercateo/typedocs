@@ -1,52 +1,13 @@
 # profilr
-- [Constants](#constants)
-    + [TARGET_MUST_BE_A_FUNCTION](#target_must_be_a_function)
-    + [UNSUPPORTED_CALL_SIGNATURE_ERROR](#unsupported_call_signature_error)
-    + [state](#state)
 - [Functions](#functions)
     + [profile](#profile)
-    + [getNextId](#getnextid)
-    + [processEvent](#processevent)
     + [registerEventCallback](#registereventcallback)
-    + [useProfilr](#useprofilr)
-    + [isFunction](#isfunction)
-    + [isPromise](#ispromise)
 - [Interfaces](#interfaces)
     + [ProfileOptions](#profileoptions)
     + [EventCallback](#eventcallback)
     + [PerformanceEvent](#performanceevent)
-    + [State](#state)
 
 
-## Constants
-
-#### TARGET_MUST_BE_A_FUNCTION
-
-```typescript
-string TARGET_MUST_BE_A_FUNCTION = "Only class methods can be decorated."
-```
-
-
-
----
-#### UNSUPPORTED_CALL_SIGNATURE_ERROR
-
-```typescript
-string UNSUPPORTED_CALL_SIGNATURE_ERROR = "Unsupported call signature. Please check API docs."
-```
-
-
-
----
-#### state
-
-```typescript
-object state = undefined
-```
-
-
-
----
 
 
 
@@ -71,29 +32,7 @@ Type | Name | Description
 :--- | :--- | :----------
 T | fn | a function
 string | label | a label
-[ProfileOptions](#profileoptions) | options | some options;
-
----
-#### getNextId
-```typescript
-function getNextId(): number
-```
-
-
-
-
-
----
-#### processEvent
-```typescript
-function processEvent(event: PerformanceEvent): void
-```
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-[PerformanceEvent](#performanceevent) | event | -
+[ProfileOptions](#profileoptions) | options | some options
 
 ---
 #### registerEventCallback
@@ -106,42 +45,6 @@ function registerEventCallback(cb: EventCallback): () => void
 Type | Name | Description
 :--- | :--- | :----------
 [EventCallback](#eventcallback) | cb | -
-
----
-#### useProfilr
-```typescript
-function useProfilr(active: boolean): void
-```
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-boolean | active | -
-
----
-#### isFunction
-```typescript
-function isFunction(functionToCheck: any): boolean
-```
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-any | functionToCheck | -
-
----
-#### isPromise
-```typescript
-function isPromise(obj: any): boolean
-```
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-any | obj | -
 
 ---
 
@@ -188,7 +91,7 @@ interface PerformanceEvent  {
     fnName: string,
     id: number,
     label: string,
-    options: ProfileOptions,
+    options?: ProfileOptions,
     result: any
 }
 ```
@@ -205,25 +108,6 @@ number | id | -
 string | label | -
 [ProfileOptions](#profileoptions) | options | -
 any | result | -
-
----
-#### State
-
-```typescript
-interface State  {
-    enabled: boolean,
-    listeners: Array<EventCallback>
-}
-```
-
-
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-boolean | enabled | -
-Array<[EventCallback](#eventcallback)> | listeners | -
 
 ---
 

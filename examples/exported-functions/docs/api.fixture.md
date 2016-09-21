@@ -6,7 +6,6 @@
     + [ENUM](#enum)
 - [Functions](#functions)
     + [add](#add)
-    + [subtract](#subtract)
 - [Classes](#classes)
     + [A](#a)
     + [dummyClass](#dummyclass)
@@ -72,19 +71,6 @@ number | a | The first summand.
 number | b | The second summand.
 
 ---
-#### subtract
-```typescript
-function subtract(a: number, b: number): number
-```
-
-
-
-Type | Name | Description
-:--- | :--- | :----------
-number | a | The minuend.
-number | b | The subtrahend.
-
----
 
 
 ## Classes
@@ -131,7 +117,7 @@ This is a dummy class with no real doc.
 
 Type | Name | Description
 :--- | :--- | :----------
-[Constructor] | constructor | Default Constructor.;Constructor with foo.;Constructor implementation.;Constructor implementation.
+[Constructor] | constructor | Default Constructor. Constructor with foo. Constructor implementation. Constructor implementation.
 number | bar | The 'bar' variable.
 any | foo | -
 [Method] | dummyFctExp | { implements function of [C](#c) }
