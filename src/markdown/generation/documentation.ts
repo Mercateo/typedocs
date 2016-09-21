@@ -1,4 +1,6 @@
-import {CommentObject, ClassObject, InterfaceObject, BaseObject, ParameterObject} from "../../interfaces/objects";
+import {
+  CommentObject, ClassObject, InterfaceObject, BaseObject, ParameterObject, SignatureObject
+} from "../../interfaces/objects";
 import {nn, italic, n, link, reduceHeritage, bold, createLinkToType, tableRow, tableHead, h5} from "./util";
 import {ReflectionKind} from "../../interfaces/ReflectionKind";
 import {relationMd} from "./general-md-gen";
@@ -78,6 +80,24 @@ export function docTableMd(children: BaseObject[]): string {
             .concat(nn)
             .concat(docTableMd(paramType.declaration.children));
         }
+      }
+
+      if (0 !== (child.kind & (ReflectionKind.CallSignature | ReflectionKind.IndexSignature))) {
+        let signType = <SignatureObject> child;
+        let paramTypes = signType.parameters.reduce((i, p) => {
+          let paramType = createLinkToType(p.type)
+          return `${i}${paramType}, `;
+        }, '').slice(0, -2);
+        let typedParamTypes = signType.typeParameter.reduce((i, p) => {
+          let paramType = createLinkToType(p.type);
+          if ('-' === paramType) {
+            paramType = p.name;
+          }
+          return `${i}${paramType}, `;
+        }, '<').slice(0, -2).concat('>');
+        let returnType = createLinkToType(signType.type);
+        let brackets = child.kind === ReflectionKind.IndexSignature ? ['[', ']'] : ['(', ')'];
+        name = `${typedParamTypes}${brackets[0]}${paramTypes}${brackets[1]}: ${returnType}`;
       }
 
       return s + tableRow(type, name, subDoc ? subDoc : doc) + n;

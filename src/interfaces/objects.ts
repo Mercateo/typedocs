@@ -52,6 +52,7 @@ export interface MethodObject extends FunctionObject {
 
 export interface InterfaceObject extends BaseObject {
   children: ParameterObject[],
+  signatures?: SignatureObject[],
   extendedBy?: RelationObject[],
   implementedBy?: RelationObject[],
   extendedTypes?:  RelationObject[]

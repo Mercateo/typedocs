@@ -3,20 +3,20 @@ import {n, tab} from "./util";
 import {relationMd} from "./general-md-gen";
 import {ReflectionKind} from "../../interfaces/ReflectionKind";
 
-export function signatureMd(signatures: SignatureObject[]): string {
+export function signatureMd(signatures: SignatureObject[], separator: string = ''): string {
   if (signatures) {
     return signatures.reduce((s, signature) => {
       let typeParam = typeParamMd(signature.typeParameter);
       let params = paramMd(signature.parameters);
       let returnType = returnMd(signature.type);
       if ('__call' === signature.name) {
-        return `${s}${typeParam}(${params}) => ${returnType}${n}`;
+        return `${s}${typeParam}(${params}) => ${returnType}${separator}${n}`;
       } else if(ReflectionKind.IndexSignature === signature.kind) {
         return `{ [${params}]: ${returnType}; } `;
       } else {
-        return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${n}`;
+        return `${s}function ${signature.name}${typeParam}(${params}): ${returnType}${separator}${n}`;
       }
-    }, '').slice(0, -1);
+    }, '').slice(0, -(1 + separator.length));
   } else {
     return '';
   }
