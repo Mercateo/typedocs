@@ -1,6 +1,5 @@
 # @mercateo/ws
 - [Constants](#constants)
-    + [project](#project)
     + [TYPE](#type)
 - [Functions](#functions)
     + [validate](#validate)
@@ -13,15 +12,6 @@
 
 ## Constants
 
-#### project
-
-```typescript
-IProject project =  validate(unvalidatedProject)
-```
-
-
-
----
 #### TYPE
 
 ```typescript

@@ -76,7 +76,7 @@ any | custom | -
 interface EventCallback  {
     id: number
 
-    <T>(event: PerformanceEvent) => void
+    <T extends EventCallback>(event: PerformanceEvent) => void
 }
 ```
 
@@ -87,7 +87,7 @@ interface EventCallback  {
 Type | Name | Description
 :--- | :--- | :----------
 number | id | -
-[Call signature] | <T>([PerformanceEvent](#performanceevent)): void | -
+[Call signature] | <[EventCallback](#eventcallback)>([PerformanceEvent](#performanceevent)): void | -
 
 ---
 #### PerformanceEvent

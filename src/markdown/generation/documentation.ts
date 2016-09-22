@@ -71,38 +71,53 @@ export function docTableMd(children: BaseObject[]): string {
       let type = `[${child.kindString}]`;
 
       if (0 !== (child.kind & (ReflectionKind.Parameter | ReflectionKind.VariableOrProperty | ReflectionKind.TypeParameter))) {
-        let paramType = (<ParameterObject> child).type;
-        type = createLinkToType(paramType);
-        if (paramType.declaration && paramType.declaration.children) {
-          name = link(name);
-          subDocTables = subDocTables.concat(nn)
-            .concat(h5(child.name))
-            .concat(nn)
-            .concat(docTableMd(paramType.declaration.children));
-        }
+        [type, name, subDocTables] = [...docForFields(<ParameterObject> child, name, subDocTables)];
       }
 
       if (0 !== (child.kind & (ReflectionKind.CallSignature | ReflectionKind.IndexSignature))) {
-        let signType = <SignatureObject> child;
-        let paramTypes = signType.parameters.reduce((i, p) => {
-          let paramType = createLinkToType(p.type)
-          return `${i}${paramType}, `;
-        }, '').slice(0, -2);
-        let typedParamTypes = signType.typeParameter.reduce((i, p) => {
-          let paramType = createLinkToType(p.type);
-          if ('-' === paramType) {
-            paramType = p.name;
-          }
-          return `${i}${paramType}, `;
-        }, '<').slice(0, -2).concat('>');
-        let returnType = createLinkToType(signType.type);
-        let brackets = child.kind === ReflectionKind.IndexSignature ? ['[', ']'] : ['(', ')'];
-        name = `${typedParamTypes}${brackets[0]}${paramTypes}${brackets[1]}: ${returnType}`;
+        name = docForSignatures(<SignatureObject> child, name);
       }
 
       return s + tableRow(type, name, subDoc ? subDoc : doc) + n;
     }, `${tableHead}${n}`).slice(0, -1).concat(subDocTables);
   } else {
     return '';
+  }
+}
+
+function* docForFields(child: ParameterObject, name: string, subDocTables: string) {
+  if (child) {
+    let paramType = child.type;
+    yield createLinkToType(paramType);
+    if (paramType.declaration && paramType.declaration.children) {
+      yield link(name);
+      yield subDocTables.concat(nn)
+        .concat(h5(child.name))
+        .concat(nn)
+        .concat(docTableMd(paramType.declaration.children));
+    } else {
+      yield name;
+      yield subDocTables;
+    }
+  }
+}
+
+function docForSignatures(child: SignatureObject, name: string) {
+  if (child) {
+    let paramTypes = child.parameters.reduce((i, p) => {
+      let paramType = createLinkToType(p.type)
+      return `${i}${paramType}, `;
+    }, '').slice(0, -2);
+    let typedParamTypes = child.typeParameter.reduce((i, p) => {
+      let paramType = createLinkToType(p.type);
+      if ('-' === paramType) {
+        paramType = p.name;
+      }
+      return `${i}${paramType}, `;
+    }, '<').slice(0, -2).concat('>');
+    let returnType = createLinkToType(child.type);
+    let brackets = child.kind === ReflectionKind.IndexSignature ? ['[', ']'] : ['(', ')'];
+    name = `${typedParamTypes}${brackets[0]}${paramTypes}${brackets[1]}: ${returnType}`;
+    return name;
   }
 }

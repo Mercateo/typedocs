@@ -26,7 +26,7 @@ export interface PerformanceEvent {
 }
 
 export interface EventCallback {
-  <T>(event: PerformanceEvent): void,
+  <T extends EventCallback>(event: PerformanceEvent): void,
   id: number
 }
 

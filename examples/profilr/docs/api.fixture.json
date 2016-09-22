@@ -1000,7 +1000,12 @@
 									"name": "T",
 									"kind": 131072,
 									"kindString": "Type parameter",
-									"flags": {}
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "EventCallback",
+										"id": 91
+									}
 								}
 							],
 							"parameters": [

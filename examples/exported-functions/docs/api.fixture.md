@@ -99,7 +99,7 @@ Type | Name | Description
 class dummyClass extends A implements B, C {
     public constructor();
     public constructor(foo: number);
-
+    
 
     public bar: number = 2;
     protected foo: any;
@@ -164,4 +164,3 @@ Type | Name | Description
 function | dummyFctExp | { inherited from [B](#b) }
 
 ---
-
