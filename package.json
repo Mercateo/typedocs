@@ -9,7 +9,8 @@
   "scripts": {
     "typedocs": "node ./bin/typedocs.js",
     "build": "ws build",
-    "test": "ws lint && ws unit"
+    "test": "ws lint && ws unit",
+    "postinstall": "./bin/setup-typedoc.sh"
   },
   "ws": {
     "type": "node"

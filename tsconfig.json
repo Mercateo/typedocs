@@ -6,8 +6,8 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "types": [
-      "mocha",
-      "node"
+	"node",
+ 	"mocha"
     ]
   },
   "exclude": [

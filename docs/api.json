@@ -1,0 +1,7691 @@
+{
+	"id": 0,
+	"name": "typedocs",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 450,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/index.ts",
+			"children": [
+				{
+					"id": 452,
+					"name": "defaultOutputFile",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " Path.join(process.cwd(), 'docs', 'api.md')"
+				},
+				{
+					"id": 451,
+					"name": "defaultOutputJson",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " Path.join(process.cwd(), 'docs', 'api.json')"
+				},
+				{
+					"id": 453,
+					"name": "createJson",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 454,
+							"name": "createJson",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 455,
+									"name": "path",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "unknown",
+								"name": "Promise<any>"
+							}
+						}
+					]
+				},
+				{
+					"id": 456,
+					"name": "toMarkdown",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 457,
+							"name": "toMarkdown",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Converts the typedoc json output to markdown.",
+								"returns": "markdown text\n"
+							},
+							"parameters": [
+								{
+									"id": 458,
+									"name": "typeDocJsonFile",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the typedoc json output"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 459,
+					"name": "toMarkdownFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 460,
+							"name": "toMarkdownFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Converts the typedoc json output to markdown and writes it to the specified file.",
+								"returns": "a Promise\n"
+							},
+							"parameters": [
+								{
+									"id": 461,
+									"name": "typeDocJsonFile",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the typedoc json output"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 462,
+									"name": "outputFile",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the file to write markdown to; default is 'docs/api.md'"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": " defaultOutputFile"
+								}
+							],
+							"type": {
+								"type": "unknown",
+								"name": "Promise<any>"
+							}
+						}
+					]
+				},
+				{
+					"id": 466,
+					"name": "toMarkdownFileFrom",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 467,
+							"name": "toMarkdownFileFrom",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Creates typedoc json output using the source base as specified, converts it to markdown and writes it to the specified file.",
+								"returns": "a Promise\n"
+							},
+							"parameters": [
+								{
+									"id": 468,
+									"name": "sourceDir",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "your api entry point"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 469,
+									"name": "outputFile",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the file to write markdown to; default is 'docs/api.md'"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": " defaultOutputFile"
+								}
+							],
+							"type": {
+								"type": "unknown",
+								"name": "Promise<any>"
+							}
+						}
+					]
+				},
+				{
+					"id": 463,
+					"name": "toMarkdownFrom",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 464,
+							"name": "toMarkdownFrom",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Creates typedoc json output using the source base as specified and converts it to markdown.",
+								"returns": "a Promise with the markdown text\n"
+							},
+							"parameters": [
+								{
+									"id": 465,
+									"name": "sourceDir",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "your api entry point"
+									},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "unknown",
+								"name": "Promise<string>"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						452,
+						451
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						453,
+						456,
+						459,
+						466,
+						463
+					]
+				}
+			]
+		},
+		{
+			"id": 362,
+			"name": "\"input-handling/ObjectIterator\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/input-handling/ObjectIterator.ts",
+			"children": [
+				{
+					"id": 366,
+					"name": "ObjectIterator",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 370,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 371,
+									"name": "new ObjectIterator",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 372,
+											"name": "typeDocJson",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "BaseObject",
+												"id": 39
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "ObjectIterator",
+										"id": 366
+									}
+								}
+							]
+						},
+						{
+							"id": 369,
+							"name": "externalModules",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							}
+						},
+						{
+							"id": 368,
+							"name": "flatObjectList",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "unknown",
+								"name": "BaseObject[]"
+							}
+						},
+						{
+							"id": 367,
+							"name": "typeDocJson",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "BaseObject",
+								"id": 39
+							}
+						},
+						{
+							"id": 377,
+							"name": "lastId",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"getSignature": [
+								{
+									"id": 378,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ID",
+										"id": 210
+									}
+								}
+							]
+						},
+						{
+							"id": 375,
+							"name": "modules",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"getSignature": [
+								{
+									"id": 376,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							]
+						},
+						{
+							"id": 373,
+							"name": "objects",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true,
+								"isExternal": true
+							},
+							"getSignature": [
+								{
+									"id": 374,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "BaseObject[]"
+									}
+								}
+							]
+						},
+						{
+							"id": 379,
+							"name": "addFlags",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 380,
+									"name": "addFlags",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 381,
+											"name": "flags",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Flags",
+												"id": 363
+											}
+										},
+										{
+											"id": 382,
+											"name": "condition",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "Condition",
+												"id": 393
+											}
+										}
+									],
+									"type": {
+										"type": "instrinct",
+										"name": "Object"
+									}
+								}
+							]
+						},
+						{
+							"id": 383,
+							"name": "findChildById",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 384,
+									"name": "findChildById",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 385,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "BaseObject",
+												"id": 39
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 386,
+											"name": "childId",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ID",
+												"id": 210
+											}
+										}
+									],
+									"type": {
+										"type": "union"
+									}
+								}
+							]
+						},
+						{
+							"id": 387,
+							"name": "findChildrenById",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 388,
+									"name": "findChildrenById",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 389,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "BaseObject",
+												"id": 39
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 390,
+											"name": "childrenIds",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"isArray": true,
+												"name": "ID",
+												"id": 210
+											}
+										},
+										{
+											"id": 391,
+											"name": "condition",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "Condition",
+												"id": 393
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"isArray": true
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								370
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								369,
+								368,
+								367
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								377,
+								375,
+								373
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								379,
+								383,
+								387
+							]
+						}
+					]
+				},
+				{
+					"id": 363,
+					"name": "Flags",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"indexSignature": [
+						{
+							"id": 364,
+							"name": "__index",
+							"kind": 8192,
+							"kindString": "Index signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 365,
+									"name": "flag",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 393,
+					"name": "Condition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "unknown",
+						"name": "Condition"
+					}
+				},
+				{
+					"id": 392,
+					"name": "traverse",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "any"
+					},
+					"defaultValue": " require('traverse')"
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						366
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						363
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						393
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						392
+					]
+				}
+			]
+		},
+		{
+			"id": 394,
+			"name": "\"input-handling/find-real-api\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/input-handling/find-real-api.ts",
+			"children": [
+				{
+					"id": 395,
+					"name": "addApiExportedFlag",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 396,
+							"name": "addApiExportedFlag",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 397,
+									"name": "iterator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "ObjectIterator"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "Object"
+							}
+						}
+					]
+				},
+				{
+					"id": 398,
+					"name": "findBaseModule",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 399,
+							"name": "findBaseModule",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Finds the module specified as entry point when api.json was created.\nUses the hack, that this module does not have 'isExternal'-flag.",
+								"returns": "the entry point module\n"
+							},
+							"parameters": [
+								{
+									"id": 400,
+									"name": "modules",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "BaseObject",
+								"id": 39
+							}
+						}
+					]
+				},
+				{
+					"id": 404,
+					"name": "findWords",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 405,
+							"name": "findWords",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 406,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"isArray": true,
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 401,
+					"name": "parseExportClause",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 402,
+							"name": "parseExportClause",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 403,
+									"name": "tsFile",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"isArray": true,
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						395,
+						398,
+						404,
+						401
+					]
+				}
+			]
+		},
+		{
+			"id": 355,
+			"name": "\"input-handling/group-transforming\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/input-handling/group-transforming.ts",
+			"children": [
+				{
+					"id": 359,
+					"name": "matchGroups",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 360,
+							"name": "matchGroups",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 361,
+									"name": "modules",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							}
+						}
+					]
+				},
+				{
+					"id": 356,
+					"name": "reduceToKnownGroups",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 357,
+							"name": "reduceToKnownGroups",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 358,
+									"name": "moduleGroup",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "GroupObject",
+										"id": 184
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GroupObject",
+								"id": 184
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						359,
+						356
+					]
+				}
+			]
+		},
+		{
+			"id": 407,
+			"name": "\"input-handling/json-processor\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/input-handling/json-processor.ts",
+			"children": [
+				{
+					"id": 416,
+					"name": "process",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 417,
+							"name": "process",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 418,
+									"name": "typeDocJson",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "Result",
+								"id": 188
+							}
+						}
+					]
+				},
+				{
+					"id": 412,
+					"name": "processClasses",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 413,
+							"name": "processClasses",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 414,
+									"name": "classes",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Result",
+										"id": 188
+									}
+								},
+								{
+									"id": 415,
+									"name": "it",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "ObjectIterator"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "Object"
+							}
+						}
+					]
+				},
+				{
+					"id": 408,
+					"name": "processModules",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 409,
+							"name": "processModules",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 410,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 411,
+									"name": "it",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "ObjectIterator"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "Result",
+								"id": 188
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						416,
+						412,
+						408
+					]
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"interfaces/ReflectionKind\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/interfaces/ReflectionKind.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "ReflectionKind",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 21,
+							"name": "Accessor",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "262144"
+						},
+						{
+							"id": 15,
+							"name": "CallSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "4096"
+						},
+						{
+							"id": 10,
+							"name": "Class",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "128"
+						},
+						{
+							"id": 27,
+							"name": "ClassOrInterface",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": " Class | Interface"
+						},
+						{
+							"id": 12,
+							"name": "Constructor",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "512"
+						},
+						{
+							"id": 17,
+							"name": "ConstructorSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "16384"
+						},
+						{
+							"id": 6,
+							"name": "Enum",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "4"
+						},
+						{
+							"id": 7,
+							"name": "EnumMember",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "16"
+						},
+						{
+							"id": 26,
+							"name": "Event",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "8388608"
+						},
+						{
+							"id": 4,
+							"name": "ExternalModule",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "1"
+						},
+						{
+							"id": 9,
+							"name": "Function",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "64"
+						},
+						{
+							"id": 29,
+							"name": "FunctionOrMethod",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": " Function | Method"
+						},
+						{
+							"id": 22,
+							"name": "GetSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "524288"
+						},
+						{
+							"id": 3,
+							"name": "Global",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "0"
+						},
+						{
+							"id": 16,
+							"name": "IndexSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "8192"
+						},
+						{
+							"id": 11,
+							"name": "Interface",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "256"
+						},
+						{
+							"id": 14,
+							"name": "Method",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "2048"
+						},
+						{
+							"id": 5,
+							"name": "Module",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "2"
+						},
+						{
+							"id": 24,
+							"name": "ObjectLiteral",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "2097152"
+						},
+						{
+							"id": 18,
+							"name": "Parameter",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "32768"
+						},
+						{
+							"id": 13,
+							"name": "Property",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "1024"
+						},
+						{
+							"id": 23,
+							"name": "SetSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "1048576"
+						},
+						{
+							"id": 31,
+							"name": "SomeModule",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": " Module | ExternalModule"
+						},
+						{
+							"id": 30,
+							"name": "SomeSignature",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": " CallSignature | IndexSignature | ConstructorSignature | GetSignature | SetSignature"
+						},
+						{
+							"id": 25,
+							"name": "TypeAlias",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "4194304"
+						},
+						{
+							"id": 19,
+							"name": "TypeLiteral",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "65536"
+						},
+						{
+							"id": 20,
+							"name": "TypeParameter",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "131072"
+						},
+						{
+							"id": 8,
+							"name": "Variable",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": "32"
+						},
+						{
+							"id": 28,
+							"name": "VariableOrProperty",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"defaultValue": " Variable | Property"
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								21,
+								15,
+								10,
+								27,
+								12,
+								17,
+								6,
+								7,
+								26,
+								4,
+								9,
+								29,
+								22,
+								3,
+								16,
+								11,
+								14,
+								5,
+								24,
+								18,
+								13,
+								23,
+								31,
+								30,
+								25,
+								19,
+								20,
+								8,
+								28
+							]
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"kind": 4,
+					"children": [
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": 32,
+			"name": "\"interfaces/objects\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/interfaces/objects.ts",
+			"children": [
+				{
+					"id": 33,
+					"name": "Title",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 37,
+							"name": "Classes",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							}
+						},
+						{
+							"id": 34,
+							"name": "Constants",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							}
+						},
+						{
+							"id": 35,
+							"name": "Enumerations",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							}
+						},
+						{
+							"id": 36,
+							"name": "Functions",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							}
+						},
+						{
+							"id": 38,
+							"name": "Interfaces",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								37,
+								34,
+								35,
+								36,
+								38
+							]
+						}
+					]
+				},
+				{
+					"id": 39,
+					"name": "BaseObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 47,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							}
+						},
+						{
+							"id": 46,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							}
+						},
+						{
+							"id": 44,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						},
+						{
+							"id": 48,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							}
+						},
+						{
+							"id": 40,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							}
+						},
+						{
+							"id": 42,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							}
+						},
+						{
+							"id": 43,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 41,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 45,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								47,
+								46,
+								44,
+								48,
+								40,
+								42,
+								43,
+								41,
+								45
+							]
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "EnumObject",
+							"id": 49
+						},
+						{
+							"type": "reference",
+							"name": "EnumMemberObject",
+							"id": 59
+						},
+						{
+							"type": "reference",
+							"name": "ClassObject",
+							"id": 70
+						},
+						{
+							"type": "reference",
+							"name": "ConstructorObject",
+							"id": 86
+						},
+						{
+							"type": "reference",
+							"name": "InterfaceObject",
+							"id": 110
+						},
+						{
+							"type": "reference",
+							"name": "ConstantObject",
+							"id": 124
+						},
+						{
+							"type": "reference",
+							"name": "FunctionObject",
+							"id": 136
+						},
+						{
+							"type": "reference",
+							"name": "SignatureObject",
+							"id": 147
+						},
+						{
+							"type": "reference",
+							"name": "ParameterObject",
+							"id": 160
+						},
+						{
+							"type": "reference",
+							"name": "TypeLiteralObject",
+							"id": 172
+						}
+					]
+				},
+				{
+					"id": 70,
+					"name": "ClassObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 84,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 83,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 74,
+							"name": "constructors",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ConstructorObject",
+								"id": 86
+							}
+						},
+						{
+							"id": 71,
+							"name": "extendedBy",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 72,
+							"name": "extendedTypes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 81,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 85,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 77,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 73,
+							"name": "implementedTypes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 79,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 80,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 76,
+							"name": "methods",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "MethodObject",
+								"id": 97
+							}
+						},
+						{
+							"id": 78,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 82,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 75,
+							"name": "properties",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								84,
+								83,
+								74,
+								71,
+								72,
+								81,
+								85,
+								77,
+								73,
+								79,
+								80,
+								76,
+								78,
+								82,
+								75
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 205,
+					"name": "CommentObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 208,
+							"name": "returns",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 206,
+							"name": "shortText",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 209,
+							"name": "tags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "unknown",
+								"isArray": true,
+								"name": "{ tag: string; text: string; }"
+							}
+						},
+						{
+							"id": 207,
+							"name": "text",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								208,
+								206,
+								209,
+								207
+							]
+						}
+					]
+				},
+				{
+					"id": 124,
+					"name": "ConstantObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 134,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 133,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 126,
+							"name": "defaultValue",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 131,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 135,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 127,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 129,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 130,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 128,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 132,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 125,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "TypeObject",
+								"id": 195
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								134,
+								133,
+								126,
+								131,
+								135,
+								127,
+								129,
+								130,
+								128,
+								132,
+								125
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 86,
+					"name": "ConstructorObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 95,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 94,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 92,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 96,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 88,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 90,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 91,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 89,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 93,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 87,
+							"name": "signatures",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								95,
+								94,
+								92,
+								96,
+								88,
+								90,
+								91,
+								89,
+								93,
+								87
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 59,
+					"name": "EnumMemberObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 68,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 67,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 60,
+							"name": "defaultValue",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							}
+						},
+						{
+							"id": 65,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 69,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 61,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 63,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 64,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 62,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 66,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								68,
+								67,
+								60,
+								65,
+								69,
+								61,
+								63,
+								64,
+								62,
+								66
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 49,
+					"name": "EnumObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 50,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "EnumMemberObject",
+								"id": 59
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 57,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 55,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 58,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 51,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 53,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 54,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 52,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 56,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								50,
+								57,
+								55,
+								58,
+								51,
+								53,
+								54,
+								52,
+								56
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 136,
+					"name": "FunctionObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 145,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 144,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 142,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 146,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 138,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 140,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 141,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 139,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 143,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 137,
+							"name": "signatures",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								145,
+								144,
+								142,
+								146,
+								138,
+								140,
+								141,
+								139,
+								143,
+								137
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "MethodObject",
+							"id": 97
+						}
+					]
+				},
+				{
+					"id": 184,
+					"name": "GroupObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 187,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"isArray": true,
+								"name": "number"
+							}
+						},
+						{
+							"id": 186,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							}
+						},
+						{
+							"id": 185,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								187,
+								186,
+								185
+							]
+						}
+					]
+				},
+				{
+					"id": 110,
+					"name": "InterfaceObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 111,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "ParameterObject",
+								"id": 160
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 122,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 113,
+							"name": "extendedBy",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 115,
+							"name": "extendedTypes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 120,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 123,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 116,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 114,
+							"name": "implementedBy",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 118,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 119,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 117,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 121,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 112,
+							"name": "signatures",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								111,
+								122,
+								113,
+								115,
+								120,
+								123,
+								116,
+								114,
+								118,
+								119,
+								117,
+								121,
+								112
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 97,
+					"name": "MethodObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 108,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 107,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 105,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 109,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 101,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 98,
+							"name": "implementationOf",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 99,
+							"name": "inheritedFrom",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 103,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 104,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 102,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 106,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 100,
+							"name": "signatures",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FunctionObject.signatures",
+								"id": 137
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								108,
+								107,
+								105,
+								109,
+								101,
+								98,
+								99,
+								103,
+								104,
+								102,
+								106,
+								100
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FunctionObject",
+							"id": 136
+						}
+					]
+				},
+				{
+					"id": 160,
+					"name": "ParameterObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 170,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 169,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 167,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 171,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 163,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 162,
+							"name": "inheritedFrom",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 165,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 166,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 164,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 168,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 161,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "TypeObject",
+								"id": 195
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								170,
+								169,
+								167,
+								171,
+								163,
+								162,
+								165,
+								166,
+								164,
+								168,
+								161
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 191,
+					"name": "RelationObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 194,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							}
+						},
+						{
+							"id": 193,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 192,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								194,
+								193,
+								192
+							]
+						}
+					]
+				},
+				{
+					"id": 188,
+					"name": "Result",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 190,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							}
+						},
+						{
+							"id": 189,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								190,
+								189
+							]
+						}
+					]
+				},
+				{
+					"id": 147,
+					"name": "SignatureObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 158,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "BaseObject",
+								"id": 39
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 157,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 155,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 159,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 151,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 153,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 154,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 152,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 156,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 149,
+							"name": "parameters",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "ParameterObject",
+								"id": 160
+							}
+						},
+						{
+							"id": 150,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "TypeObject",
+								"id": 195
+							}
+						},
+						{
+							"id": 148,
+							"name": "typeParameter",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "ParameterObject",
+								"id": 160
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								158,
+								157,
+								155,
+								159,
+								151,
+								153,
+								154,
+								152,
+								156,
+								149,
+								150,
+								148
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 172,
+					"name": "TypeLiteralObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 175,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "ParameterObject",
+								"id": 160
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "BaseObject.children",
+								"id": 47
+							}
+						},
+						{
+							"id": 182,
+							"name": "comment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "CommentObject",
+								"id": 205
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.comment",
+								"id": 46
+							}
+						},
+						{
+							"id": 180,
+							"name": "flags",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.flags",
+								"id": 44
+							}
+						},
+						{
+							"id": 183,
+							"name": "groups",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "GroupObject",
+								"id": 184
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.groups",
+								"id": 48
+							}
+						},
+						{
+							"id": 176,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "ID",
+								"id": 210
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.id",
+								"id": 40
+							}
+						},
+						{
+							"id": 174,
+							"name": "indexSignature",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							}
+						},
+						{
+							"id": 178,
+							"name": "kind",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kind",
+								"id": 42
+							}
+						},
+						{
+							"id": 179,
+							"name": "kindString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.kindString",
+								"id": 43
+							}
+						},
+						{
+							"id": 177,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.name",
+								"id": 41
+							}
+						},
+						{
+							"id": 181,
+							"name": "originalName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseObject.originalName",
+								"id": 45
+							}
+						},
+						{
+							"id": 173,
+							"name": "signatures",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "SignatureObject",
+								"id": 147
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								175,
+								182,
+								180,
+								183,
+								176,
+								174,
+								178,
+								179,
+								177,
+								181,
+								173
+							]
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "BaseObject",
+							"id": 39
+						}
+					]
+				},
+				{
+					"id": 195,
+					"name": "TypeObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 199,
+							"name": "declaration",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "TypeLiteralObject",
+								"id": 172
+							}
+						},
+						{
+							"id": 197,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 196,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 200,
+							"name": "typeArguments",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "RelationObject",
+								"id": 191
+							}
+						},
+						{
+							"id": 201,
+							"name": "types",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "UnionObject",
+								"id": 202
+							}
+						},
+						{
+							"id": 198,
+							"name": "value",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								199,
+								197,
+								196,
+								200,
+								201,
+								198
+							]
+						}
+					]
+				},
+				{
+					"id": 202,
+					"name": "UnionObject",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 203,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 204,
+							"name": "value",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								203,
+								204
+							]
+						}
+					]
+				},
+				{
+					"id": 210,
+					"name": "ID",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "number"
+					}
+				},
+				{
+					"id": 211,
+					"name": "TEMPLATE",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "reference",
+						"isArray": true,
+						"name": "GroupObject",
+						"id": 184
+					},
+					"defaultValue": " [\n  // Title[Title.*] for string conversion\n  { title: Title[Title.Constants], kind: 32, children: [] },\n  { title: Title[Title.Enumerations], kind: 4, children: [] },\n  { title: Title[Title.Functions], kind: 64, children: [] },\n  { title: Title[Title.Classes], kind: 128, children: [] },\n  { title: Title[Title.Interfaces], kind: 256, children: [] }\n]"
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"kind": 4,
+					"children": [
+						33
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						39,
+						70,
+						205,
+						124,
+						86,
+						59,
+						49,
+						136,
+						184,
+						110,
+						97,
+						160,
+						191,
+						188,
+						147,
+						172,
+						195,
+						202
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						210
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						211
+					]
+				}
+			]
+		},
+		{
+			"id": 419,
+			"name": "\"markdown/Markdown\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/Markdown.ts",
+			"children": [
+				{
+					"id": 426,
+					"name": "Markdown",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 428,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 429,
+									"name": "new Markdown",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 430,
+											"name": "typeDocJson",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "instrinct",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Markdown",
+										"id": 426
+									}
+								}
+							]
+						},
+						{
+							"id": 427,
+							"name": "markdown",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "TopLevelSection",
+								"id": 423
+							}
+						},
+						{
+							"id": 431,
+							"name": "getText",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 432,
+									"name": "getText",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								428
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								427
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								431
+							]
+						}
+					]
+				},
+				{
+					"id": 420,
+					"name": "Section",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 421,
+							"name": "header",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 422,
+							"name": "markdown",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "SectionOrString",
+								"id": 437
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								421,
+								422
+							]
+						}
+					]
+				},
+				{
+					"id": 423,
+					"name": "TopLevelSection",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 424,
+							"name": "header",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExternal": true
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						},
+						{
+							"id": 425,
+							"name": "paragraphs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExternal": true
+							},
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "Section",
+								"id": 420
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								424,
+								425
+							]
+						}
+					]
+				},
+				{
+					"id": 437,
+					"name": "SectionOrString",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "Section",
+								"id": 420
+							},
+							{
+								"type": "instrinct",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 433,
+					"name": "toc",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "any"
+					},
+					"defaultValue": " require('markdown-toc')"
+				},
+				{
+					"id": 444,
+					"name": "appendTableOfContent",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 445,
+							"name": "appendTableOfContent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 446,
+									"name": "text",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 438,
+					"name": "createTopLevelSection",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 439,
+							"name": "createTopLevelSection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 440,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "TopLevelSection",
+								"id": 423
+							}
+						}
+					]
+				},
+				{
+					"id": 434,
+					"name": "isString",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 435,
+							"name": "isString",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 436,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "SectionOrString",
+										"id": 437
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 447,
+					"name": "printParagraphs",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 448,
+							"name": "printParagraphs",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 449,
+									"name": "paragraphs",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "Section",
+										"id": 420
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 441,
+					"name": "printable",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 442,
+							"name": "printable",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 443,
+									"name": "section",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "SectionOrString",
+										"id": 437
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						426
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						420,
+						423
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						437
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						433
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						444,
+						438,
+						434,
+						447,
+						441
+					]
+				}
+			]
+		},
+		{
+			"id": 331,
+			"name": "\"markdown/generation/class-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/class-gen.ts",
+			"children": [
+				{
+					"id": 332,
+					"name": "classMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 333,
+							"name": "classMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 334,
+									"name": "classes",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 335,
+					"name": "constructorMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 336,
+							"name": "constructorMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 337,
+									"name": "constructor",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ConstructorObject",
+										"id": 86
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 341,
+					"name": "methodMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 342,
+							"name": "methodMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 343,
+									"name": "methods",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "MethodObject",
+										"id": 97
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 338,
+					"name": "propertyMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 339,
+							"name": "propertyMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 340,
+									"name": "properties",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						332,
+						335,
+						341,
+						338
+					]
+				}
+			]
+		},
+		{
+			"id": 348,
+			"name": "\"markdown/generation/component-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/component-gen.ts",
+			"children": [
+				{
+					"id": 349,
+					"name": "generateMarkdown",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 350,
+							"name": "generateMarkdown",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 351,
+									"name": "result",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Result",
+										"id": 188
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Section",
+								"id": 420
+							}
+						}
+					]
+				},
+				{
+					"id": 352,
+					"name": "groupMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 353,
+							"name": "groupMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 354,
+									"name": "result",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Result",
+										"id": 188
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "SectionOrString",
+								"id": 437
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						349,
+						352
+					]
+				}
+			]
+		},
+		{
+			"id": 313,
+			"name": "\"markdown/generation/constant-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/constant-gen.ts",
+			"children": [
+				{
+					"id": 317,
+					"name": "constantMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 318,
+							"name": "constantMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 319,
+									"name": "constants",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 314,
+					"name": "defaultObject",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 315,
+							"name": "defaultObject",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 316,
+									"name": "children",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "ParameterObject",
+										"id": 160
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						317,
+						314
+					]
+				}
+			]
+		},
+		{
+			"id": 294,
+			"name": "\"markdown/generation/documentation\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/documentation.ts",
+			"children": [
+				{
+					"id": 304,
+					"name": "docForFields",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 305,
+							"name": "docForFields",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 306,
+									"name": "child",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ParameterObject",
+										"id": 160
+									}
+								},
+								{
+									"id": 307,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 308,
+									"name": "subDocTables",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "unknown",
+								"name": "IterableIterator<string>"
+							}
+						}
+					]
+				},
+				{
+					"id": 309,
+					"name": "docForSignatures",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 310,
+							"name": "docForSignatures",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 311,
+									"name": "child",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "SignatureObject",
+										"id": 147
+									}
+								},
+								{
+									"id": 312,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 298,
+					"name": "docHeritage",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 299,
+							"name": "docHeritage",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 300,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ClassObject",
+												"id": 70
+											},
+											{
+												"type": "reference",
+												"name": "InterfaceObject",
+												"id": 110
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 295,
+					"name": "docMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 296,
+							"name": "docMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 297,
+									"name": "comment",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "CommentObject",
+										"id": 205
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 301,
+					"name": "docTableMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 302,
+							"name": "docTableMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 303,
+									"name": "children",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						304,
+						309,
+						298,
+						295,
+						301
+					]
+				}
+			]
+		},
+		{
+			"id": 320,
+			"name": "\"markdown/generation/enum-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/enum-gen.ts",
+			"children": [
+				{
+					"id": 321,
+					"name": "enumMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 322,
+							"name": "enumMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 323,
+									"name": "enums",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 324,
+					"name": "enumMemberMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 325,
+							"name": "enumMemberMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 326,
+									"name": "enumMember",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "EnumMemberObject",
+										"id": 59
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						321,
+						324
+					]
+				}
+			]
+		},
+		{
+			"id": 327,
+			"name": "\"markdown/generation/function-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/function-gen.ts",
+			"children": [
+				{
+					"id": 328,
+					"name": "functionMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 329,
+							"name": "functionMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 330,
+									"name": "functions",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						328
+					]
+				}
+			]
+		},
+		{
+			"id": 280,
+			"name": "\"markdown/generation/general-md-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/general-md-gen.ts",
+			"children": [
+				{
+					"id": 287,
+					"name": "heritageMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 288,
+							"name": "heritageMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 289,
+									"name": "converted",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "InterfaceObject",
+												"id": 110
+											},
+											{
+												"type": "reference",
+												"name": "ClassObject",
+												"id": 70
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 284,
+					"name": "modifierMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 285,
+							"name": "modifierMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 286,
+									"name": "flags",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 281,
+					"name": "nameMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 282,
+							"name": "nameMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 283,
+									"name": "baseObj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 290,
+					"name": "relationMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 291,
+							"name": "relationMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 292,
+									"name": "obj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseObject",
+										"id": 39
+									}
+								},
+								{
+									"id": 293,
+									"name": "linked",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "(s: any) => any"
+									},
+									"defaultValue": " (s) => s"
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						287,
+						284,
+						281,
+						290
+					]
+				}
+			]
+		},
+		{
+			"id": 344,
+			"name": "\"markdown/generation/interface-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/interface-gen.ts",
+			"children": [
+				{
+					"id": 345,
+					"name": "interfaceMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 346,
+							"name": "interfaceMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 347,
+									"name": "interfaces",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						345
+					]
+				}
+			]
+		},
+		{
+			"id": 212,
+			"name": "\"markdown/generation/signature-gen\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/signature-gen.ts",
+			"children": [
+				{
+					"id": 224,
+					"name": "paramMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 225,
+							"name": "paramMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 226,
+									"name": "params",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "ParameterObject",
+										"id": 160
+									}
+								},
+								{
+									"id": 227,
+									"name": "separator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": "\", \""
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 228,
+					"name": "returnMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 229,
+							"name": "returnMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 230,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TypeObject",
+										"id": 195
+									}
+								},
+								{
+									"id": 231,
+									"name": "separator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": " `,${n}${tab}`"
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 213,
+					"name": "signatureMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 214,
+							"name": "signatureMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 215,
+									"name": "signatures",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "SignatureObject",
+										"id": 147
+									}
+								},
+								{
+									"id": 216,
+									"name": "separator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": "\"\""
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 220,
+					"name": "typeArgMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 221,
+							"name": "typeArgMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 222,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TypeObject",
+										"id": 195
+									}
+								},
+								{
+									"id": 223,
+									"name": "recursiveCb",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "(TypeObject: any) => string"
+									},
+									"defaultValue": " returnMd"
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 217,
+					"name": "typeParamMd",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 218,
+							"name": "typeParamMd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 219,
+									"name": "typeParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "ParameterObject",
+										"id": 160
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						224,
+						228,
+						213,
+						220,
+						217
+					]
+				}
+			]
+		},
+		{
+			"id": 232,
+			"name": "\"markdown/generation/util\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"originalName": "/home/alexander/workspace_js/markTypeDoc/src/markdown/generation/util.ts",
+			"children": [
+				{
+					"id": 261,
+					"name": "codeEnd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " n + '\\`\\`\\`'"
+				},
+				{
+					"id": 260,
+					"name": "codeStart",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " '\\`\\`\\`typescript' + n"
+				},
+				{
+					"id": 257,
+					"name": "n",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": "\"\n\""
+				},
+				{
+					"id": 258,
+					"name": "nn",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " n + n"
+				},
+				{
+					"id": 259,
+					"name": "tab",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": "\"    \""
+				},
+				{
+					"id": 262,
+					"name": "tableHead",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"type": {
+						"type": "instrinct",
+						"name": "string"
+					},
+					"defaultValue": " `Type | Name | Description${n}:--- | :--- | :----------`"
+				},
+				{
+					"id": 233,
+					"name": "bold",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 234,
+							"name": "bold",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 235,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 269,
+					"name": "createLinkToType",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 270,
+							"name": "createLinkToType",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 271,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TypeObject",
+										"id": 195
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 266,
+					"name": "createMdUrl",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 267,
+							"name": "createMdUrl",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 268,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 277,
+					"name": "distinctParams",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 278,
+							"name": "distinctParams",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 279,
+									"name": "signatures",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "SignatureObject",
+										"id": 147
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"isArray": true,
+								"name": "ParameterObject",
+								"id": 160
+							}
+						}
+					]
+				},
+				{
+					"id": 242,
+					"name": "h4",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 243,
+							"name": "h4",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 244,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 245,
+					"name": "h5",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 246,
+							"name": "h5",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 247,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 263,
+					"name": "isAccessible",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 264,
+							"name": "isAccessible",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 265,
+									"name": "obj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseObject",
+										"id": 39
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 236,
+					"name": "italic",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 237,
+							"name": "italic",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 238,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 248,
+					"name": "link",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 249,
+							"name": "link",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 250,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 251,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									},
+									"defaultValue": " createMdUrl(name)"
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 272,
+					"name": "reduceHeritage",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 273,
+							"name": "reduceHeritage",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 274,
+									"name": "keyword",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 275,
+									"name": "relations",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "RelationObject",
+										"id": 191
+									}
+								},
+								{
+									"id": 276,
+									"name": "linkCondition",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "(obj: any) => any"
+									},
+									"defaultValue": " (obj) => obj.name"
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 252,
+					"name": "tableRow",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 253,
+							"name": "tableRow",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 254,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 255,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 256,
+									"name": "description",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 239,
+					"name": "underlined",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 240,
+							"name": "underlined",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 241,
+									"name": "s",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						261,
+						260,
+						257,
+						258,
+						259,
+						262
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						233,
+						269,
+						266,
+						277,
+						242,
+						245,
+						263,
+						236,
+						248,
+						272,
+						252,
+						239
+					]
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				450,
+				362,
+				394,
+				355,
+				407,
+				1,
+				32,
+				419,
+				331,
+				348,
+				313,
+				294,
+				320,
+				327,
+				280,
+				344,
+				212,
+				232
+			]
+		}
+	]
+}
