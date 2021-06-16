@@ -1,3 +1,5 @@
+**DEPRECATED** This project is unmantained, deprecated and goes into archive with followup removal in 2 years.
+
 # typedocs
 
 > Generates API documentation from your TypeScript files.
